@@ -2,6 +2,7 @@
 *.bbl
 *.blg
 *.dvi
+*.eps
 *.fdb_latexmk
 *.glg
 *.glo
