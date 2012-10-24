@@ -1,0 +1,101 @@
+% $Id: grid.ps,v 1.10 2000/04/18 19:16:07 billd Exp $
+
+/grid_dict 40 dict def
+grid_dict /grid_mtrxstor matrix put
+
+/grid
+  {
+  grid_dict
+    begin
+
+    /ysteps    exch def
+    /xsteps    exch def
+    /delpts  exch def
+    /yminpts   exch def
+    /xminpts   exch def
+    /delta     exch def
+    /ymin      exch def
+    /xmin      exch def
+
+    0 SLW
+
+    /xmaxpts xminpts xsteps delpts mul add def
+    /ymaxpts yminpts ysteps delpts mul add def
+
+    /fnthgt 8 def
+    /Times-Roman findfont fnthgt scalefont setfont
+    /labsep fnthgt 2 mul def
+    /extndfr 1 2 div def
+    /graylevel 0.2 def
+
+    /labseptrk -1 def
+    0 1 xsteps 
+      {
+      /xn exch def
+      /xpts xminpts delpts xn mul add def
+      /x    xmin    delta    xn mul add def
+
+      /dolabel labseptrk 0 lt def
+
+      graylevel setgray
+      xpts 
+      dolabel { yminpts delpts extndfr mul sub } { yminpts } ifelse
+      M2
+      xpts ymaxpts L2
+      ST
+
+      dolabel
+        {
+        /labseptrk labsep def
+        0 setgray
+        xpts yminpts M2
+        x 20 string cvs false CP
+        PBX
+        pop exch pop exch sub /txtwid exch def
+        NP
+        xpts txtwid 2 div sub 
+          yminpts fnthgt sub delpts extndfr mul sub M2
+        x 20 string cvs S
+        } if
+
+      /labseptrk labseptrk delpts sub def
+      } for
+
+    /labseptrk -1 def
+    0 1 ysteps 
+      {
+      /yn exch def
+      /ypts yminpts delpts yn mul add def
+      /y    ymin    delta    yn mul add def
+
+      /dolabel labseptrk 0 lt def
+
+      graylevel setgray
+      dolabel { xminpts delpts extndfr mul sub } { xminpts } ifelse
+      ypts M2
+      xmaxpts ypts L2
+      ST
+
+      dolabel
+        {
+        /labseptrk labsep def
+        0 setgray
+        xminpts ypts M2
+        y 20 string cvs false CP
+        PBX
+        exch 4 -1 roll sub /txtwid exch def
+        sub neg /txthgt exch def
+        NP
+        xminpts txtwid sub fnthgt sub delpts extndfr mul sub
+          ypts txthgt 2 div sub M2
+        y 20 string cvs S
+        } if
+
+      /labseptrk labseptrk delpts sub def
+      } for
+
+    0 setgray
+    
+    end
+  } def
+

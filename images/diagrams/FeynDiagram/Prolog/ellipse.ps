@@ -1,0 +1,25 @@
+% $Id: ellipse.ps,v 1.10 2000/04/18 19:16:07 billd Exp $
+
+/ellipse_dict 6 dict def
+ellipse_dict /ellipse_mtrxstor matrix put
+
+/ellipse
+  {
+  ellipse_dict begin
+
+  /yrad exch def
+  /xrad exch def
+  /y exch def
+  /x exch def
+
+  /ellipse_oldmtrx ellipse_mtrxstor currentmatrix def
+
+  x y translate
+  xrad yrad scale
+  0 0 1 0 360 arc
+
+  ellipse_oldmtrx setmatrix
+
+  end
+  } def
+

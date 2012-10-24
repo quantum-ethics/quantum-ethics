@@ -1,0 +1,77 @@
+% $Id: fill.ps,v 1.10 2000/04/18 19:16:07 billd Exp $
+
+/fillbox_dict 20 dict def
+fillbox_dict /fillbox_mtrxstor matrix put
+
+% fillbox_create is to be used for filling a box which is AT LEAST AS LARGE
+% as box given by xmin,ymin xmax,ymax - use clipping to strip off what
+% you don't want
+
+/fillbox_create
+  {
+  fillbox_dict begin
+
+  /ang exch def
+  /ymax exch def
+  /xmax exch def
+  /ymin exch def
+  /xmin exch def
+  /fillbox_proc exch def  % the fillbox_proc fetches rest of stack
+
+  /fillbox_oldmtrx fillbox_mtrxstor currentmatrix def
+
+  xmin xmax add 2 div
+  ymin ymax add 2 div
+  translate
+
+  ang rotate
+
+  % rad tells how big a circle which encompasses the box must be
+  /rad 
+    xmax xmin sub xmax xmin sub mul
+    ymax ymin sub ymax ymin sub mul
+    add sqrt 2 div
+    def
+
+  fillbox_proc
+
+  fillbox_oldmtrx setmatrix
+  end
+  } def
+
+
+/fillbox_lines
+  {
+  /incr exch def
+
+  rad neg incr rad
+    {
+    /yv exch def
+    rad neg yv M2
+    rad yv L2
+    ST
+    } for
+  } bind def
+  
+
+/fillbox_dots
+  {
+  /dtrad exch def
+  /incr exch def
+
+  /shx 0 def
+
+  rad neg incr rad
+    {
+    /yval exch def
+    rad neg shx sub incr rad
+      {
+      /xval exch def
+      xval dtrad add yval M2
+      xval yval dtrad 0 360 arc
+      fill
+      } for
+    shx 0 eq { /shx incr 2 div def } { /shx 0 def } ifelse
+    } for
+  } bind def
+

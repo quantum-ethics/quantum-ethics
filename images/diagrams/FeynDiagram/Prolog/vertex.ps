@@ -1,0 +1,116 @@
+% $Id: vertex.ps,v 1.11 2000/04/18 19:16:07 billd Exp $
+
+/vtx_dict 20 dict def
+vtx_dict /vtx_mtrxstor matrix put
+
+/vtx_create
+  {
+  vtx_dict begin
+
+  /ang exch def
+  /rad exch def
+  /y exch def
+  /x exch def
+  /vtx_proc exch def
+
+  /vtx_oldmatrix vtx_mtrxstor currentmatrix def
+
+  x y translate
+  ang rotate
+
+  vtx_proc
+
+  vtx_oldmatrix setmatrix
+  end
+  } bind def
+
+
+/vtx_dot
+  {
+  NP
+  rad 0 M2
+  0 0 rad 0 360 arc
+  0 setgray
+  fill
+  } bind def
+
+
+/vtx_box
+  {
+  NP
+  rad rad M2
+  rad rad neg L2
+  rad neg rad neg L2
+  rad neg rad L2
+  closepath
+  0 setgray
+  fill
+  } def
+
+/vtx_open_box
+  {
+  NP
+  rad rad M2
+  rad rad neg L2
+  rad neg rad neg L2
+  rad neg rad L2
+  closepath
+  1 setgray
+  gsave fill grestore
+	0 setgray
+	ST
+  } def
+
+/vtx_cross
+  {
+  NP
+  -1 2 sqrt div rad mul
+  -1 2 sqrt div rad mul
+  M2
+  1 2 sqrt div rad mul
+  1 2 sqrt div rad mul
+  L2
+
+  -1 2 sqrt div rad mul
+  1 2 sqrt div rad mul
+  M2
+  1 2 sqrt div rad mul
+  -1 2 sqrt div rad mul
+  L2
+
+  ST
+  } def
+
+/vtx_circlecross
+  {
+  /xshrfct .63 def
+
+    % blank out whatever is underneath
+  NP
+  rad 0 M2
+  0 0 rad 0 360 arc
+  1 setgray
+  fill
+
+  NP
+  -1 2 sqrt div rad mul xshrfct mul
+  -1 2 sqrt div rad mul xshrfct mul
+  M2
+  1 2 sqrt div rad mul xshrfct mul
+  1 2 sqrt div rad mul xshrfct mul
+  L2
+
+  -1 2 sqrt div rad mul xshrfct mul
+  1 2 sqrt div rad mul xshrfct mul
+  M2
+  1 2 sqrt div rad mul xshrfct mul
+  -1 2 sqrt div rad mul xshrfct mul
+  L2
+
+  rad 0 M2
+  0 0 rad 0 360 arc
+
+  0 setgray
+  ST
+  } def
+

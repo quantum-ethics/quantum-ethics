@@ -1,0 +1,37 @@
+% $Id: tilde.ps,v 1.2 1994/12/13 14:47:16 billd Exp $
+
+/tilde_dict 12 dict def
+tilde_dict /tilde_mtrxstor matrix put
+
+/tilde
+	{
+	tilde_dict
+		begin
+
+		/h exch def
+		/y2 exch def
+		/x2 exch def
+		/y1 exch def
+		/x1 exch def
+
+		x1 y1 M2
+		/w x2 x1 sub def
+
+		/tilde_oldmtrx tilde_mtrxstor currentmatrix def
+		CPT translate
+		w 6 div h scale
+
+		/t .5 def
+
+		0 t RM2
+		1 1.2 2 1.2 3 .5 RC2
+		1 -.7 2 -.7 3 .5 RC2
+		0 -1 t mul rlineto
+		-1 -1.2 -2 -1.2 -3 -.5 RC2
+		-1 .7 -2 .7 -3 -.5 RC2
+
+		closepath
+
+		tilde_oldmtrx setmatrix
+		end
+	} bind def

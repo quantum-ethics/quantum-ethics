@@ -1,0 +1,33 @@
+% $Id: text.ps,v 1.10 2000/04/18 19:16:07 billd Exp $
+
+/text_dict 20 dict def
+text_dict /text_mtrxstor matrix put
+
+/SF* {  exch findfont exch scalefont setfont } bind def
+
+systemdict /selectfont known
+  { /SF /selectfont load def }
+  { /SF /SF* load def }
+  ifelse
+
+/txtsta
+  {
+  text_dict begin
+
+  /angle exch def
+  /y exch def
+  /x exch def
+
+  /text_oldmtrx text_mtrxstor currentmatrix def
+
+  x y translate
+  angle rotate
+  } bind def
+
+
+/txtend
+  {
+  text_oldmtrx setmatrix
+  end
+  } bind def
+
