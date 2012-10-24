@@ -1,0 +1,63 @@
+******************************************************************************
+          Technical Notes for FeynDiagram Version 2.6
+
+These notes are somewhat technical.  The contents of this file may
+not be relevant to future releases of FeynDiagram.
+******************************************************************************
+
+Objects which can be drawn on paper, such as lines, vertices, entire
+FeynDiagrams, and even pages all have a member function called hide().
+Calling this function causes the object to be hidden, so it doesn't produce
+any output on the page.
+
+When computing the bounding box for the whole figure,
+the bounding box for text is computed by guessing at about how big the
+characters are (based on the Times-Roman font).  Generally, it is
+too large, so if you have text near the edges of the diagram, or you
+have very long text strings, the bounding box of the diagram might not
+be quite right.  You may even get warnings that the diagram may not
+fit on 8.5x11 paper even though it does.  You can adjust the bounding
+box by using the FeynDiagram::pad_bbox member function.
+
+When doing \overline, \widetilde, \tildebar, \overrightarrow, or 
+special centering of text, FeynDiagram needs
+some way of determining the size of the text.  So, it has PostScript
+compute the path for the text without actually drawing it, and then 
+finds the bounding box.  If your text string is too long (more than about
+25 characters), your printer may run out of memory, causing it to throw the
+page away.  Also, the bounding box the printer finds for rotated text
+seems to be too big, so \overline doesn't work well if the text is
+rotated (I don't understand this - is it just me?).
+
+The "parameters" for various Feynman diagram parts are organized as
+linked lists.  So, it works it's way up the list until it sees that
+one of the nodes actually has had its value set.
+
+All pages are in one linked list.  FeynDiagram's are linked lists attached 
+to pages.  Lines, vertices, etc. go into a linked list on a FeynDiagram.
+Shading for blobs goes in a linked list attached to the blob.  Lots of links...
+
+There are no copy constructors - maybe someday... (copy constructors are
+nontrivial because of all of the linked lists - can't just copy bits)
+
+> OBSOLETE: (versions 1.21 and earlier)
+> If, for some reason, you want to override the PostScript prolog file
+> used by FeynDiagram (without recompiling), just set page::prologfile
+> to a string giving the name of the prolog file you want to use.
+As of version 1.22, there are several prolog files that get 
+merged together as needed (instead of just one file) which should
+make output somewhat smaller.  So, page::prologfile is gone.  It has been 
+replaced by page::prologdir which is the directory
+name (including a trailing '/' or whatever is appropriate for your
+computer) where the prolog files are.
+
+Should each page of postscript be wrapped with a save/restore pair?
+The dvips manual says that you shouldn't have save/restore's in
+postscript files to be imported, but I haven't had any problems.  To
+eliminate the save/restore, just #define NOSAVERESTORE, and rebuild
+the library.
+
+line_spring actually has parameters fract1, fract2, fract3, and fract4.
+Only fract1 is mentioned in the tutorial.  There are probably
+too many parameters - I may change some of the extras in a future release.
+

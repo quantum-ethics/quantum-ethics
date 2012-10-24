@@ -1,0 +1,86 @@
+If for some reason your C++ compiler does not have the "osfcn.h" header
+file, you can (hopefully) get around this by #define'ing NOOSFCN.  There
+is a line in the unix makefile for doing this.  On non-unix machines
+you can look up the compiler option in your manual, or alternatively just
+edit the files 'default.C' and 'fd.C' sticking '#define NOOSFCN' at the
+top of each file.
+
+These are the results I have found from testing with various C++ compilers.
+
+CC (cfront) version 2.1.0:
+ The library seems to build, but the programs core dump when they run.
+ Perhaps our version is just defective.
+
+CC (cfront) version 3.0.1:
+ Works fine.  
+ Comment for Sun users:
+   Sometimes, when doing very complicated diagrams, the Sun 'cc'
+   compiler will get a 'yacc stack overflow' when it tries to compile the 
+   output from CC.  One possible fix is to get gcc (the public domain Gnu C
+   compiler) and tell CC to use it instead of 'cc'.
+
+g++ version 2.2.2:
+ Works fine.
+
+g++ version 2.3.3 and 2.4.5:
+ This version of g++ seems to have a bug.  When you try use implicit conversion
+ of a vertex to an xy (when a function is expecting an xy and you
+ pass it a vertex), it gives error messages like:
+    too few arguments for constructor `xy'
+ You can get around this by explicitly casting the vertex to an xy.  This is
+ quite annoying.  An example:
+   Instead of:
+      vertex vtx(fd,1,1);
+      line_plain lp(fd,vtx,xy(5,1));
+   Do:
+      vertex vtx(fd,1,1);
+      line_plain lp(fd,(xy)vtx,xy(5,1));
+      
+g++ version 2.5.2:
+ I am told that although this version is capable of compiling the
+ FeynDiagram library, it has problems (in addition to the above) when
+ trying to compile the example programs.  It complains about
+ 'conflicting types' and 'previous declaration' of various
+ class xy operators in "fd.h".
+
+g++ version 2.5.6 
+ Works fine on our Sun Sparc.
+
+g++ 2.5.7
+ Works fine on our IBM RS6000.
+ Does not seem to work on Sun Sparc - gets confused when compiling examples, 
+	 says: `deflt_double::operator double(...)' must take `void'
+
+g++ version 2.5.8
+ Apparently doesn't work.
+
+g++ version 2.6.0
+ I am told that it works fine.
+
+g++ version 2.6.3
+ I am told that it works fine.
+
+g++ version 2.91.66
+ Works fine.
+
+SGI Challenge running Iris-5 with the SGI C++:
+ Due to an apparent bug in this compiler, it seems that 
+ FeynDiagram::global_gridon doesn't get initialized.  This results in 
+ the following error message whenever you run a program to create
+ a diagram:
+   ** Fatal error - measurement has no value and no parent
+   **  Please notify Bill Dimm
+ To get around this, you must explicitly set global_gridon after
+ you declare your first FeynDiagram.  For example:
+   main()
+	{
+	page pg;
+	FeynDiagram fd(pg);
+	fd.global_gridon.false();
+	/* ... */
+	}
+
+
+xlC (IBM RS6000):
+ Works fine.
+

@@ -1,0 +1,81 @@
+body {
+	background-color: #1C1C1C;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 20px;
+	font-family: Times,serif;
+	font-size: 16px;
+}
+div#title {
+	text-align: center;
+	margin: 20px;
+	color: #FFFFFF;
+}
+div#title a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 32px;
+	font-weight: bold;
+	text-shadow: 0 1px 1px;
+}
+h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: bold;
+}
+h4 {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-weight: bold;
+}
+div#abstract {
+	background-color: #FFFFFF;
+	padding: 20px;
+	border: 1px solid #000000;
+	box-shadow: 0 0 10px;
+}
+p {
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+}
+div#download a {
+	color: #000000;
+	text-decoration: none;
+}
+div#download {
+	float: right;
+	text-align: center;
+	margin-left: 20px;
+}
+div#sharing {
+	clear: both;
+	float: left;
+	font-family: Arial,sans-serif;
+	font-size: 12px;
+}
+div#sharing a {
+	color: #115BB5;
+	text-decoration: none;
+}
+div#licence {
+	text-align: right;
+	font-style: italic;
+}
+div#licence a {
+	color: #115BB5;
+	text-decoration: none;
+}

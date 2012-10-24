@@ -1,0 +1,86 @@
+History of FeynDiagram versions:
+
+2.6   8/13/03	Bill Dimm
+       Fixed bounding boxes that were wrong when the width of a
+       line was set to a negative value (e.g. to flip a gluon).  
+
+       Made bounding boxes take line thickness and arrows into account.
+
+       Added FeynDiagram::pad_bbox(top, right, bottom, left)
+       which allows you to adjust bounding box padding on all sides
+       of the diagram (padding is specified in the diagram's coordinate
+       system).  This can be useful for things like text (where
+       FeynDiagram approximates the bounding box, but might be off).
+       The default padding (when using the default coordinate system
+       configuration) is 0.12 on all sides (was 0 in previous versions).
+
+2.5   4/17/00	Bill Dimm
+       Minor adjustments to remove some warnings and errors
+       that occur with g++ 2.91.66.
+
+2.4   10/16/95	Bill Dimm
+       Added vertex_box::fill and FeynDiagram::vertex_box_fill so that
+       you can turn off the filling of the box vertex (by default it
+       still fills).  The tutorial has not been updated to document this
+       feature.  An example:
+
+	   FeynDiagram fd(pg);
+	   vertex_box vtx(fd,xy(0,0));
+	   vtx.fill.setfalse();  /* turn off fill for this vertex */
+	   fd.vertex_box_fill.setfalse();  /* default is no fill for diagram */
+
+2.3   9/3/95	Bill Dimm
+       Fixed some occurences of 'cout' that should have been 'out' - this
+       caused problems when trying to output directly to a file instead of 
+       outputting to stdout (ie. cout) as is done in the tutorial.
+
+2.2   12/13/94	Bill Dimm
+       Changed 
+          #include <stream.h> 
+       to 
+          #include <iostream.h>
+
+2.1   12/13/94	Bill Dimm
+       Changed true() to settrue() and false() to setfalse()
+       for compatibility with ANSI standard which now has true and false
+       as reserved words.  This may cause some incompatibility
+       with programs for old versions (sorry).
+
+       Changed BoundingBox so that values are integers (instead of
+       real numbers) so figures should now display on newer versions of xdvi.
+
+       Added ontop() to various line types so that you can make
+       a line appear to go over another one.
+
+       Added to the text processor: 
+          \minus \widetilde \tildebar \overrightarrow
+
+       Also added the ability to use a different font in the middle of text
+       with: \font{fontname}{text}
+
+       Now gives warnings if you give a negative value for a radius.
+
+1.22  7/10/94	Bill Dimm
+       Previously, FeynDiagram had one large prolog file.  This file
+       has been broken into several small ones which are only inserted into
+       the output as needed - this should make the output somewhat smaller.
+
+1.21  11/9/93	Bill Dimm
+       Made a change to "fd.C" to circumvent the peculiar behavior of a VMS
+       compiler which was causing it to produce mangled output (outputting
+       the last chuck of "prolog.ps" twice).
+
+1.20  11/4/93	Bill Dimm
+       Made some changes to "fd.C" so that it will compile OK even if 
+       M_PI isn't defined in your "math.h" header file.
+
+1.19  11/3/93	Bill Dimm
+       Added the NOOSFCN option so that it can be compiled even if your
+       C++ compiler doesn't have the header file "osfcn.h"
+
+1.18  10/27/93	Bill Dimm
+       Corrected a minor bug in arcthru which caused it to sometimes
+       draw the arc the wrong way (due to a rounding error)
+
+1.17  6/3/93	Bill Dimm
+       The first public release.

@@ -1,0 +1,73 @@
+#!/bin/sh
+
+CC="$1"
+LIBNAME="$2"
+INCLUDEDIR="$3"
+FDHOME="$4"
+
+
+cat >feyndiagram.3 <<!
+.TH FEYNDIAGRAM 3C++ "3 June 1993"
+.hy 0
+
+.SH NAME
+FeynDiagram - library for drawing Feynman diagrams in PostScript.
+
+.SH DESCRIPTION
+FeynDiagram allows you to create high quality PostScript Feynman diagrams
+by writing a short C++ program to describe the diagram.
+A printed tutorial-style manual is available (see the FILES section
+below for the location of the example programs on this system).
+Note that executable programs produced with C++ are often large, so it is
+a good idea to remove the executable after you have used it to generate
+PostScript output.
+
+.SH EXAMPLE
+To compile a program called "prog.C" which uses FeynDiagram, and generate
+an executable called "prog", do:
+
+.B "$CC -o prog prog.C -l$LIBNAME -lm"
+
+See the FILES section below for the location of example programs which
+use FeynDiagram.
+
+.SH FILES
+.PD 0
+.TP 20
+.BI $FDHOME/Docs
+Location of tutorial and technical notes.
+.TP
+.BI $FDHOME/Examples
+Location of programs from the tutorial and other examples.
+.TP
+.BI $FDHOME/Prolog
+Directory containing default PostScript prolog files.
+.TP
+.BI $INCLUDEDIR/FeynDiagram
+Include files.
+
+.SH DIAGNOSTICS
+Programs which use the FeynDiagram library will automatically print
+messages about their progress and any errors encountered to the screen
+(stderr) when they are run.
+
+.SH BUGS
+The \\\\overline control sequence (for creating a line over text) doesn't
+put the line in the right place when the text is rotated - I don't know why.
+
+If you use long text strings, the bounding box might not be quite right.
+
+Using special positioning with long text strings
+(more than about 25 characters) may
+cause your printer to run out of memory and abort the page.
+
+There are no copy constructors yet.
+
+.SH AVAILABILITY
+The latest version of this software is available from
+http://feyndiagram.com
+
+.SH AUTHOR
+Bill Dimm,  bdimm@feyndiagram.com
+!
+

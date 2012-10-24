@@ -1,0 +1,9 @@
+    FeynDiagram is a library of C++ routines which allow you to draw
+high quality PostScript Feynman diagrams by writing a short C++ program
+to describe the diagram (ie. where the vertices and lines go).  Knowledge
+of C++ is not necessary, but a C++ compiler is.
+    Tutorial-style documentation (with lots of examples of output from
+FeynDiagram) is in the form of a compressed PostScript file Docs/tutorial.ps.Z,
+which can be sent directly to a PostScript printer after uncompress'ing.
+    See README_installnotes and README_compilernotes for information
+about installing FeynDiagram.

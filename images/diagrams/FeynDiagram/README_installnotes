@@ -1,0 +1,40 @@
+Tutorial-style documentation is in the form of a compressed PostScript
+file Docs/tutorial.ps.Z
+
+UNIX INSTALLATION:
+To install FeynDiagram on Unix, edit the makefile to change options
+for your particular system, then do:
+   make
+This will produce the library and manpage in this directory.  The manpage
+contains information about where things will be put on your local
+system when you do the install, and how to compile programs to use
+FeynDiagram.  If you put things where the compiler doesn't find them
+automatically, you ought to edit the manpage (feyndiagram.3) at this point.
+To move everything to the right place, change permissions etc., do:
+   make install
+That should do it (you can do 'make clean' to remove .o files etc.).
+(note: if you do 'make' without 'make install' it will produce a working
+library etc., but when you run programs compiled with it, they will
+be unable to find the prolog files since they haven't been copied to the
+right place).
+
+VMS INSTALLATION:
+I have included a file called 'descrip.mss' which was written by Tony Kennedy.
+It can be used if your machine has MMS (DEC's version of make).  To use
+it, you must rename files ending in '.C' to end in '.CXX'.  Then, edit
+'descrip.mss' and redefine the FD macro to point to the directory
+you put the source into (the trailing ']' is not included in the name).
+
+OTHER NON-UNIX INSTALLATION:
+Compile default.C, fd.C, text2PS.C, and put them in a library.  To do this,
+you will need to "#define PROLOGDIR" in fd.C to set PROLOGDIR to the full 
+pathname for the directory which contains the prolog files (abbrev.ps, max.ps,
+vertex.ps, arrow.ps, fill.ps, ellipse.ps, and text.ps).  PROLOGDIR
+should include a trailing '/' or whatever is appropriate for your
+computer.  For example, on Unix you might have:
+  #define PROLOGDIR "/usr/local/lib/FeynDiagram/Prolog/"
+Also, move default.h, fd.h, and text2PS.h to a subdirectory
+of the normal location for include files called "FeynDiagram".  If your
+compiler does not have the "osfcn.h" header file, you will need to
+"#define NOOSFCN".
+

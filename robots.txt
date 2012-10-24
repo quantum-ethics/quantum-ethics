@@ -1,0 +1,3 @@
+Sitemap: http://quantum-ethics.org/sitemap.xml
+User-agent: *
+
