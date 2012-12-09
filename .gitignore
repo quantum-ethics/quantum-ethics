@@ -26,6 +26,8 @@
 *.maf
 *.mtc
 *.mtc0
+/.settings/
 /.project
-/Quantum Field Theory.pdf
 /.buildpath
+*~
+/Quantum Field Theory.pdf
