@@ -1,4 +1,21 @@
-\documentclass[11pt,a4paper,twoside,openany]{book}
+\documentclass[10pt,a4paper,twoside,openany]{book}
+\usepackage{etoolbox}
+\newtoggle{paperback}
+\toggletrue{paperback}
+\iftoggle{paperback}
+{
+\usepackage{emptypage}
+\pagestyle{myheadings}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
+\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
+\let\stdpart\part\renewcommand*\part{\cleardoublepage\stdpart}
+\usepackage[paperwidth=6in,paperheight=9in,top=0.75in,bottom=0.75in,outer=0.75in,inner=0.4in,pdftex]{geometry}
+}
+{
+\pagestyle{myheadings}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
+\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
+}
 \usepackage[utf8]{inputenc}
 \usepackage[american]{babel}
 \usepackage{lmodern}
@@ -17,7 +34,6 @@
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 %\makeindex
 \setlength{\parskip}{2pt}
-\pagestyle{empty}
 
 \begin{document}
 
@@ -34,10 +50,10 @@
 
 % Mathematical notations
 \newcommand{\eqdef}{:=} % Equals by definition
-\newcommand{\IN}{\mathbb N} % Integers
-\newcommand{\IZ}{\mathbb Z} % Relative integers
-\newcommand{\IR}{\mathbb R} % Real numbers
-\newcommand{\IC}{\mathbb C} % Complex numbers
+\newcommand{\IN}{\mathbb{N}} % Integers
+\newcommand{\IZ}{\mathbb{Z}} % Relative integers
+\newcommand{\IR}{\mathbb{R}} % Real numbers
+\newcommand{\IC}{\mathbb{C}} % Complex numbers
 \newcommand{\IntRange}[2]{\Lbrack{#1},{#2}\Rbrack} % Integer range
 \renewcommand{\exp}[1]{\mathrm{exp} \left( {#1} \right)} % Exponential function
 \renewcommand{\ln}[1]{\mathrm{ln} \left( {#1} \right)} % Logarithm function
@@ -61,7 +77,7 @@
 \newcommand{\dtq}{\mathrm d^3\q} % Infinitesimal 3-wave vector
 \newcommand{\dO}{\mathrm d\Omega} % Infinitesimal solid angle
 \newcommand{\ddt}{\frac{\mathrm d}{\dt}} % Time derivative
-\newcommand{\Id}{\mathbb 1} % Identity
+\newcommand{\Id}{\mathbb{1}} % Identity
 \renewcommand{\matrix}[1]{\begin{pmatrix} #1 \end{pmatrix}} % Matrix
 \newcommand{\operp}{\overset{\perp}{\oplus}} % Orthogonal direct sum
 
@@ -219,17 +235,29 @@
 
 % Mental notations
 \newcommand{\CMS}{\mathcal M} % Set of all collective mental states
-\newcommand{\ims}{\mathfrak m} % Placeholder individual mind state
-\newcommand{\cms}{\mathfrak M} % Placeholder collective mind state
+\newcommand{\ims}{\mathfrak{m}} % Placeholder individual mind state
+\newcommand{\cms}{\mathfrak{M}} % Placeholder collective mind state
 \newcommand{\bM}[2]{{#1}_{#2}} % Mental state indices
 \newcommand{\bFM}[2]{({#1}_{#2})} % Mental field indices
-\newcommand{\God}{\mathfrak G} % God
+\newcommand{\God}{\mathfrak{G}} % God
 
 \frontmatter
+
+\thispagestyle{empty}
 
 \null
 \vfill
 \begin{center}
+\iftoggle{paperback}
+{
+{\Huge Quantum Ethics} \\
+\vskip 1cm
+A Spinozist Interpretation \\
+of Quantum Field Theory
+\vskip 2cm
+{\large Sébastien Fauvel}
+}
+{
 {\LARGE Quantum Ethics} \\
 --- \\
 A Spinozist Interpretation \\
@@ -238,13 +266,17 @@ of Quantum Field Theory
 {\large Sébastien Fauvel\footnotemark[2]}
 \vskip 5mm
 {\large \today}
+\footnotetext[2]{Contact: Sébastien Fauvel, Ackerstrasse~43, CH-4057 Basle, Switzerland. E-mail: \htmladdnormallink{\texttt{sebastien.fauvel@gmx.ch}}{mailto:sebastien.fauvel@gmx.ch}.}
+}
 \end{center}
 \vfill
 \null
-\footnotetext[2]{Contact: Sébastien Fauvel, Ackerstrasse~43, CH-4057 Basle, Switzerland. E-mail: \htmladdnormallink{\texttt{sebastien.fauvel@gmx.ch}}{mailto:sebastien.fauvel@gmx.ch}.}
 
 \newpage
 
+\iftoggle{paperback}
+{}
+{
 \null
 \vfill
 \begin{center}
@@ -257,24 +289,28 @@ To view a copy of this license, visit \\
 \end{center}
 \vfill
 Document available online at \htmladdnormallink{quantum-ethics.org}{http://quantum-ethics.org}.
+}
+
+%TODO Preface
+%\chapter{Preface}
 
 \tableofcontents
 
-\chapter{Preface}
+\chapter{Introduction}
+
+\section*{Interpreting Quantum Field Theory}
 
 The birth of Quantum Physics in the 1920s has been marked by a long period of intense controversies about its interpretation, which has been recently reviewed by Juan Miguel Marin in his paper \textit{‘Mysticism’ in quantum mechanics: the forgotten controversy}~\cite{Marin2009}. The Copenhagen interpretation which emerged from these debates has been seemingly dominating the scene in the 1950s-1960s, not because it was intrinsically better than others, but because it seemed to challenge the materialist world view of classical, `everyday' physics as little as possible. Since the 1970s, however, numerous alternative interpretations have been proposed and older interpretations further developed: Pilot-Wave Theory, Many-Worlds interpretation, Many-Minds interpretation, Dynamical Collapse Theories, Decoherent Histories... All these attempts to give Quantum Physics a sound interpretation are facing the problem that the mathematical theory itself, in the form of the Standard Model of Quantum Field Theory (or of slight variants regarding the existence of the Higgs field, of neutrino masses...), is ill-defined, and that it is therefore impossible to assign a physical or metaphysical meaning to the fundamental mathematical entities of the theory. Of course, it is possible to choose a specific, mathematically well-defined regularization of the theory for this purpose, but since renormalization methods are leading, in the singular limit of the original theory, to the same results for different regularization schemes, we don't know which regularization is the right one, and as a consequence we don't know either which are the fundamental mathematical entities to be interpreted. Quite surprisingly, however, it seems that this issue has never been seriously accounted for yet. Existing interpretations of Quantum Physics are either restricted to non-relativistic Quantum Mechanics, which is no fundamental theory, or are formulated so vaguely that they are hardly more than the mere idea of an interpretation, which has made most `serious' physicists doubt that such an interpretation is possible at all. This book will have reached his goal if it convinces the reader of the contrary and helps interpretation issues recovering again their place at the heart of the research on Quantum Field Theory. For this purpose, I shall take as an example a lattice regularization scheme, formulate in this well-defined framework a rather conservative interpretation inspired by Spinoza's philosophy and show that classical philosophical questions can be formulated as simple physical hypotheses in the frame of the resulting naturalistic metaphysics.
 
-\chapter{Introduction}
-
 \section*{Motivation}
 
-Most philosophers have ascribed a central role to the ethics in their work, as the answer to the question ``How should I live?'' requires a preliminary reflection about all the fields of our existence, from metaphysics via physics, psychology and morals up to politics. Up to the emergence of Quantum Field Theory in the late 1920s, philosophers have always been able to integrate the knowledge gathered in the field of physics into their world view: In 17th-century Europe, for instance, the Dutch philosopher Baruch Spinoza worked out in his \textit{Ethics}~\cite{Spinoza1677} the deterministic materialism of classical mechanics and based his philosophy on the idea that everything in Nature happens according to the divine necessity, both at the material and at the spiritual level. In fact, from the Antics up to the Age of Enlightenment, physicists used to consider themselves primarily as Nature philosophers. In the modern ages, however, the scientific community began to split under the influence of industrial work organization into small groups of specialists lacking interdisciplinary skills. Nowadays, mainstream physicists even consider philosophical interpretations of physics as non-scientific and pointless. Needless to say, such a lack of intellectual rigor has had serious consequences for the conceptual and formal quality of physical theories. In the case of Quantum Field Theory, this attitude has resulted in the fact that, for the last eighty years, no consensus could be reached on its two major issues, known as the \textit{measurement problem} and as the \textit{main issue}. The latter is a formal issue consisting in conceiving a mathematically well-defined quantum field theory formally compatible to Special Relativity\footnotemark[1], which is thought to be impossible, although this hasn't been proved definitely yet. The former is an interpretation issue concerning the relation between ``mind'', i.e. the form of our experience of the world, and ``body'', i.e. the physical world described in terms of quantum fields. There have been numerous propositions for this interpretation, from the very beginning of Quantum Field Theory in the 1920s and 1930s until now, but as long as the mathematical formalism of the theory is ill-defined, these interpretations cannot be formulated precisely either. Strictly speaking, however, the whole theory doesn't make any sense if this interpretation issue doesn't become precisely answered. In order to give a sound philosophical interpretation of Quantum Field Theory, it is therefore necessary in the first place to put the mathematical formalism on a well-defined basis, which cannot be formally compatible with Special Relativity if the main issue really cannot be solved; Relativity Theory should then emerge as an approximation at usual energy and distance scales. In this book, I shall propose an answer to both issues and thus lay the foundations of an ethic taking into account the world view sustained by Quantum Field Theory.
+Most philosophers have ascribed a central role to the ethics in their work, as the answer to the question ``How should I live?'' requires a preliminary reflection about all the fields of our existence, from metaphysics via physics, psychology and morals up to politics. Up to the emergence of Quantum Field Theory in the late 1920s, philosophers have always been able to integrate the knowledge gathered in the field of physics into their world view: In 17th-century Europe, for instance, the Dutch philosopher Baruch Spinoza worked out in his \textit{Ethics}~\cite{Spinoza1677} the deterministic materialism of classical mechanics and based his philosophy on the idea that everything in Nature happens according to the divine necessity, both at the material and at the spiritual level. In fact, from the Antics up to the Age of Enlightenment, physicists used to consider themselves primarily as Nature philosophers. In the modern ages, however, the scientific community began to split under the influence of industrial work organization into small groups of specialists lacking interdisciplinary skills. Nowadays, mainstream physicists even consider philosophical interpretations of physics as non-scientific and pointless. Needless to say, such a lack of intellectual rigor has had serious consequences for the conceptual and formal quality of physical theories. In the case of Quantum Field Theory, this attitude has resulted in the fact that, for the last eighty years, no consensus could be reached on its two major issues, known as the \textit{measurement problem} and as the \textit{main issue}. The latter is a formal issue consisting in conceiving a mathematically well-defined quantum field theory formally compatible to Special Relativity\footnotemark[1], which is thought to be impossible, although this hasn't been proved definitely yet. The former is an interpretation issue concerning the relation between ``mind'', i.e. the primitive form of our experience of the world, and ``body'', i.e. the physical world described in terms of quantum fields. There have been numerous propositions for this interpretation, from the very beginning of Quantum Field Theory in the 1920s and 1930s until now, but as long as the mathematical formalism of the theory is ill-defined, these interpretations cannot be formulated precisely either. Strictly speaking, however, the whole theory doesn't make any sense if this interpretation issue doesn't become precisely answered. In order to give a sound philosophical interpretation of Quantum Field Theory, it is therefore necessary in the first place to put the mathematical formalism on a well-defined basis, which cannot be formally compatible with Special Relativity if the main issue really cannot be solved; Relativity Theory should then emerge as an approximation at usual energy and distance scales. In this book, I shall propose an answer to both issues and thus lay the foundations of an ethic taking into account the world view sustained by Quantum Field Theory.
 
 \footnotetext[1]{Precisely, one requires that the classical Lagrangian used in the heuristical construction of the theory be Poincaré invariant and describes local (contact) interactions of point particles in the Minkowski space-time.}
 
 \section*{Abstract}
 
-In the formulation of Quantum Field Theory proposed in this book, Nature presents the two aspects of a physical and of a mental world in mutual interaction. The mental world can be adequately experienced by the collectivity of all sentient beings: A state of the mental world is given by a set of a various number of individual minds with definite conscious thoughts. Though we are experiencing this mental world directly, we only experience it partially under the aspect of a single individual mind (which we're used to call ``our'' mind), and must communicate with others in order to get closer to an adequate representation of this mental world. Communication happens over social interactions in the physical world, an aspect of Nature that we don't experience directly but only through its influence on our subjective mental experience. This physical world, best described in terms of quantum fields, is by nature holistic and doesn't involve precise boundaries of individual bodies as they exist for individual minds. A state of this physical world is given by a quantum superposition of so-called localized states, which are given by the number of particles of each kind (e.g. 1 spin down positron and 4 right-handed circularly polarized photons) at each point of space. Each physical state can be uniquely decomposed into a sum of components corresponding to each possible mental state, and this decomposition also defines a probability law on the set of all possible mental states. The joined temporal evolution of both aspects of Nature is a tree-steps process repeated indefinitely: First, the initial state of the physical world undergoes a deterministic, Hamiltonian evolution of a given, ``elementary'' duration. Then, the final physical state defines a probability law according to which a mental state is being selected and becomes collectively experienced. Finally, the component of the physical state corresponding to the selected mind state becomes the initial state of the next evolution process. In this world view, the mystery of consciousness consists in the fact that there is, to some extent, an adequation between the conscious thoughts of individual minds and some physical processes happening in the corresponding physical states, e.g. the biological processes of consciousness within a human brain.
+In the formulation of Quantum Field Theory proposed in this book, Nature presents the two aspects of a physical and of a mental world in mutual interaction. The mental world can be adequately experienced by the collectivity of all sentient beings: A state of the mental world is given by a set of a various number of individual minds with definite conscious thoughts. Though we are experiencing this mental world directly, we only experience it partially under the aspect of a single individual mind (which we're used to call ``our'' mind), and must communicate with others in order to get closer to an adequate representation of the mental world as a whole. Communication happens over social interactions in the physical world, which is an aspect of Nature that we don't experience directly but only through its influence on our subjective mental experience. This physical world, best described in terms of quantum fields, is by nature holistic and doesn't involve precise boundaries of individual bodies as they may exist for individual minds. A state of this physical world is given by a quantum superposition of so-called localized states, which are given by the number of particles of each kind (e.g. 1 spin down positron and 4 right-handed circularly polarized photons) at each point of space. Each physical state can be uniquely decomposed into a sum of components corresponding to each possible mental state, and this decomposition also defines a probability law on the set of all possible mental states. The joined temporal evolution of both aspects of Nature is a tree-steps process repeated indefinitely: First, the initial state of the physical world undergoes a deterministic, Hamiltonian evolution of a given, ``elementary'' duration. Then, the final physical state defines a probability law according to which a mental state is being selected and becomes collectively experienced. Finally, the component of the physical state corresponding to the selected mind state becomes the initial state of the next evolution process. In this world view, the mystery of consciousness consists in the fact that there is, to some extent, an adequation between the conscious thoughts of individual minds and some physical processes happening in the corresponding physical states, e.g. the biological processes of consciousness within a human brain.
 
 \section*{Overview}
 
@@ -282,7 +318,9 @@ This book begins in chapter \ref{Quantum fields} with the formulation of a mathe
 
 The Hamiltonian evolution of quantum fields is then defined very classically for an arbitrary interaction Hamiltonian in chapter \ref{Hamiltonian evolution}, where general results of scattering theory are being derived.
 
-A general model for the mental world is defined in chapter \ref{Mental states} and the joint stochastic evolution of the physical and mental worlds in chapter \ref{Stochastic evolution}. The basic idea of this model -- that ``mind causes collapse'' -- isn't new, as it has first been formulated by John von Neumann~\cite{Neumann1932} and was once knew as the ``standard interpretation'' of Quantum Mechanics. As far as I know, however, it is the first time with this book that a precise interpretation of a mathematically well-defined Quantum Field Theory has ever been given. This provides thus the first sound basis for a discussion of the philosophical implications of the theory, which is the main goal of this book.
+A general model for the mental world is defined in chapter \ref{Mental states} and the joint stochastic evolution of the physical and mental worlds in chapter \ref{Stochastic evolution}. The basic idea of this model -- that ``mind causes collapse'' -- isn't quite new, as it has first been formulated by John von Neumann~\cite{Neumann1932} and was once knew as the ``standard interpretation'' of Quantum Mechanics. As far as I know, however, it is the first time with this book that a precise interpretation of a mathematically well-defined Quantum Field Theory has ever been given. This provides thus the first sound basis for a discussion of the philosophical implications of the theory, which is the main goal of this book.
+
+The resulting metaphysics are been sketched in chapter \ref{Metaphysics} and a few philosophical issues discussed in chapter \ref{Philosophical issues}.
 
 The interaction Hamiltonian of Quantum  Electrodynamics is then defined in chapter \ref{Quantum Electrodynamics} and, as an example, the semi-classical cross-section of Coulomb scattering is calculated to the leading order in chapter \ref{Coulomb scattering}.
 
@@ -902,6 +940,7 @@ In particular, if $\left| H'_{f + (\delta \q_j),i} \right|^2$ admits such a cont
 \part{Interpretation}
 
 \chapter{Metaphysics}
+\label{Metaphysics}
 
 \renewcommand{\epigraphwidth}{6cm}
 \epigraph{As I have said so many times,\\God doesn't play dice with the world.}{Albert Einstein, \\ in \textit{Einstein and the Poet}~\cite{Hermanns1983}}
@@ -919,6 +958,8 @@ The states (modes) of God (the substance) are evidently identified, under their 
 \God \eqdef \left( \H \times \CMS, (\op{\Pi}_\cms), \op U_\tau \right)
 \end{equation*}
 The states of God, taking the general form $(\ket \Psi, \cms)$, are said to be ``real'' if $\ket \Psi \in \H_\cms$ and ``virtual'' otherwise. An elementary evolution step of the state of God proceeds from a real state $(\ket{\Psi_0}, \cms_0)$, first evolving to a generally virtual state $(\op U_\tau \ket{\Psi_0}, \cms_0)$ and eventually collapsing to one of the real states $(\op{\Pi}_{\cms_1} \op U_\tau \ket{\Psi_0}, \cms_1)$ with a probability $\bra{\Psi_0} \dop U_\tau \op{\Pi}_{\cms_1} \op U_\tau \ket{\Psi_0} / \braket{\Psi_0}{\Psi_0}$.
+
+%TODO Physical issues
 
 %\chapter{Physical issues}
 
@@ -1595,3 +1636,7 @@ We extend these definitions periodically to all $\q \in \ILD$ by $\SAop \pt \q \
 %\printindex
 
 \end{document}
+
+% Back cover
+
+% Sébastien Fauvel, born 1983, is an alumnus of the Ecole Normale Supérieure of Paris, where he graduated in Physics and Comparative literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basle.
