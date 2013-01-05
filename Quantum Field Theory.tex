@@ -9,7 +9,7 @@
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
 \patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
 \let\stdpart\part\renewcommand*\part{\cleardoublepage\stdpart}
-\usepackage[paperwidth=6in,paperheight=9in,top=0.75in,bottom=0.75in,outer=0.75in,inner=0.4in,pdftex]{geometry}
+\usepackage[paperwidth=6in,paperheight=9in,top=0.75in,bottom=0.75in,outer=0.4in,inner=0.75in,pdftex]{geometry}
 }
 {
 \pagestyle{myheadings}
@@ -294,6 +294,7 @@ Document available online at \htmladdnormallink{quantum-ethics.org}{http://quant
 %TODO Preface
 %\chapter{Preface}
 
+\cleardoublepage
 \tableofcontents
 
 \chapter{Introduction}
