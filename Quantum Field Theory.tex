@@ -201,6 +201,8 @@
 \newcommand{\tSCop}[3]{\dop{\sv{\psi}^{#1}}_{{#2}, {#3}}} % 3-Spinor creation operator
 \newcommand{\SAop}[3]{\op{\psi^{#1}}_{{#2}, {#3}}} % 4-Spinor annihilation operator
 \newcommand{\SCop}[3]{\op{\overline \psi^{#1}}_{{#2}, {#3}}} % 4-Spinor creation operator
+\newcommand{\Faop}[3]{\op{\epsilon^{#1}}_{{#2}, {#3}}} % Fermion antisymmetrization operator
+\newcommand{\Pn}[2]{\pi^{#1}_{#2}} % Standard particle numbering function
 
 % Physical notations
 \newcommand{\pt}{\phi} % Placeholder particle type
@@ -296,12 +298,12 @@ Document available online at \htmladdnormallink{quantum-ethics.org}{http://quant
 
 First and foremost, I would like to thank my wife Angela for having sacrificed so much of our precious free time as I was working on this book. This publication would never have been possible without her patience, her understanding, all her love and support. Thank you!
 
-I would also like to thank my colleague Markus Matteucci for initiating me into the art of book publishing, my fellow students Christian Hagendorf and Tristan Machado for our encouraging and fruitful discussions that did much to my understanding of Physics, my teachers Christian Swit and Stephane Gentil who introduced me to the joys of Philosophy and Mathematics, my uncle Bertrand Liaudet and my regretted `godfather' Frédéric Poupaud for having made me discover the world of Algorithmic and Informatics at a far too early age. They all did very much for my personal evolution.
+I would also like to thank my colleague Markus Matteucci for initiating me into the art of book publishing, my fellow students Christian Hagendorf and Tristan Machado for our encouraging and fruitful discussions that did much to my understanding of Physics, my teachers Christian Swit and Stephane Gentil who introduced me to the joys of Philosophy and Mathematics, my uncle Bertrand Liaudet and my regretted ``godfather'' Frédéric Poupaud for having made me discover the world of Algorithmic and Informatics at a far too early age. They all did very much for my personal evolution.
 
 \cleardoublepage
 \section*{Preface}
 
-Dear reader!
+\hspace*{\parindent}\hspace*{\parindent}\hspace*{\parindent}Dear reader!
 
 This book has been written with the main concern of providing the scientific community with a mean of building a bridge between Physicists and Philosophers in the field of Quantum Physics. It defines a common language to describe the realm of our experience of the world and I truly hope that this new language will find a large audience in both communities. For Physicists, it stresses the importance of developing a well-defined mathematical formalism for Quantum Field Theory, since this is the necessary condition for Philosophers to identify the underlying ontology, which builds the base of every philosophical discourse on the implications of Quantum Physics. The development of a coherent, convincing discourse by Philosophers builds in turn the ground on which every conceptually and technically correct vulgarization effort can foot, and contributes thereby to broaden the popularity and acceptance of Quantum Physics through the whole society and especially among students. Philosophers, on the other hand, gain a mean of confronting their ideas with the latest insights into fundamental physics, of expressing these ideas in terms of naturalistically grounded metaphysics and of articulating speculative thoughts in the uncertainty zones remaining within the physical theory or inherent to it.
 
@@ -309,11 +311,14 @@ Although the careful reader will find in the first edition of this book all the 
 
 The philosophical aspects of this book might also have deserved a more extensive treatment. I have given a few basic examples to explain how the physical theory can be used as a reference language in order to express philosophical questions, but I should have added much more and more various examples to give an adequate idea of the potential of this method. 
 
-These imperfections of the first edition will certainly be a good reason of publishing a second, augmented edition in the future. For the time being, I wish you a fruitful and enjoyable reading and would appreciate any comments and suggestions!
+These imperfections of the first edition will certainly be reason enough to publish a second, augmented edition in the future. For the time being, I wish you a fruitful and enjoyable reading and would appreciate any comments and suggestions!
 
-January, 2013
-
+\begin{flushright}
+\begin{tabular}{l}
+January, 2013\\
 Sébastien Fauvel
+\end{tabular}
+\end{flushright}
 
 \cleardoublepage
 \tableofcontents
@@ -336,7 +341,7 @@ In the formulation of Quantum Field Theory proposed in this book, Nature present
 
 \section*{Overview}
 
-This book begins in chapter \ref{Quantum fields} with the formulation of a mathematically well-defined frame for any theory of mutually interacting quantum fields of point particles. Well-definedness is achieved by making sure that the Hamilton space of the quantum states is finite dimensional, so that the Hamiltonian evolution is trivially well-defined for any interaction Hamiltonian. The ``ingredients'' of this mathematical frame are already well-known in Quantum Field Theory: Space is supposed to have the structure of a finite three dimensional lattice, the definition of the kinetic energy Hamiltonian making use of the SLAC derivative, and the occupation number of single modes of the particle fields is supposed to be bounded for Bosons as well as for Fermions.
+This book begins in chapter \ref{Quantum fields} with the formulation of a mathematically well-defined frame for any theory of mutually interacting quantum fields of point particles. Well-definedness is achieved by making sure that the Hamilton space of the quantum states is finite dimensional, so that the Hamiltonian evolution is trivially well-defined for any interaction Hamiltonian. The ``ingredients'' of this mathematical frame are already well-known in Quantum Field Theory: Space is supposed to have the structure of a finite three dimensional lattice, the definition of the kinetic energy Hamiltonian making use of the SLAC derivative, and the occupation number of single modes of the particle fields is supposed to be bounded for bosons as well as for fermions.
 
 The Hamiltonian evolution of quantum fields is then defined very classically for an arbitrary interaction Hamiltonian in chapter \ref{Hamiltonian evolution}, where general results of scattering theory are being derived.
 
@@ -360,7 +365,7 @@ Finally, some usual mathematical functions, notations and operators are being de
 
 \section{Abstract}
 
-The aim of this chapter is to develop a well-defined, divergence-free mathematical formalism for the Standard Model of particle physics. To achieve this, we suppose that elementary particles are bounded to a finite set of world lines in the flat space-time (so that the particle field only has a finite number of modes), and that there is a maximum occupation number for a single mode of the field for bosons as well as for fermions, so that the Hilbert space of the states of the universe is finite dimensional. We will first develop a general formalism, valid for any set of elementary particles and for any form of the interaction Hamiltonian, and define the notations used in the rest of this paper.
+The aim of this chapter is to develop a well-defined, divergence-free mathematical formalism for the Standard Model of particle physics. To achieve this, we suppose that elementary particles are bounded to a finite lattice, also a finite set of world lines in the flat space-time (so that the particle field only has a finite number of modes), and that there is a maximum occupation number for any single mode of the field, for bosons as well as for fermions. This makes the Hilbert space of the states of the universe finite dimensional, so that the theory is trivially well-defined. We will develop here a general formalism, valid for any set of elementary particles and for any form of the interaction Hamiltonian, and define the notations used in the rest of this book.
 
 \section{Space}
 
@@ -408,7 +413,7 @@ Incidentally, with this values, the cosmological constant of the $\Lambda$-Cold 
 \begin{equation*}
 \rho_{vac} \sim 2 \N \frac{\h \c}{\a} \left( ( 1 + 2 \N ) \a \right)^{-3} \approx 5.6~10^{-10}\ \mathrm J / \mathrm m^3
 \end{equation*}
-Deriving such a relation, however, isn't the goal of this paper.
+Deriving such a relation, however, isn't the goal of this book.
 
 \section{One particle states}
 
@@ -511,7 +516,7 @@ and the basis of the localized states is called ``position basis''.
 
 \section{Creation and annihilation operators}
 
-The annihilation operators are defined by:
+\paragraphtitle{Definition} The annihilation operators are given by:
 \begin{equation*}
 \aop \pt \n \sp \ket{\bFX N \pt \n \sp} \eqdef \begin{cases}
 \ket{\bFX N \pt \n \sp - \bX 1 \pt \n \sp} & \text{if $\bX N \pt \n \sp > 0$} \\
@@ -530,12 +535,15 @@ The (hypothetical) state of the universe in which no particles are present is wr
 \begin{equation*}
 \ket \Psi = \ket{\vac} \eqdef \ket{\bFX 0 \pt \n \sp}
 \end{equation*}
-The annihilation (resp. creation) operators form a (finite) set of generators of a commutative algebra $\aAlg$ (resp. $\cAlg$). Any state of the universe can be obtained by applying creation operators on the vacuum according to:
+
+\paragraphtitle{Remark} The annihilation (resp. creation) operators form a (finite) set of generators of a commutative algebra $\aAlg$ (resp. $\cAlg$). Any state of the universe can be obtained by applying creation operators on the vacuum according to:
 \begin{eqnarray*}
 \ket{\Psi} & = & \dop{\Psi} \ket{\vac} \\
 \dop{\Psi} & \eqdef & \sum_{\bFX N \pt \n \sp} \Psi \left(\bFX N \pt \n \sp \right) \prod_{\pt,\n,\sp} \left( \cop \pt \n \sp \right)^{\bX N \pt \n \sp}
 \end{eqnarray*}
 associating thus an operator $\dop{\Psi} \in \cAlg$ to each vector $\ket{\Psi} \in \H$ canonically.
+
+\paragraphtitle{Commentaries} We are defining here at purpose very basic creation and annihilation operators. The normalization factor relevant for boson fields and the antisymmetry factor relevant for fermion fields are included explicitly in the interaction Hamiltonian, e.g. in the photon spinor operators defined in appendix \ref{Photon spinors} and in the Dirac spinor operators defined in appendix \ref{Dirac spinors}.
 
 \section{Plane wave field modes}
 
@@ -548,7 +556,7 @@ Note that this definition can be extended to all $\q \in \IR^3$. The plane wave 
 \begin{equation*}
 \ket{\bFQ N \pt \q \sp} \eqdef \prod_{\pt,\q,\sp} \left( \cop \pt \q \sp \right)^{\bQ N \pt \q \sp} \ket{\vac}
 \end{equation*}
-These vectors form an orthogonal basis of the Hilbert space $\H$ and we will use the notation:
+These vectors form an orthogonal basis of the Hilbert space $\H$ called the ``momentum basis'' and we will use the notation:
 \begin{equation*}
 \ket\Psi = \sum_{\bFQ N \pt \q \sp} \FT\Psi \left( \bFQ N \pt \q \sp \right) \ket{\bFQ N \pt \q \sp}
 \end{equation*}
@@ -1572,6 +1580,60 @@ We will make use following condensed notation, representing a matrix acting cano
 \gamvec \ssp \photonspin \q \sp \eqdef \svc {(\photonspin \q \sp)} 1 \gammat 1 + \svc {(\photonspin \q \sp)} 2 \gammat 2 + \svc {(\photonspin \q \sp)} 3 \gammat 3
 \end{equation*}
 
+\section{Fermion antisymmetrization operator}
+\label{Antisymmetrization operator}
+
+Let us define first a standard order on $\FLD$, also a total order relation given by $\q < \q'$ if and only if one of the following assertions holds:
+\begin{equation*}
+\begin{aligned}[c]
+q_1 < q_1'
+\end{aligned}
+\hspace{1cm}
+\begin{aligned}[c]
+\begin{cases}
+q_1 = q_1' \\
+q_2 < q_2'
+\end{cases}
+\end{aligned}
+\hspace{1cm}
+\begin{aligned}[c]
+\begin{cases}
+q_1 = q_1' \\
+q_2 = q_2' \\
+q_3 < q_3'
+\end{cases}
+\end{aligned}
+\end{equation*}
+This allows us to label the particles of any field $(\pt, \sp)$ present in a plane wave state $\ket{\bFQ N \pt \q \sp}$ in a standard way, using a standard particle numbering function $\Pn \pt \sp$ defined by:
+\begin{equation*}
+\Pn \pt \sp \left( \bFQ N \pt \q \sp \right) \eqdef (\q_1, \q_2, \dotsc, \q_{N^\pt_\sp})
+\end{equation*}
+\begin{equation*}
+\begin{cases}
+\q_1 \leq \q_2 \leq \dotsc \leq \q_{N^\pt_\sp} \\
+\left| \{ i | \q_i = \q \} \right| = \bQ N \pt \q \sp
+\end{cases}
+\end{equation*}
+The fermion antisymmetrization operators $\Faop \pt \q \sp$ can be defined with the help of this standard particle numbering function by their action on the momentum basis:
+\begin{eqnarray*}
+\Faop \pt \q \sp \ket{\bFQ N \pt \q \sp} & \eqdef & (-1)^\sigma \ket{\bFQ N \pt \q \sp} \\
+\sigma & = & \left| \{ i | \q_i < \q \} \right| \\
+(\q_i) & = & \Pn \pt \sp \left( \bFQ N \pt \q \sp \right)
+\end{eqnarray*}
+These hermitian, unitary operators are always used together with the corresponding creation and annihilation operators for fermion fields. They verify following anticommutation properties, where the anticommutation notation $\{\cdot, \cdot\}$ is defined by $\{ \op a, \op b\} \eqdef \op a \op b + \op b \op a$:
+\begin{equation*}
+\{\Faop \pt \q \sp, \aop \pt \q \sp\} = 0
+\end{equation*}
+\begin{equation*}
+\{\Faop \pt \q \sp \aop \pt \q \sp, \Faop \pt {\q'} \sp \aop \pt {\q'} \sp\} = 0
+\end{equation*}
+\begin{equation*}
+\{\cop \pt \q \sp \Faop \pt \q \sp, \cop \pt {\q'} \sp \Faop \pt {\q'} \sp\} = 0
+\end{equation*}
+\begin{equation*}
+\{\Faop \pt \q \sp \aop \pt \q \sp, \cop \pt {\q'} \sp \Faop \pt {\q'} \sp\} = \delta_{\q,\q'}
+\end{equation*}
+
 \section{Dirac spinor operators}
 \label{Dirac spinors}
 
@@ -1607,12 +1669,12 @@ where we use the condensed notation:
 \end{equation*}
 The annihilation and creation spinor operators of these particles and of their anti-particles, which act canonically as homomorphisms between $\H$ and $\H^4$, are defined by:
 \begin{eqnarray*}
-\SAop \pt \q \sp & \eqdef & \dirspin \pt \q \sp \aop \pt \q \sp \\
-\SCop \pt \q \sp & \eqdef & \ddirspin \pt \q \sp \gammat 0 \cop \pt \q \sp \\
-\SAop {\antiparticle \pt} \q \sp & \eqdef & \ddirspin {\antiparticle \pt} \q \sp \gammat 0 \aop {\antiparticle \pt} \q \sp \\
-\SCop {\antiparticle \pt} \q \sp & \eqdef & \dirspin {\antiparticle \pt} \q \sp \cop {\antiparticle \pt} \q \sp
+\SAop \pt \q \sp & \eqdef & \dirspin \pt \q \sp \Faop \pt \q \sp \aop \pt \q \sp \\
+\SCop \pt \q \sp & \eqdef & \ddirspin \pt \q \sp \gammat 0 \cop \pt \q \sp \Faop \pt \q \sp \\
+\SAop {\antiparticle \pt} \q \sp & \eqdef & \ddirspin {\antiparticle \pt} \q \sp \gammat 0 \Faop {\antiparticle \pt} \q \sp \aop {\antiparticle \pt} \q \sp \\
+\SCop {\antiparticle \pt} \q \sp & \eqdef & \dirspin {\antiparticle \pt} \q \sp \cop {\antiparticle \pt} \q \sp \Faop {\antiparticle \pt} \q \sp
 \end{eqnarray*}
-and can also be defined on the position basis by:
+where the fermion antisymmetrization operators $\Faop \pt \q \sp$ are defined as in appendix \ref{Antisymmetrization operator}. They can also be defined on the position basis by:
 \begin{eqnarray*}
 \SAop \pt \n \sp & \eqdef & ( 1+2\N )^{-3/2} \sum_{\q} \exp{\i 2 \pi \n \ssp \q} \SAop \pt \q \sp \\
 \SCop \pt \n \sp & \eqdef & ( 1+2\N )^{-3/2} \sum_{\q} \exp{-\i 2 \pi \n \ssp \q} \SCop \pt \q \sp \\
