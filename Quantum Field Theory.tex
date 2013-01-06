@@ -1580,10 +1580,10 @@ We will make use following condensed notation, representing a matrix acting cano
 \gamvec \ssp \photonspin \q \sp \eqdef \svc {(\photonspin \q \sp)} 1 \gammat 1 + \svc {(\photonspin \q \sp)} 2 \gammat 2 + \svc {(\photonspin \q \sp)} 3 \gammat 3
 \end{equation*}
 
-\section{Fermion antisymmetrization operator}
-\label{Antisymmetrization operator}
+\section{Fermion antisymmetrization operators}
+\label{Antisymmetrization operators}
 
-Let us define first a standard order on $\FLD$, also a total order relation given by $\q < \q'$ if and only if one of the following assertions holds:
+Let us define first a standard order on $\FLD$, for instance the total order relation given by $\q < \q'$ if and only if one of the following assertions holds:
 \begin{equation*}
 \begin{aligned}[c]
 q_1 < q_1'
@@ -1614,13 +1614,13 @@ This allows us to label the particles of any field $(\pt, \sp)$ present in a pla
 \left| \{ i | \q_i = \q \} \right| = \bQ N \pt \q \sp
 \end{cases}
 \end{equation*}
-The fermion antisymmetrization operators $\Faop \pt \q \sp$ can be defined with the help of this standard particle numbering function by their action on the momentum basis:
+The fermion antisymmetrization operators $\Faop \pt \q \sp$ can be defined conventionally with the help of this standard particle numbering function by their action on the momentum basis:
 \begin{eqnarray*}
 \Faop \pt \q \sp \ket{\bFQ N \pt \q \sp} & \eqdef & (-1)^\sigma \ket{\bFQ N \pt \q \sp} \\
 \sigma & = & \left| \{ i | \q_i < \q \} \right| \\
 (\q_i) & = & \Pn \pt \sp \left( \bFQ N \pt \q \sp \right)
 \end{eqnarray*}
-These hermitian, unitary operators are always used together with the corresponding creation and annihilation operators for fermion fields. They verify following anticommutation properties, where the anticommutation notation $\{\cdot, \cdot\}$ is defined by $\{ \op a, \op b\} \eqdef \op a \op b + \op b \op a$:
+These hermitian, unitary operators are always used together with the corresponding creation and annihilation operators for fermion fields. They verify following essential anticommutation properties, where the anticommutation notation $\{\cdot, \cdot\}$ is defined by $\{ \op a, \op b\} \eqdef \op a \op b + \op b \op a$:
 \begin{equation*}
 \{\Faop \pt \q \sp, \aop \pt \q \sp\} = 0
 \end{equation*}
@@ -1674,7 +1674,7 @@ The annihilation and creation spinor operators of these particles and of their a
 \SAop {\antiparticle \pt} \q \sp & \eqdef & \ddirspin {\antiparticle \pt} \q \sp \gammat 0 \Faop {\antiparticle \pt} \q \sp \aop {\antiparticle \pt} \q \sp \\
 \SCop {\antiparticle \pt} \q \sp & \eqdef & \dirspin {\antiparticle \pt} \q \sp \cop {\antiparticle \pt} \q \sp \Faop {\antiparticle \pt} \q \sp
 \end{eqnarray*}
-where the fermion antisymmetrization operators $\Faop \pt \q \sp$ are defined as in appendix \ref{Antisymmetrization operator}. They can also be defined on the position basis by:
+where the fermion antisymmetrization operators $\Faop \pt \q \sp$ are defined as in appendix \ref{Antisymmetrization operators}. These spinor operators can also be defined on the position basis by:
 \begin{eqnarray*}
 \SAop \pt \n \sp & \eqdef & ( 1+2\N )^{-3/2} \sum_{\q} \exp{\i 2 \pi \n \ssp \q} \SAop \pt \q \sp \\
 \SCop \pt \n \sp & \eqdef & ( 1+2\N )^{-3/2} \sum_{\q} \exp{-\i 2 \pi \n \ssp \q} \SCop \pt \q \sp \\
@@ -1723,4 +1723,4 @@ We extend these definitions periodically to all $\q \in \ILD$ by $\SAop \pt \q \
 
 % Back cover
 
-% Sébastien Fauvel, born 1983, is an alumnus of the Ecole Normale Supérieure of Paris, where he graduated in Physics and Comparative literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basle.
+% Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basle.
