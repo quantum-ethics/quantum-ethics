@@ -9,7 +9,7 @@
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
 \patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
 \let\stdpart\part\renewcommand*\part{\cleardoublepage\stdpart}
-\usepackage[paperwidth=6in,paperheight=9in,top=0.75in,bottom=0.75in,outer=0.4in,inner=0.75in,pdftex]{geometry}
+\usepackage[paperwidth=6in,paperheight=9in,top=0.75in,bottom=0.75in,outer=0.4in,inner=0.6in,pdftex]{geometry}
 }
 {
 \pagestyle{myheadings}
@@ -1197,10 +1197,13 @@ E^{(2)} & = & ( 1 + 2 \N )^3 \frac{\e^2}{4 \pi \vpty \a} \sum_{\pt} \Qp \pt^2 \k
 && \left. - \frac {\sum_{\sp',\sp,\sp_\photon} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2} {2 \pi q_\photon \left( \Ek \pt {\q - \q_\photon} + \Ek {\antiparticle \pt} {-\q} + \Ek \photon {\q_\photon} \right) \a / \h \c} \right]
 \end{eqnarray*}
 where the spin summations evaluate to:
-\begin{eqnarray*}
-\sum_{\sp',\sp} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \dirspin {\antiparticle \pt} {-\q} \sp \right|^2 & = & 1 - \frac{( \mp \pt \a \c / \h )^2 + \eqp{\q - \q_\photon} \ssp \q}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \\
-\sum_{\sp',\sp,\sp_\photon} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 2 \left( 1 + \frac{( \mp \pt \a \c / \h )^2 + ( \eqp{\q - \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \right)
-\end{eqnarray*}
+\begin{equation*}
+\sum_{\sp',\sp} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \dirspin {\antiparticle \pt} {-\q} \sp \right|^2 = 1 - \frac{( \mp \pt \a \c / \h )^2 + \eqp{\q - \q_\photon} \ssp \q}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \\
+\end{equation*}
+\begin{multline*}
+\sum_{\sp',\sp,\sp_\photon} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 = \\
+2 \left( 1 + \frac{( \mp \pt \a \c / \h )^2 + ( \eqp{\q - \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \right)
+\end{multline*}
 The numerical coefficients $\kappa^\vac_\pt$ only depend on the masses of the bare particles and are plotted below:
 \begin{center}
 \includegraphics[scale=0.4]{images/graphics/Vacuum_Energy_2.pdf}\\
@@ -1730,6 +1733,6 @@ We extend these definitions periodically to all $\q \in \ILD$ by $\SAop \pt \q \
 
 %Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.
 
-%This groundbreaking work is bringing together Quantum Physicists and Philosophers in an unprecedented way... Making a tabula rasa from all its historical and heuristical developments, it presents Quantum Field Theory in its modern form in a exquisitely simple mathematical apparatus, nonetheless completely well-defined and fully functional... Focusing on the underlying ontology of Quantum Field Theory, which reveals very similar to the classical metaphysics of Spinoza's Ethics, it provides a solid fundament for any philosophical discussion of its interpretation.
+%This groundbreaking work is bringing together Quantum Physicists and Philosophers in an unprecedented way... Making a tabula rasa from all its historical and heuristical developments, it presents Quantum Field Theory in its modern form in a exquisitely simple mathematical apparatus, nonetheless completely well-defined and fully functional... Focusing on the underlying ontology of Quantum Field Theory, which turns out to be very similar to the classical metaphysics of Spinoza's Ethics, it provides a solid fundament for any philosophical discussion of its interpretation.
 
 %This book ought to become compulsory reading not only for all Philosophers interested by the metaphysical and ethical implications of Quantum Physics, but also for all Physicists working on the foundations of Physics, on Quantum Measurement and Decoherence Theory.
