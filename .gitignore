@@ -30,4 +30,5 @@
 /.project
 /.buildpath
 *~
+*.backup
 /Quantum Field Theory.pdf

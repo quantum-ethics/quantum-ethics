@@ -45,6 +45,16 @@
 					<img src="images/pictures/Quantum_Ethics.gif" align="middle" border="0" alt="" width="35" height="39" title="Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory" />
 				</a>
 			</div>
+			<h4>About the Author</h4>
+			<br />
+			<p>Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.</p>
+			<br />
+			<h4>Abstract</h4>
+			<br />
+			<p>This groundbreaking work is bringing together Quantum Physicists and Philosophers in an unprecedented way... Making a tabula rasa from all its historical and heuristical developments, it presents Quantum Field Theory in its modern form in a exquisitely simple mathematical apparatus, nonetheless completely well-defined and fully functional... Focusing on the underlying ontology of Quantum Field Theory, which turns out to be very similar to the classical metaphysics of Spinoza's Ethics, it provides a solid fundament for any philosophical discussion of its interpretation.</p>
+			<br />
+			<p>This book ought to become compulsory reading not only for all Philosophers interested by the metaphysical and ethical implications of Quantum Physics, but also for all Physicists working on the foundations of Physics, on Quantum Measurement and on Decoherence Theory.</p>
+			<br />
 			<h4>Preface</h4>
 			<br />
 			<p>Dear reader!</p>
