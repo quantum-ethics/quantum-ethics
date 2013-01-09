@@ -36,6 +36,8 @@
 %\makeindex
 \setlength{\parskip}{2pt}
 
+%Cover image: Hubble telescope image of the Carina Nebula, 2010. Photograph: Nasa, ESA, M LIVIO, (STScI)/EPA
+
 \begin{document}
 
 % Layout elements
@@ -244,6 +246,16 @@
 \newcommand{\bFM}[2]{({#1}_{#2})} % Mental field indices
 \newcommand{\God}{\mathfrak{G}} % God
 
+% Symbols
+\newcommand{\RadioactiveAtom}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/radioactivity.png}}}$} % Radioactive atom
+\newcommand{\DetectorOff}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/bulb_off.pdf}}}$} % Detector off (waiting)
+\newcommand{\DetectorOn}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/bulb_on.pdf}}}$} % Detector on (activated)
+\newcommand{\Atom}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/atom.pdf}}}$} % Atom
+\newcommand{\Radiation}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/radiation.png}}}$} % Radiation
+\newcommand{\ObserverOff}{$\vcenter{\hbox{\huge\textit?}}$} % Observer off (waiting)
+\newcommand{\ObserverOn}{$\vcenter{\hbox{\huge\textit!}}$} % Observer on (having observed the expected result)
+\newcommand{\Superposition}{$\vcenter{\hbox{\huge+}}$} % Quantum superposition
+
 \frontmatter
 
 \thispagestyle{empty}
@@ -364,8 +376,6 @@ Finally, some usual mathematical functions, notations and operators are being de
 \renewcommand{\epigraphwidth}{7cm}
 \epigraph{The first simplification to be considered involves the very existence of the theory.}{John Collins,\\\textit{Renormalization}~\cite{Collins1984}}
 
-\section{Abstract}
-
 The aim of this chapter is to develop a well-defined, divergence-free mathematical formalism for the Standard Model of particle physics. To achieve this, we suppose that elementary particles are bounded to a finite lattice, also a finite set of world lines in the flat space-time (so that the particle field only has a finite number of modes), and that there is a maximum occupation number for any single mode of the field, for bosons as well as for fermions. This makes the Hilbert space of the states of the universe finite dimensional, so that the theory is trivially well-defined. We will develop here a general formalism, valid for any set of elementary particles and for any form of the interaction Hamiltonian, and define the notations used in the rest of this book.
 
 \section{Space}
@@ -418,7 +428,7 @@ Deriving such a relation, however, isn't the goal of this book.
 
 \section{One particle states}
 
-\paragraphtitle{Definition} The (hypothetical) physical state in which the universe only contains a single particle, of type $\pt$, at point $\n$ and in the spin state $\sp$, is written:
+\paragraphtitle{Definition} The (hypothetical) physical state $\ket{\Psi}$ in which the universe only contains a single particle, of type $\pt$, at point $\n$ and in the spin state $\sp$, is written:
 \begin{equation*}
 \ket{\Psi} = \ketX 1 \pt \n \sp
 \end{equation*}
@@ -427,8 +437,7 @@ We postulate that a one particle state is given by any linear combination of the
 \begin{equation*}
 \ket{\Psi} = \sum_{\pt,\n,\sp} \Psi(\bX 1 \pt \n \sp) \ketX 1 \pt \n \sp
 \end{equation*}
-
-The set of all these vectors forms a finite dimensional Hilbert space given by:
+With arbitrary complex coefficients $\Psi(\bX 1 \pt \n \sp)$. The set of all these vectors, taken as an orthogonal basis, forms a finite dimensional Hilbert space written $\Hn 1$ and given by:
 \begin{equation*}
 \Hn 1 \eqdef \bigoplus^\perp_{\pt,\n,\sp} \IC \ketX 1 \pt \n \sp
 \end{equation*}
@@ -448,7 +457,7 @@ These vectors form an orthogonal basis of the Hilbert space $\Hn 1$ and we will 
 \ket\Psi = \sum_{\pt,\q,\sp} \FT\Psi(\bQ 1 \pt \q \sp) \ketQ 1 \pt \q \sp
 \end{equation*}
 
-In order to simplify the notations, when defining and using periodical functions on all $\q \in \IR^3$, we will define $\eqp \q \in \left]-\frac 1 2,\frac 1 2\right]^3$ by the equivalence relation $\eqp \q - \q \in \IZ^3$. We have then in particular $\eqp \q \in \FLD$ for all $\q \in \ILD$.
+\paragraphtitle{Notation} In order to simplify the notations, when defining and using periodical functions on all $\q \in \IR^3$, we will define $\eqp \q \in \left]-\frac 1 2,\frac 1 2\right]^3$ by the equivalence relation $\eqp \q - \q \in \IZ^3$. We have then in particular $\eqp \q = \q$ for all $\q \in \FLD$ and $\eqp \q \in \FLD$ for all $\q \in \ILD$.
 
 \section{Position and momentum operators}
 
@@ -480,7 +489,7 @@ as well as the velocity by $\vk \pt \q \eqdef \bk \pt \q \c$.
 
 \section{Wave function}
 
-We can associate following wave function components to each one particle state:
+\paragraphtitle{Remark} We can associate following wave function components to each one particle state:
 \begin{equation*}
 \wf \Psi \pt \sp {\sv x} \eqdef (1+2 \N)^{-3/2} \sum_{\q} \FT\Psi(\bQ 1 \pt \q \sp) \exp{\i 2 \pi \frac{\sv x \ssp \q}{\a}}
 \end{equation*}
@@ -489,7 +498,9 @@ Eigenstates of the momentum operator are thus associated with plane waves on $\I
 \wf \Psi \pt \sp {\sv x} & = & \sum_{\n} \Psi(\bX 1 \pt \n \sp) \deltaX{\sv x - \a \n} \\
 \deltaX{\sv x} & \eqdef & (1+2 \N)^{-3} \prod_i \frac{\sin{\pi \svc x i / \a}}{\sin{\pi \svc x i / (1+2 \N)\a}}
 \end{eqnarray*}
-We define thus an isomorphism between a finite set, indexed on $( \pt,\sp )$, of complementary subspaces of $\Hn 1$, and a finite dimensional subspace of $\mathrm C^\infty\left(\IR^3,\IC\right)$ containing functions of period $(1+2\N)\a$ along each coordinate. In that space, the (image of the) momentum operator acts according to:
+We define thus an isomorphism between a finite set, indexed on $( \pt,\sp )$, of complementary subspaces of $\Hn 1$, and a finite dimensional subspace of $\mathrm C^\infty\left(\IR^3,\IC\right)$ containing functions of period $(1+2\N)\a$ along each coordinate.
+
+\paragraphtitle{Complements} In that space, the (image of the) momentum operator acts according to:
 \begin{equation*}
 \Pop \wf \Psi \pt \sp {\sv x} = \frac{\h}{\i 2 \pi} \sv \nabla \wf \Psi \pt \sp {\sv x}
 \end{equation*}
@@ -498,7 +509,7 @@ The dynamic of the free fields on the lattice is also identical to the usual dyn
 \section{Many particles states}
 \label{Many particles states}
 
-The physical state in which each point $\n$ is being occupied by $\bX N \pt \n \sp$ particles of each type $\pt$ in each spin state $\sp$ is written:
+The physical state $\ket{\Psi}$ in which each point $\n$ is being occupied by $\bX N \pt \n \sp$ particles of each type $\pt$ in each spin state $\sp$ is written:
 \begin{equation*}
 \ket{\Psi} = \ketFX N \pt \n \sp
 \end{equation*}
@@ -507,13 +518,15 @@ and is called a ``localized state''. We postulate that a many particles state is
 \ket{\Psi} & = & \sum_{\bFX N \pt \n \sp} \Psi \left(\bFX N \pt \n \sp \right) \ketFX N \pt \n \sp \\
 \bX N \pt \n \sp & \in & \IntRange{0}{\M \pt}
 \end{eqnarray*}
-where $\M \pt$ is the maximum occupation number of the field $\pt$. For fermions, we have experimentally $\M \pt = 1$. For bosons, no upper limit of the occupation number is experimentally known; a lower limit of about $\M \photon \gtrsim 10^{21}$ for photons has been reached experimentally by high intensity lasers.
+where the (finite) integer $\M \pt$ is the maximum occupation number of the field $\pt$.
 
-The set of all these vectors forms a finite dimensional Hilbert space given by:
+The set of all these vectors, taken as an orthogonal basis, forms a finite dimensional Hilbert space given by:
 \begin{equation*}
 \H \eqdef \bigoplus^\perp_{\bFX N \pt \n \sp} \IC \ketFX N \pt \n \sp
 \end{equation*}
 and the basis of the localized states is called ``position basis''.
+
+\paragraphtitle{Remark} For fermions, we have experimentally $\M \pt = 1$. For bosons, no upper limit of the occupation number is experimentally known; a lower limit of about $\M \photon \gtrsim 10^{21}$ for photons has been reached experimentally by high intensity lasers.
 
 \section{Creation and annihilation operators}
 
@@ -548,7 +561,7 @@ associating thus an operator $\dop{\Psi} \in \cAlg$ to each vector $\ket{\Psi} \
 
 \section{Plane wave field modes}
 
-Creation and annihilation operators can also be defined for the plane wave modes of the field by:
+\paragraphtitle{Definition} Creation and annihilation operators can also be defined for the plane wave modes of the field by:
 \begin{eqnarray*}
 \aop \pt \q \sp & \eqdef & (1+2 \N)^{-3/2} \sum_{\n} \exp{-\i 2 \pi \n \ssp \q} \aop \pt \n \sp \\
 \cop \pt \q \sp & \eqdef & (1+2 \N)^{-3/2} \sum_{\n} \exp{\i 2 \pi \n \ssp \q} \cop \pt \n \sp
@@ -562,7 +575,7 @@ These vectors form an orthogonal basis of the Hilbert space $\H$ called the ``mo
 \ket\Psi = \sum_{\bFQ N \pt \q \sp} \FT\Psi \left( \bFQ N \pt \q \sp \right) \ket{\bFQ N \pt \q \sp}
 \end{equation*}
 
-The decomposition of the plane wave state $\ket{\bFQ {N'} \pt \q \sp}$ on the position basis is given by:
+\paragraphtitle{Remark} The decomposition of the plane wave state $\ket{\bFQ {N'} \pt \q \sp}$ on the position basis is given by:
 \begin{eqnarray*}
 \braket{\bFX N \pt \n \sp}{\bFQ {N'} \pt \q \sp} & = & \left[ \prod_{\pt, \sp} \delta\left( {N'}^\pt_\sp - N^\pt_\sp \right) \right] \psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ) \right) \\
 \psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ) \right) & \eqdef & \prod_{\substack{\pt, \sp \\ N^\pt_\sp \neq 0}} \frac{(1+2 \N)^{-3 N^\pt_\sp / 2} }{\prod_{\n} \bX N \pt \n \sp !} \sum_{\sigma \in \mathfrak{S}_{N^\pt_\sp}} \prod_{j = 1}^{N^\pt_\sp} \exp{\i 2 \pi \n^{\pt, \sp}_{\sigma_j} \ssp \q^{\pt, \sp}_j}
@@ -576,7 +589,7 @@ In the definition of $\psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ) \righ
 
 \section{Particle number operators}
 
-The particle number operators are defined by:
+\paragraphtitle{Definition} The particle number operators are defined by:
 \begin{eqnarray*}
 \Nop \pt \n \sp \ket{\bFX N \pt \n \sp} & \eqdef & \bX N \pt \n \sp \ket{\bFX N \pt \n \sp} \\
 \Nop \pt \q \sp \ket{\bFQ N \pt \q \sp} & \eqdef & \bQ N \pt \q \sp \ket{\bFQ N \pt \q \sp}
@@ -589,6 +602,7 @@ Its eigenspace for the eigenvalue $N$ is written $\Hn N$ and its elements are ca
 \begin{equation*}
 \H = \bigoplus_{N}^\perp \Hn N
 \end{equation*}
+The maximum number of particles in a $N$ particle state is given by $N = (1+2 \N)^3 \sum_{\pt,\sp} \M \pt$.
 
 \chapter{Hamiltonian evolution}
 \label{Hamiltonian evolution}
@@ -825,6 +839,8 @@ Given two collective mental states $\cms = \bFM N \ims$ and $\cms' = \bFM {N'} \
 \H_{\cms}^+ \eqdef \bigoplus_{\cms' \geq \cms}^\perp \H_{\cms'}
 \end{equation*}
 
+\paragraphtitle{Commentaries} The different brain creation operators $\dop{\Psi_\ims^\alpha}$ corresponding to the same individual mind state $\ims$ may differ for instance by a translation or a rotation of the brain, by any modification of its physical environment which doesn't involve the creation of a second brain, or by any internal modification of the physical state of the brain itself, insofar as this doesn't influence the associated conscious thoughts. We could think for instance of neurophysiological processes involved in the unconscious brain activity or of irrelevant low-level biochemical processes.
+
 \chapter{Stochastic evolution}
 \label{Stochastic evolution}
 
@@ -834,14 +850,14 @@ In the joint evolution of the mental and physical states of the universe, I supp
 \begin{equation*}
 P(\cms) = \frac{\bra\Psi \op{\Pi}_\cms \ket\Psi}{\braket\Psi\Psi}
 \end{equation*}
-where $\op{\Pi}_\cms$ is the orthogonal projection operator on $\H_\cms$, and that this projection corresponds to the fact that, in the mental world, the collective mind state $\cms = \bFM N \ims$ is being experienced, i.e. each possible individual mind state $\ims$ is being experienced by $\bM N \ims$ individual minds. We call the physical part of this process ``collapse'' of the physical state of the universe and its mental counterpart ``collective mind selection''. The operators $\op{\Pi}_\cms$ are called ``collapse operators''. As a working hypothesis, we assume that the period $\tau$ of this process is of the order of the Plank time:
+where $\op{\Pi}_\cms$ is the orthogonal projection operator on $\H_\cms$. Furthermore, I suppose that this projection corresponds to the fact that, in the mental world, the collective mind state $\cms = \bFM N \ims$ is being experienced, i.e. each possible individual mind state $\ims$ is being experienced by $\bM N \ims$ individual minds. We call the physical part of this process ``collapse'' of the physical state of the universe and its mental counterpart ``collective mind selection''. The operators $\op{\Pi}_\cms$ are called ``collapse operators''. As a working hypothesis, we assume that the period $\tau$ of this process is of the order of the Plank time:
 \begin{equation*}
 \tau \approx \sqrt{4\pi\G \h/\c^5}\approx4.8~10^{-43}\ \mathrm s
 \end{equation*}
 
 \section{Mental evolution}
 
-Fundamentally, Quantum Field Theory also defines the probability that any given succession of collective mind states be experienced, an initial physical and collective mind state being given. In the case where the actually experienced collective mind state has a relatively high probability, our mental state may give us some clues about the physics of the world we live in; on the opposite, if our collective mind state has a very low probability, our mental experience has very little to do with the laws of the physical world and we live in a mere illusion of knowing something about reality -- without having any mean of noticing it. This dilemma is very well known of particle physicists, who have to accept they cannot make more precise statements about reality than, for instance, ``in the context of the standard model and in the presence of a sequential fourth family of fermions with high masses [...] a Higgs boson with mass between 144 and 207 GeV/$\mathrm{c}^2$ is ruled out at 95\% confidence level''~\cite{CMS2011}. Any physical model can also be conventionally, but not definitely, ``ruled out'' if it predicts the observed results with a probability considered to be too low.
+Fundamentally, Quantum Field Theory also defines the probability that any given succession of collective mind states be experienced, an initial physical and collective mind state being given. In the case where the actually experienced collective mind state has a relatively high probability, our mental state may give us some clues about the physics of the world we live in; on the opposite, if our collective mind state has a very low probability, our mental experience has very little to do with the laws of the physical world and we live in a mere illusion of knowing something about the physical reality -- without having any mean of noticing it. This dilemma is very well known of particle physicists, who have to accept they cannot make more precise statements about reality than, for instance, ``in the context of the standard model and in the presence of a sequential fourth family of fermions with high masses [...] a Higgs boson with mass between 144 and 207 GeV/$\mathrm{c}^2$ is ruled out at 95\% confidence level''~\cite{CMS2011}. Any physical model can also be conventionally, but not definitely, ``ruled out'' if it predicts the observed results with a probability considered to be too low.
 
 Given an initial physical state $\ket{\Psi_0} \in \H_{\cms_0}$ at $t = 0$, the probability $P(\cms_t,t)$ that a given collective mind state $\cms_t$ is being realized at time $t \tau$, where $t \in \IN^*$, reads for $t = 1$:
 \begin{equation*}
@@ -950,7 +966,7 @@ We assume that the corresponding subspace $\delta \F$ of $\H$ is given by:
 \delta \F & = & \bigoplus_{(\delta \q_j)}^{\perp} \IC \dop{\Psi}_{f + (\delta \q_j)} \ket{O} \\
 \dop{\Psi}_{f + (\delta \q_j)} & \eqdef & \prod_j \cop {\pt_j} {\q_j + \delta \q_j} {\sp_j}
 \end{eqnarray*}
-where the summation goes over all the $\delta \q_j$ verifying $\q_j + \delta \q_j \in \delta Q_j$.
+where the summation goes over all the $\delta \q_j$ verifying $\q_j + \delta \q_j \in \delta Q_j$ and where $\ket{O}$ describes the experimental setup, including measuring devices and the observer.
 
 The probability that all the detectors are activated is then given by:
 \begin{equation*}
@@ -967,6 +983,58 @@ In particular, if $\left| H'_{f + (\delta \q_j),i} \right|^2$ admits such a cont
 \TPn i {\delta \F} 2 & \approx & \int_{\prod_j \delta P_j} ( 2 \pi )^2 \frac{t - t_0} \h \left| H'_{f + (\delta \q_j),i} \right|^2 \deltaE2{E_{f + (\delta \q_j)} - E_i} \\
 && \left( (1 + 2 \N) \frac \a \h \right)^{3 n_f} \dtp_1 \dotsm \dtp_{n_f}
 \end{eqnarray*}
+
+\section{Quantum Measurement}
+
+Let us consider a simple thought experiment in order to illustrate how measurement processes take place: A radioactive atom, decaying by emitting radiations detected by a particle detector which is read by an observer. In the (ideal) initial state at time $t_0$, the radioactive atom hasn't decayed yet, the measurement apparatus is indicating that it hasn't detected any particle yet and the observer is waiting for the detector to get activated. We symbolize this situation by:
+\begin{flushleft}
+\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\end{flushleft}
+The decay of the radioactive atom into a stable atom and radiations first brings it into a quantum superposition of states, where both states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. The measurement apparatus is still inactive and the observer waiting. We symbolize this situation by:
+\begin{flushleft}
+\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\end{flushleft}
+Supposing, to simplify, that the particle detector has a detection efficiency of 100\%, the detector gets then with certainty activated by the incoming radiation, coming thus into a quantum superposition of states, where all three states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. The observer is still waiting. We symbolize this situation by:
+\begin{flushleft}
+\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOff
+\end{flushleft}
+Finally, at time $t_0 + \Delta t$, the observer is becoming aware of the fact that the detector has been activated and comes itself into a quantum superposition of states, so that all four states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. We symbolize this situation by:
+\begin{flushleft}
+\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOn
+\end{flushleft}
+This (purely physical) situation lasts until the next process of collapse and collective mind selection takes place. The experienced consciousness state of the observer is then either one of ``I am still waiting for the detector to get activated'' or ``I have seen the detector becoming activated''. In the first case, the physical state of the universe becomes again:
+\begin{flushleft}
+\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\hspace*{3mm}\Superposition\hspace*{3mm}
+\Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOff
+\end{flushleft}
+i.e. the detector has still been activated, but the observer didn't yet notice it. In the second case, the state of the universe becomes:
+\begin{flushleft}
+\Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOn
+\end{flushleft}
+and the atom has definitely decayed. The probability $\delta P$ of this event to occur is very small, but the process of collapse and collective mind selection take place very often, with a period $\tau$, so that the decay of the atom will eventually be observed. An approximation of this elementary probability is given, to the leading order, by:
+\begin{equation*}
+\delta P \approx ( 2 \pi )^2 \frac\tau\h \sum_{\bFQ {N_1} \pt \q \sp} \left| H'_{1,i} \right|^2 \deltaE2{E_1 - E_i}
+\end{equation*}
+and the mean duration until the atomic decay is being observed can be approximated by:
+\begin{equation*}
+\left< t - t_0 \right> \approx \Delta t + \h \Big[ ( 2 \pi )^2 \sum_{\bFQ {N_1} \pt \q \sp} \left| H'_{1,i} \right|^2 \deltaE2{E_1 - E_i} \Big]^{-1}
+\end{equation*}
+where the summation runs over the decay states $\bFQ {N_1} \pt \q \sp$ of the radioactive atom. The delta function can be approximated by the (time independent) density of decay states (with regard to the kinetic energy) around the ``allowed'' decay states conserving kinetic energy.
 
 \part{Interpretation}
 
@@ -1061,8 +1129,6 @@ Of course, this hypothesis is logically perfectly correct, but it is utmost diff
 
 \chapter{Quantum Electrodynamics}
 \label{Quantum Electrodynamics}
-
-\section{Abstract}
 
 In this chapter, we will define the interaction Hamiltonian of Quantum Electrodynamics (QED), describing the photon mediated electromagnetic interaction between electrically charged fermions, and we will derive the composition of the corresponding dressed particles.
 
