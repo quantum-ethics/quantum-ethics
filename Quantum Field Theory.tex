@@ -245,11 +245,11 @@
 \newcommand{\God}{\mathfrak{G}} % God
 
 % Symbols
-\newcommand{\RadioactiveAtom}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/radioactivity.png}}}$} % Radioactive atom
+\newcommand{\ExcitedAtom}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/atom.pdf}}}$} % Excited atom
 \newcommand{\DetectorOff}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/bulb_off.pdf}}}$} % Detector off (waiting)
 \newcommand{\DetectorOn}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/bulb_on.pdf}}}$} % Detector on (activated)
-\newcommand{\Atom}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/atom.pdf}}}$} % Atom
-\newcommand{\Radiation}{$\vcenter{\hbox{\includegraphics[height=.6cm]{images/pictures/radiation.png}}}$} % Radiation
+\newcommand{\Atom}{$\vcenter{\hbox{\includegraphics[height=.4cm]{images/pictures/atom.pdf}}}$} % Atom
+\newcommand{\Photon}{$\vcenter{\hbox{\includegraphics[height=.6cm,angle=-90,origin=c]{images/diagrams/Photon.pdf}}}$} % Photon
 \newcommand{\ObserverOff}{$\vcenter{\hbox{\huge\textit?}}$} % Observer off (waiting)
 \newcommand{\ObserverOn}{$\vcenter{\hbox{\huge\textit!}}$} % Observer on (having observed the expected result)
 \newcommand{\Superposition}{$\vcenter{\hbox{\huge+}}$} % Quantum superposition
@@ -312,9 +312,9 @@ Document available online at \htmladdnormallink{quantum-ethics.org}{http://quant
 \cleardoublepage
 \section*{Acknowledgements}
 
-First and foremost, I would like to thank my wife Angela for having sacrificed so much of our precious free time as I was working on this book. This publication would never have been possible without her patience, her understanding, all her love and support. Thank you!
+First and foremost, I would like to thank my wife Angela for having let me enjoy her wisdom and love radiating being for all these years. She made me discover Spinoza's philosophy and this publication would never have been possible without her brilliant intelligence, her constructive criticism, all her love and support. Thank you!
 
-I would also like to thank my colleague Markus Matteucci for initiating me into the art of book publishing, my fellow students Christian Hagendorf and Tristan Machado for our encouraging and fruitful discussions that did much to my understanding of Physics, my teachers Christian Swit and Stéphane Gentil who introduced me to the joys of Philosophy and Mathematics, my uncle Bertrand Liaudet and my regretted ``godfather'' Frédéric Poupaud for having made me discover the world of Algorithmic and Informatics at a far too early age. They all did very much for my personal evolution.
+I would also like to thank my colleague Markus Matteucci for initiating me into the art of book publishing, my fellow students Christian Hagendorf and Tristan Machado for some fruitful discussions that did much for my understanding of Physics, my teachers Christian Swit and Stéphane Gentil who introduced me to the joys of Philosophy and Mathematics, my uncle Bertrand Liaudet and my regretted ``godfather'' Frédéric Poupaud for having made me discover the world of Algorithmic and Informatics at a far too early age. They all did very much for my personal evolution.
 
 \cleardoublepage
 \section*{Preface}
@@ -325,7 +325,7 @@ Although the careful reader will find in the first edition of this book all the 
 
 The philosophical aspects of this book might have deserved a more extensive treatment, too. I have given a few basic examples to explain how the physical theory can be used as a reference language in order to express philosophical questions, but I would have to add more various examples to give an adequate idea of the potential of this method. 
 
-I am preparing a second, augmented edition of this work to be published in the near future, so that the ideas presented here become more explicit and accessible to a broader public. Nevertheless, the open-minded reader familiar with Quantum Physics will already find, in the first edition of this book, the very first mathematically well-defined formulation of Quantum Field Theory coming along with an intellectually satisfactory interpretation, perfectly capable of explaining all known quantum phenomena. I am very pleased to present it to you and wish you a fruitful and enjoyable reading as well as long hours of delightful meditation!
+I am preparing a second, augmented edition of this work so that the ideas presented here become more explicit and accessible to a broader public. Nevertheless, the open-minded reader familiar with Quantum Physics will already find, in the first edition of this book, the very first mathematically well-defined formulation of Quantum Field Theory coming along with an intellectually satisfactory interpretation, perfectly capable of explaining all known quantum phenomena. I am very pleased to present it to you and wish you a fruitful and enjoyable reading as well as long hours of delightful meditation!
 
 \begin{flushright}
 \begin{tabular}{l}
@@ -429,6 +429,8 @@ Deriving such a relation, however, isn't the goal of this book.
 
 \section{One particle states}
 
+\paragraphtitle{Particle types} We don't make in this chapter any assumption about the existing particle types, e.g. electrons, positrons an photons. We are noting them $\pt$ in a generic way. The corresponding spin states $\sp$ depend implicitely, in the notations, on the particle type. The spin state influences the way a particle interacts with other particle fields; this effect is described quantitatively in the expression of the spinor operators in appendix \ref{Photon spinors} and \ref{Dirac spinors}.
+
 \paragraphtitle{Definition} The (hypothetical) physical state $\ket{\Psi}$ in which the universe only contains a single particle, of type $\pt$, at point $\n$ and in the spin state $\sp$, is written:
 \begin{equation*}
 \ket{\Psi} = \ketX 1 \pt \n \sp
@@ -438,7 +440,7 @@ We postulate that a one particle state is given by any linear combination of the
 \begin{equation*}
 \ket{\Psi} = \sum_{\pt,\n,\sp} \Psi(\bX 1 \pt \n \sp) \ketX 1 \pt \n \sp
 \end{equation*}
-With arbitrary complex coefficients $\Psi(\bX 1 \pt \n \sp)$. The set of all these vectors, taken as an orthogonal basis, forms a finite dimensional Hilbert space written $\Hn 1$ and given by:
+with arbitrary complex coefficients $\Psi(\bX 1 \pt \n \sp)$. The set of all these vectors, taken as an orthogonal basis, forms a finite dimensional Hilbert space written $\Hn 1$ and given by:
 \begin{equation*}
 \Hn 1 \eqdef \bigoplus^\perp_{\pt,\n,\sp} \IC \ketX 1 \pt \n \sp
 \end{equation*}
@@ -987,39 +989,39 @@ In particular, if $\left| H'_{f + (\delta \q_j),i} \right|^2$ admits such a cont
 
 \section{Quantum Measurement}
 
-Let us consider a simple thought experiment in order to illustrate how measurement processes take place: A radioactive atom, decaying by emitting radiations detected by a particle detector which is read by an observer. In the (ideal) initial state at time $t_0$, the radioactive atom hasn't decayed yet, the measurement apparatus is indicating that it hasn't detected any particle yet and the observer is waiting for the detector to get activated. We symbolize this situation by:
+Let us consider a simple thought experiment in order to illustrate how measurement processes take place: An excited atom, decaying by emitting a photon detected by a photomultiplicator, which is read by an observer. In the initial state, at time $t_0$, the atom has just been switched to its excited state and hasn't decayed yet, the measurement apparatus is indicating that it hasn't detected any photon yet and the observer is waiting for the detector to get activated. We symbolize this situation by:
 \begin{flushleft}
-\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \end{flushleft}
-The decay of the radioactive atom into a stable atom and radiations first brings it into a quantum superposition of states, where both states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. The measurement apparatus is still inactive and the observer waiting. We symbolize this situation by:
+The decay of the excited atom into a stable atom and a photon first brings it into a quantum superposition of states, where both states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. In both cases, the measurement apparatus is still inactive and the observer waiting. We symbolize this situation by:
 \begin{flushleft}
-\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
-\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\Atom\hspace*{3mm}\Photon\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \end{flushleft}
-Supposing, to simplify, that the particle detector has a detection efficiency of 100\%, the detector gets then with certainty activated by the incoming radiation, coming thus into a quantum superposition of states, where all three states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. The observer is still waiting. We symbolize this situation by:
+Supposing, to simplify, that the photomultiplicator has a detection efficiency of 100\%, the detector gets then with certainty activated by the incoming photon, coming thus at time $t_0 + \Delta t$ into a quantum superposition of states, where all three states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. In all three cases, the observer is still waiting. We symbolize this situation by:
 \begin{flushleft}
-\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
-\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\Atom\hspace*{3mm}\Photon\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
 \Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOff
 \end{flushleft}
-Finally, at time $t_0 + \Delta t$, the observer is becoming aware of the fact that the detector has been activated and comes itself into a quantum superposition of states, so that all four states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. We symbolize this situation by:
+Finally, the observer is becoming aware of the fact that the detector has been activated and comes itself into a quantum superposition of states, so that all four states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. We symbolize this situation by:
 \begin{flushleft}
-\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
-\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\Atom\hspace*{3mm}\Photon\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
 \Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
 \Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOn
 \end{flushleft}
-This (purely physical) situation lasts until the next process of collapse and collective mind selection takes place. The experienced consciousness state of the observer is then either one of ``I am still waiting for the detector to get activated'' or ``I have seen the detector becoming activated''. In the first case, the physical state of the universe becomes again:
+This (purely physical) situation lasts until the next process of collapse and collective mind selection takes place. The experienced consciousness state of the observer is then, randomly, either one of ``I am still waiting for the detector to get activated'' or ``I have seen the detector becoming activated''. In the first case, the physical state of the universe becomes again:
 \begin{flushleft}
-\RadioactiveAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
-\Atom\hspace*{3mm}\Radiation\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
+\Atom\hspace*{3mm}\Photon\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
 \Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOff
 \end{flushleft}
@@ -1031,7 +1033,7 @@ and the atom has definitely decayed. The probability $\delta P$ of this event to
 \begin{equation*}
 \delta P \approx ( 2 \pi )^2 \frac\tau\h \sum_{\bFQ {N_1} \pt \q \sp} \left| H'_{1,i} \right|^2 \deltaE2{E_1 - E_i}
 \end{equation*}
-where the summation runs over the decay states $\bFQ {N_1} \pt \q \sp$ of the radioactive atom and where the delta function can be approximated by the (time independent) density of decay states (with regard to the kinetic energy) around the ``allowed'' decay states conserving kinetic energy. The mean duration until the decay is being observed is given by the general formula:
+where the summation runs over the decay states $\bFQ {N_1} \pt \q \sp$ of the atom and where the delta function can be approximated by the (time independent) density of decay states (with regard to the kinetic energy) around the ``allowed'' decay states conserving kinetic energy. The mean duration until the decay is being observed is given by the general formula:
 \begin{equation*}
 \left< t - t_0 \right> \approx \Delta t + \tau \frac{1 - \delta P}{\delta P}
 \end{equation*}
