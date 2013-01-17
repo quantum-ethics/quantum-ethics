@@ -17,7 +17,7 @@
  *------------------------------------------------------------------------
  */
 
-#include <iostream.h>
+#include <iostream>
 
 #ifdef NOOSFCN
 	extern "C" { void exit(int); }
@@ -70,7 +70,7 @@ double deflt_double::get()
 			{
 			if (parent == NULL)
 				{
-				cerr << ERRSTR << "Attempt to rescale a variable with no parent\n";
+				std::cerr << ERRSTR << "Attempt to rescale a variable with no parent\n";
 				exit(1);
 				}
 			result = val * parent->get();  // Oh joy, recursion!
@@ -82,8 +82,8 @@ double deflt_double::get()
 		{
 		if (parent == NULL)
 			{
-			cerr << ERRSTR << "Fatal error - measurement has no value and no parent\n";
-			cerr << ERRSTR << "  Please notify " << AUTHOR << "\n";
+			std::cerr << ERRSTR << "Fatal error - measurement has no value and no parent\n";
+			std::cerr << ERRSTR << "  Please notify " << AUTHOR << "\n";
 			exit(1);
 			}
 		else
@@ -126,8 +126,8 @@ int deflt_boolean::get()
 		{
 		if (parent == NULL)
 			{
-			cerr << ERRSTR << "Fatal error - measurement has no value and no parent\n";
-			cerr << ERRSTR << "  Please notify " << AUTHOR << "\n";
+			std::cerr << ERRSTR << "Fatal error - measurement has no value and no parent\n";
+			std::cerr << ERRSTR << "  Please notify " << AUTHOR << "\n";
 			exit(1);
 			}
 		else
@@ -162,8 +162,8 @@ char *deflt_str::get()
 		{
 		if (parent == NULL)
 			{
-			cerr << ERRSTR << "Fatal error - measurement has no value and no parent\n";
-			cerr << ERRSTR << "  Please notify " << AUTHOR << "\n";
+			std::cerr << ERRSTR << "Fatal error - measurement has no value and no parent\n";
+			std::cerr << ERRSTR << "  Please notify " << AUTHOR << "\n";
 			exit(1);
 			}
 		else

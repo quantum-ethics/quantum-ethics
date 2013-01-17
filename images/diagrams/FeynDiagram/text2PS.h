@@ -21,10 +21,10 @@
 
 // $Id: text2PS.h,v 2.5 2000/04/18 17:03:05 billd Exp $
 
-#include <iostream.h>
+#include <iostream>
 
-extern void text2PS(ostream &out, char *textptr, double fontsize, char *fontname = "Times-Roman");
+extern void text2PS(std::ostream &out, char *textptr, double fontsize, char *fontname = "Times-Roman");
 
-extern void text2PS(ostream &out, char *textptr, double horizfract, double vertfract, double fontsize, char *fontname = "Times-Roman");
+extern void text2PS(std::ostream &out, char *textptr, double horizfract, double vertfract, double fontsize, char *fontname = "Times-Roman");
 
 #endif  // ifndef TEXT2PS_H

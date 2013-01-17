@@ -12,7 +12,7 @@
 # SCCS ID for makefile: $Id: makefile_distrib,v 2.6 2000/04/18 19:49:29 billd Exp $
 
 # CC - the name of your C++ compiler (default CC)
-CC=CC
+CC=g++
 
 # LIBDIR - where you keep local C++ libraries (default /usr/local/lib)
 LIBDIR=/usr/local/lib
@@ -103,10 +103,10 @@ install_include:
 	find $(INCLUDEDIR)/FeynDiagram -type d -print | xargs chmod $(DIRPERM)
 
 install_manpage: feyndiagram.3
-	cp feyndiagram.3 $(MANDIR)
-	chmod $(PERM) $(MANDIR)/feyndiagram.3
-	chgrp $(GROUP) $(MANDIR)/feyndiagram.3
-	chown $(OWNER) $(MANDIR)/feyndiagram.3
+#	cp feyndiagram.3 $(MANDIR)
+#	chmod $(PERM) $(MANDIR)/feyndiagram.3
+#	chgrp $(GROUP) $(MANDIR)/feyndiagram.3
+#	chown $(OWNER) $(MANDIR)/feyndiagram.3
 
 default.o: default.C default.h
 	$(CC) $(CFLAGS) -c default.C
@@ -118,7 +118,7 @@ text2PS.o: text2PS.C text2PS.h
 	$(CC) $(CFLAGS) -c text2PS.C
 
 feyndiagram.3: makefile
-	./mkmanpage $(CC) $(LIBNAME) $(INCLUDEDIR) $(FDHOME)
+#	./mkmanpage $(CC) $(LIBNAME) $(INCLUDEDIR) $(FDHOME)
 
 clean:
 	rm -f *.o lib$(LIBNAME).a feyndiagram.3

@@ -17,8 +17,8 @@
  *------------------------------------------------------------------------
  */
 
-#include <iostream.h>
-#include <fstream.h>
+#include <iostream>
+#include <fstream>
 #include <math.h>
 #include <string.h>
 #include <ctype.h>
@@ -139,7 +139,7 @@ xy polar(double r, double theta)
 	{
 	double xval, yval;
 	if (r < 0)
-		cerr << ERRSTR << "Warning: polar() called with negative radius\n";
+		std::cerr << ERRSTR << "Warning: polar() called with negative radius\n";
 	xval = r * cos(theta * PI/180.);
 	yval = r * sin(theta * PI/180.);
 	return xy(xval,yval);
@@ -220,7 +220,7 @@ double xy::x() const
 	{
 	if (!isdefinedflag)
 		{
-		cerr << ERRSTR << "Attempt to get x value from undefined xy\n";
+		std::cerr << ERRSTR << "Attempt to get x value from undefined xy\n";
 		exit(1);
 		}
 	return xval;
@@ -231,7 +231,7 @@ double xy::y() const
 	{
 	if (!isdefinedflag)
 		{
-		cerr << ERRSTR << "Attempt to get y value from undefined xy\n";
+		std::cerr << ERRSTR << "Attempt to get y value from undefined xy\n";
 		exit(1);
 		}
 	return yval;
@@ -250,8 +250,8 @@ xy xy::perp()
 	len = sqrt(SQR(x()) + SQR(y()));
 	if (len <= 0.0)
 		{
-		cerr << ERRSTR << "xy::perp() - cannot find vector perpendicular to ";
-		cerr << ERRSTR << "null vector\n";
+		std::cerr << ERRSTR << "xy::perp() - cannot find vector perpendicular to ";
+		std::cerr << ERRSTR << "null vector\n";
 		exit(1);
 		}
 	return xy(-y()/len,x()/len);
@@ -387,12 +387,12 @@ drawable::~drawable()
 	}
 
 
-void drawable::draw(ostream &out)
+void drawable::draw(std::ostream &out)
 	{
 	if (!ishidden())
 		dodraw(out);
 #ifdef DEBUG2
-	cerr << "   Output with priority " << priority << "\n";
+	std::cerr << "   Output with priority " << priority << "\n";
 #endif
 	}
 
@@ -408,10 +408,10 @@ void drawable_list::remove(drawable *ptr)
 	}
 
 
-void drawable::dodraw(ostream &out)
+void drawable::dodraw(std::ostream &out)
 	{
-	cerr << ERRSTR << "Missing virtual function drawable::dodraw\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function drawable::dodraw\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	}
 
@@ -427,8 +427,8 @@ boundingbox drawable::bbox()
 
 boundingbox drawable::findbbox()
 	{
-	cerr << ERRSTR << "Missing virtual function drawable::findbbox\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function drawable::findbbox\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	return boundingbox();
 	}
@@ -459,13 +459,13 @@ void drawable_list::add(drawable *ptr)
 	else if (headptr->priority < ptr->priority)
 		{
 #ifdef DEBUG
-cerr << "Adding with priority = " << ptr->priority << " head = " << (int)headptr;
+std::cerr << "Adding with priority = " << ptr->priority << " head = " << (int)headptr;
 #endif
 		ptr->nextptr = headptr;
 		headptr->prevptr = ptr;
 		headptr = ptr;
 #ifdef DEBUG
-cerr << ERRSTR << "  new head = " << (int)headptr << "\n";
+std::cerr << ERRSTR << "  new head = " << (int)headptr << "\n";
 #endif
 		}
 	else
@@ -493,14 +493,14 @@ FDpart::FDpart(FeynDiagram &feyndiag,int priorityval,drawable_list *dlist)
 
 char *vertex_raw::procedurestr()
 	{
-	cerr << ERRSTR << "Missing virtual function vertex_raw::procedurestr\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function vertex_raw::procedurestr\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	return NULL;
 	}
 
 
-void vertex_raw::dodraw(ostream &out)
+void vertex_raw::dodraw(std::ostream &out)
 	{
 	out << fd->lencoord2pt(thickness.get()) << " SLW\n";
 	out << procedurestr() << " " << fd->xcoord2pt(loc.x()) << " " << fd->ycoord2pt(loc.y());
@@ -637,24 +637,24 @@ vertex_box::vertex_box(FeynDiagram &fd, double x, double y, double angle)
 
 void curve_raw::func(double t, double &x, double &y)
 	{
-	cerr << ERRSTR << "Missing virtual function curve_raw::func\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function curve_raw::func\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	}
 
 
 void curve_raw::deriv(double t, double &dt, double &dx, double &dy, double prec)
 	{
-	cerr << ERRSTR << "Missing virtual function curve_raw::deriv\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function curve_raw::deriv\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	}
 
 
 double curve_raw::dist(double t, double prec, double ref)
 	{
-	cerr << ERRSTR << "Missing virtual function curve_raw::dist\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function curve_raw::dist\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	return 0.0;
 	}
@@ -662,8 +662,8 @@ double curve_raw::dist(double t, double prec, double ref)
 
 double curve_raw::tfromdist(double dist, double tmin, double tmax, double prec)
 	{
-	cerr << ERRSTR << "Missing virtual function curve_raw::tfromdist\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function curve_raw::tfromdist\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	return 0.0;
 	}
@@ -686,8 +686,8 @@ xy curve_raw::tang(double t, double prec)
 	len = sqrt(dx*dx + dy*dy);
 	if (len <= 0.0)
 		{
-		cerr << ERRSTR << "curve_raw::tang - tangent vector has zero length so the\n";
-		cerr << ERRSTR << "  curve must be badly parameterized.\n";
+		std::cerr << ERRSTR << "curve_raw::tang - tangent vector has zero length so the\n";
+		std::cerr << ERRSTR << "  curve must be badly parameterized.\n";
 		exit(1);
 		}
 	return xy(dx/len,dy/len);
@@ -722,7 +722,7 @@ void curve_straightline::deriv(double t, double &dt, double &dx, double &dy, dou
 
 	if (ISTINY(dx) && ISTINY(dy))
 		{
-		cerr << ERRSTR << "curve_straighline::deriv - both dx & dy are zero for t=" << t << " - bad curve\n";
+		std::cerr << ERRSTR << "curve_straighline::deriv - both dx & dy are zero for t=" << t << " - bad curve\n";
 		exit(1);
 		}
 	}
@@ -807,7 +807,7 @@ line_raw::~line_raw()
 	}
 
 
-void line_raw::dodraw(ostream &out)
+void line_raw::dodraw(std::ostream &out)
 	{
 	if (do_whiteline)
 		{
@@ -819,10 +819,10 @@ void line_raw::dodraw(ostream &out)
 	}
 
 
-void line_raw::drawline(ostream &out, int whiteline, double thick)
+void line_raw::drawline(std::ostream &out, int whiteline, double thick)
 	{
-	cerr << ERRSTR << "Missing virtual function line_raw::drawline\n";
-	cerr << ERRSTR << "  contact " << AUTHOR << "\n";
+	std::cerr << ERRSTR << "Missing virtual function line_raw::drawline\n";
+	std::cerr << ERRSTR << "  contact " << AUTHOR << "\n";
 	exit(1);
 	}
 
@@ -893,7 +893,7 @@ void line_raw::arcthru(const xy &location, int ccw)
 		tadpole = 1;
 	else if (ISTINY(denom))
 		{
-		cerr << ERRSTR << "Illegal arcthru - the point lies on the line connecting the endpoints\n";
+		std::cerr << ERRSTR << "Illegal arcthru - the point lies on the line connecting the endpoints\n";
 		exit(1);
 		}
 
@@ -915,8 +915,8 @@ void line_raw::arcthru(const xy &location, int ccw)
 	radius = sqrt( SQR(x1-xc) + SQR(y1-yc) );
 	if (radius > BIGRADIUS)
 		{
-		cerr << ERRSTR << "warning - radius for arcthru() is huge.\n";
-		cerr << ERRSTR << "          Are the three points colinear?\n";
+		std::cerr << ERRSTR << "warning - radius for arcthru() is huge.\n";
+		std::cerr << ERRSTR << "          Are the three points colinear?\n";
 		}
 
 	theta1 = findangle(x1-xc,y1-yc);
@@ -940,8 +940,8 @@ void line_raw::arcthru(const xy &location, int ccw)
 
 		if (fabs(theta1-theta2) > 360)
 			{
-			cerr << ERRSTR << "Error - difference between starting & ending angles is\n";
-			cerr << ERRSTR << "        greater than 360 degress - notify " << AUTHOR << "\n";
+			std::cerr << ERRSTR << "Error - difference between starting & ending angles is\n";
+			std::cerr << ERRSTR << "        greater than 360 degress - notify " << AUTHOR << "\n";
 			exit(1);
 			}
 		}
@@ -963,8 +963,8 @@ void line_raw::ontop(int level)
 	{
 	if (level < 1 || level > 9)
 		{
-		cerr << ERRSTR << "Attempt to call ontop() with a level number not\n";
-		cerr << ERRSTR << "in the range 1-9\n";
+		std::cerr << ERRSTR << "Attempt to call ontop() with a level number not\n";
+		std::cerr << ERRSTR << "in the range 1-9\n";
 		exit(1);
 		}
 	do_whiteline = 1;
@@ -994,7 +994,7 @@ void line_plain::init()
 	}
 
 
-void line_plain::drawline(ostream &out, int whiteline, double thick)
+void line_plain::drawline(std::ostream &out, int whiteline, double thick)
 	{
 	double tmpx, tmpy;
 	double total_len;
@@ -1012,8 +1012,8 @@ void line_plain::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (spacelen.get() <= 0.0)
 			{
-			cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
-			cerr << spacelen.get() << '\n';
+			std::cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
+			std::cerr << spacelen.get() << '\n';
 			exit(1);
 			}
 		out << "[ " << fd->lencoord2pt(spacelen.get() * dsratio.get());
@@ -1041,7 +1041,7 @@ void line_plain::drawline(ostream &out, int whiteline, double thick)
 				out << carc->angle1() << " " << carc->angle2() << " arcn\n";
 			break;
 		default:
-			cerr << ERRSTR << "Unknown curve type encountered in line_plain::drawline()\n";
+			std::cerr << ERRSTR << "Unknown curve type encountered in line_plain::drawline()\n";
 			exit(1);
 		}
 	out << "ST\n";
@@ -1051,7 +1051,7 @@ void line_plain::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (arrowposition.get() < 0.0 || arrowposition.get() > 1.0)
 			{
-			cerr << ERRSTR << "line_plain::drawline arrow position must be in range [0,1]\n";
+			std::cerr << ERRSTR << "line_plain::drawline arrow position must be in range [0,1]\n";
 			exit(1);
 			}
 		else
@@ -1140,7 +1140,7 @@ void line_doubleplain::init()
 	}
 
 
-void line_doubleplain::drawline(ostream &out,int whiteline,double thick)
+void line_doubleplain::drawline(std::ostream &out,int whiteline,double thick)
 	{
 	double tmpx, tmpy;
 	double total_len;
@@ -1161,8 +1161,8 @@ void line_doubleplain::drawline(ostream &out,int whiteline,double thick)
 		{
 		if (spacelen.get() <= 0.0)
 			{
-			cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
-			cerr << spacelen.get() << '\n';
+			std::cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
+			std::cerr << spacelen.get() << '\n';
 			exit(1);
 			}
 		out << "[ " << fd->lencoord2pt(spacelen.get() * dsratio.get());
@@ -1201,7 +1201,7 @@ void line_doubleplain::drawline(ostream &out,int whiteline,double thick)
 				}
 			break;
 		default:
-			cerr << ERRSTR << "Unknown curve type encountered in line_doubleplain::drawline()\n";
+			std::cerr << ERRSTR << "Unknown curve type encountered in line_doubleplain::drawline()\n";
 			exit(1);
 		}
 	if (dashon.get())
@@ -1210,7 +1210,7 @@ void line_doubleplain::drawline(ostream &out,int whiteline,double thick)
 		{
 		if (arrowposition.get() < 0.0 || arrowposition.get() > 1.0)
 			{
-			cerr << ERRSTR << "line_doubleplain::drawline arrow position must be in range [0,1]\n";
+			std::cerr << ERRSTR << "line_doubleplain::drawline arrow position must be in range [0,1]\n";
 			exit(1);
 			}
 		else
@@ -1301,7 +1301,7 @@ void line_wiggle::init()
 	}
 
 
-void line_wiggle::drawline(ostream &out, int whiteline, double thick)
+void line_wiggle::drawline(std::ostream &out, int whiteline, double thick)
 	{
 	double total_len;
 	double dx, dy, dt=.0001, ds;
@@ -1327,8 +1327,8 @@ void line_wiggle::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (spacelen.get() <= 0.0)
 			{
-			cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
-			cerr << spacelen.get() << '\n';
+			std::cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
+			std::cerr << spacelen.get() << '\n';
 			exit(1);
 			}
 		out << "[ " << fd->lencoord2pt(spacelen.get() * dsratio.get());
@@ -1339,7 +1339,7 @@ void line_wiggle::drawline(ostream &out, int whiteline, double thick)
 	cntmax = (int) (total_len / len_val + 0.5);
 	if (cntmax < 2)
 		{
-		cerr << ERRSTR << "Warning: line_wiggle is very short\n";
+		std::cerr << ERRSTR << "Warning: line_wiggle is very short\n";
 		cntmax = 2;
 		}
 	len_val = total_len / cntmax;  /* re-adjust to get int num of wiggles */
@@ -1347,7 +1347,7 @@ void line_wiggle::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (arrowposition.get() < 0.0 || arrowposition.get() > 1.0)
 			{
-			cerr << ERRSTR << "line_wiggle::drawline arrow position must be in range [0,1]\n";
+			std::cerr << ERRSTR << "line_wiggle::drawline arrow position must be in range [0,1]\n";
 			exit(1);
 			}
 		cnt_putarrow = (int) (arrowposition.get() * cntmax + 0.5);
@@ -1474,7 +1474,7 @@ void line_spring::init()
 	}
 
 
-void line_spring::drawline(ostream &out, int whiteline, double thick)
+void line_spring::drawline(std::ostream &out, int whiteline, double thick)
 	{
 	double total_len;
 	double dx, dy, dt=.0001, ds;
@@ -1510,8 +1510,8 @@ void line_spring::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (spacelen.get() <= 0.0)
 			{
-			cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
-			cerr << spacelen.get() << '\n';
+			std::cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
+			std::cerr << spacelen.get() << '\n';
 			exit(1);
 			}
 		out << "[ " << fd->lencoord2pt(spacelen.get() * dsratio.get());
@@ -1522,7 +1522,7 @@ void line_spring::drawline(ostream &out, int whiteline, double thick)
 	cntmax = (int) ((total_len - len_val) / (len_val * (1. - f1)) + 0.5) + 1;
 	if (cntmax < 2)
 		{
-		cerr << ERRSTR << "Warning: line_spring is very short\n";
+		std::cerr << ERRSTR << "Warning: line_spring is very short\n";
 		cntmax = 2;
 		}
 	   /* re-adjust to get int num of springs */
@@ -1532,7 +1532,7 @@ void line_spring::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (arrowposition.get() < 0.0 || arrowposition.get() > 1.0)
 			{
-			cerr << ERRSTR << "line_spring::dodraw arrow position must be in range [0,1]\n";
+			std::cerr << ERRSTR << "line_spring::dodraw arrow position must be in range [0,1]\n";
 			exit(1);
 			}
 		cnt_putarrow = (int) (arrowposition.get() * cntmax);  // Not quite right...
@@ -1597,8 +1597,8 @@ void line_spring::drawline(ostream &out, int whiteline, double thick)
 				{
 				if (spacelen.get() <= 0.0)
 					{
-					cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
-					cerr << spacelen.get() << '\n';
+					std::cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
+					std::cerr << spacelen.get() << '\n';
 					exit(1);
 					}
 				out << "[ " << fd->lencoord2pt(spacelen.get() * dsratio.get());
@@ -1702,7 +1702,7 @@ void line_zigzag::init()
 	}
 
 
-void line_zigzag::drawline(ostream &out, int whiteline, double thick)
+void line_zigzag::drawline(std::ostream &out, int whiteline, double thick)
 	{
 	double len_val, width_val;
 	double dx, dy, dt=.0001, ds;
@@ -1727,8 +1727,8 @@ void line_zigzag::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (spacelen.get() <= 0.0)
 			{
-			cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
-			cerr << spacelen.get() << '\n';
+			std::cerr << ERRSTR << "'spacelen' must be greater than zero, it is: ";
+			std::cerr << spacelen.get() << '\n';
 			exit(1);
 			}
 		out << "[ " << fd->lencoord2pt(spacelen.get() * dsratio.get());
@@ -1739,7 +1739,7 @@ void line_zigzag::drawline(ostream &out, int whiteline, double thick)
 	cntmax = (int) (total_len / len_val + 0.5);
 	if (cntmax < 2)
 		{
-		cerr << ERRSTR << "Warning: line_zigzag is very short\n";
+		std::cerr << ERRSTR << "Warning: line_zigzag is very short\n";
 		cntmax = 2;
 		}
 	len_val = total_len / cntmax;  /* re-adjust to get int num of wiggles */
@@ -1747,7 +1747,7 @@ void line_zigzag::drawline(ostream &out, int whiteline, double thick)
 		{
 		if (arrowposition.get() < 0.0 || arrowposition.get() > 1.0)
 			{
-			cerr << ERRSTR << "line_zigzag::drawline arrow position must be in range [0,1]\n";
+			std::cerr << ERRSTR << "line_zigzag::drawline arrow position must be in range [0,1]\n";
 			exit(1);
 			}
 		cnt_putarrow = (int) (arrowposition.get() * cntmax + 0.5);
@@ -1834,7 +1834,7 @@ FeynDiagram::FeynDiagram(page &pg, double xmin_in, double xmax_in, double yref_i
 	}
 
 
-void FeynDiagram::prt_begin(ostream &out)
+void FeynDiagram::prt_begin(std::ostream &out)
 	{
 	}
 
@@ -2025,12 +2025,12 @@ boundingbox FeynDiagram::findbbox()
 	}
 
 
-void FeynDiagram::dodraw(ostream &out)
+void FeynDiagram::dodraw(std::ostream &out)
 	{
 	drawable *drawptr;
 
 #ifdef DEBUG
-	cerr << "outputting with head = " << (int)drawlist.head() << "\n";
+	std::cerr << "outputting with head = " << (int)drawlist.head() << "\n";
 #endif
 
 	prt_begin(out);
@@ -2127,15 +2127,15 @@ double FeynDiagram::xcoord2pt(double x)
 	double result;
 
 #ifdef DEBUG
-//cerr << "xcoord2pt called with " << x ;
+//std::cerr << "xcoord2pt called with " << x ;
 #endif
 	result = (x - xmin_coord) / (xmax_coord - xmin_coord);
 	result *= (xmax_inches - xmin_inches);
 	result += xmin_inches;
 	result = inch2pt(result);
 #ifdef DEBUG
-//cerr << " returning " << result << "\n";
-//cerr << "xmin_coord xmax_coord " << xmin_coord << " " << xmax_coord << "\n";
+//std::cerr << " returning " << result << "\n";
+//std::cerr << "xmin_coord xmax_coord " << xmin_coord << " " << xmax_coord << "\n";
 #endif
 	return result;
 	}
@@ -2187,7 +2187,7 @@ void FeynDiagram::pad_bbox(double top, double right, double bottom, double left)
 	}
 
 
-void FeynDiagram::showbbox(ostream &out, boundingbox bb)
+void FeynDiagram::showbbox(std::ostream &out, boundingbox bb)
 	{
 	if (!bb.isdefined())
 		return;
@@ -2223,16 +2223,16 @@ int FeynDiagram::find_prolog_needs()
 	}
 
 
-void page::insert_prolog_file(ostream &out, char *prefix, char *suffix)
+void page::insert_prolog_file(std::ostream &out, char *prefix, char *suffix)
 	{
 	char buf[1000];
 	char fname[MAX_FILENAME_LEN];
 	sprintf(fname,"%s%s",prefix,suffix);  
-	ifstream fin(fname);
+	std::ifstream fin(fname);
 
 	if (!fin)
 		{
-		cerr << ERRSTR << "Cannot open prolog file: " << fname << "\n";
+		std::cerr << ERRSTR << "Cannot open prolog file: " << fname << "\n";
 		exit(1);
 		}
 
@@ -2249,19 +2249,19 @@ void page::insert_prolog_file(ostream &out, char *prefix, char *suffix)
 	}
 
 
-void page::prt_begin(ostream &out, int numpages)
+void page::prt_begin(std::ostream &out, int numpages)
 	{
 	char buf[1000];
 	boundingbox bb;
 	int prolog_flags;
 	int blx, bly, bux, buy;
 
-	cerr << "FeynDiagram by Bill Dimm, bdimm@hotneuron.com\n";
-	cerr << "Version $Revision: 2.6 $   $Date: 2003/08/13 06:23:38 $\n";
+	std::cerr << "FeynDiagram by Bill Dimm, bdimm@hotneuron.com\n";
+	std::cerr << "Version $Revision: 2.6 $   $Date: 2003/08/13 06:23:38 $\n";
 #ifdef TESTVERSION
-	cerr << TESTVERSIONCOMMENT << "\n";
+	std::cerr << TESTVERSIONCOMMENT << "\n";
 #endif
-	cerr << "\n";
+	std::cerr << "\n";
 
 	out << "%!\n";
 	out << "%%Creator: FeynDiagram $Revision: 2.6 $  by Bill Dimm\n";
@@ -2312,7 +2312,7 @@ void page::prt_begin(ostream &out, int numpages)
 	}
 
 
-void page::prt_end(ostream &out)
+void page::prt_end(std::ostream &out)
 	{
 	out << "%%EOF\n";
 	}
@@ -2358,7 +2358,7 @@ boundingbox page::total_bbox()
 	}
 
 
-void page::dodraw(ostream &out)
+void page::dodraw(std::ostream &out)
 	{
 	drawable *drawptr;
 	boundingbox bb;
@@ -2373,7 +2373,7 @@ void page::dodraw(ostream &out)
 		if (bb.lowerleft.x() < 0 || bb.lowerleft.y() < 0 
 		   || bb.upperright.x() > PORTRAIT_MAXRIGHT 
 		   || bb.upperright.y() > PORTRAIT_MAXTOP)
-			cerr << ERRSTR << "Warning - this page may not fit on 8.5x11\" paper\n";
+			std::cerr << ERRSTR << "Warning - this page may not fit on 8.5x11\" paper\n";
 		}
 	out << "%%PageOrientation: Portrait\n";
 #ifndef NOSAVERESTORE
@@ -2387,7 +2387,7 @@ void page::dodraw(ostream &out)
 		if (!drawptr->ishidden())
 			{
 			++fdcnt;
-			cerr << "  FeynDiagram: " << fdcnt << "\n";
+			std::cerr << "  FeynDiagram: " << fdcnt << "\n";
 			drawptr->draw(out);
 			}
 		drawptr = drawptr->next();
@@ -2403,7 +2403,7 @@ void page::dodraw(ostream &out)
 
 
 // Outputs ALL non-hidden pages
-void page::output(ostream &out)
+void page::output(std::ostream &out)
 	{
 	int pgnum = 0;
 	drawable *drawptr;
@@ -2428,7 +2428,7 @@ void page::output(ostream &out)
 		if (!drawptr->ishidden())
 			{
 			++pgnum;
-			cerr << " Page: " << pgnum << "\n";
+			std::cerr << " Page: " << pgnum << "\n";
 			currentpagenum = pgnum;
 			drawptr->draw(out);
 			}
@@ -2492,7 +2492,7 @@ shading_lines::shading_lines(FeynDiagram &feyndiag, double x1, double y1, double
 	}
 
 
-void shading_lines::dodraw(ostream &out)
+void shading_lines::dodraw(std::ostream &out)
 	{
 	out << "NP\n";
 	out << fd->lencoord2pt(thickness.get()) << " SLW\n";
@@ -2514,7 +2514,7 @@ shading_dots::shading_dots(FeynDiagram &feyndiag, double x1, double y1, double x
 	}
 
 
-void shading_dots::dodraw(ostream &out)
+void shading_dots::dodraw(std::ostream &out)
 	{
 	out << "NP\n";
 	out << fd->lencoord2pt(spacing.get()) << " ";
@@ -2530,15 +2530,15 @@ blob::blob(FeynDiagram &fd, const xy &centerval, double rx, double ry)
    : FDpart(fd,10), center(centerval), thickness(&fd.blob_thickness)
 	{
 	if (rx < 0)
-		cerr << ERRSTR << "Warning: blob's x-radius is negative\n";
+		std::cerr << ERRSTR << "Warning: blob's x-radius is negative\n";
 	if (ry < 0)
-		cerr << ERRSTR << "Warning: blob's y-radius is negative\n";
+		std::cerr << ERRSTR << "Warning: blob's y-radius is negative\n";
 	radiusx = rx;
 	radiusy = ry;
 	}
 
 
-void blob::dodraw(ostream &out)
+void blob::dodraw(std::ostream &out)
 	{
 	drawable *drawptr;
 
@@ -2725,7 +2725,7 @@ double text::approx_strlen()
 	}
 
 
-void text::dodraw(ostream &out)
+void text::dodraw(std::ostream &out)
 	{
 #ifdef PSCOMMENTS
 	out << "% Start of text\n";

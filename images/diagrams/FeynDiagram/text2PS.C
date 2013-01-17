@@ -180,7 +180,7 @@ static struct text2PS_symbol_translation text2PS_syms[] =
 	};
 
 
-static void startfont(ostream &out, char *fontname, double fontsize)
+static void startfont(std::ostream &out, char *fontname, double fontsize)
 	{
 	out << "/" << fontname << " " << fontsize << " SF\n";
 	out << "(";
@@ -190,7 +190,7 @@ static void startfont(ostream &out, char *fontname, double fontsize)
 /* If pathonly is true, it just finds the path path for the text rather
  * than actually filling it (using show)
  */
-static void endfont(ostream &out, int pathonly)
+static void endfont(std::ostream &out, int pathonly)
 	{
 	if (pathonly)
 		out << ") true CP\n";
@@ -199,13 +199,13 @@ static void endfont(ostream &out, int pathonly)
 	}
 
 
-static char *outputobj(ostream &out, char *textptr, char *fontname, double fontsize, int pathonly);
+static char *outputobj(std::ostream &out, char *textptr, char *fontname, double fontsize, int pathonly);
 
 
 /* When this exits, there is no font active, and assumes there is no
  * font active when it starts.
  */
-static char *outputsubscript(ostream &out, char *textptr, char *fontname, double fontsize, int pathonly)
+static char *outputsubscript(std::ostream &out, char *textptr, char *fontname, double fontsize, int pathonly)
 	{
 	char *result;
 
@@ -220,7 +220,7 @@ static char *outputsubscript(ostream &out, char *textptr, char *fontname, double
 /* When this exits, there is no font active, and assumes there is no
  * font active when it starts.
  */
-static char *outputsuperscript(ostream &out, char *textptr, char *fontname, double fontsize, int pathonly)
+static char *outputsuperscript(std::ostream &out, char *textptr, char *fontname, double fontsize, int pathonly)
 	{
 	char *result;
 
@@ -232,7 +232,7 @@ static char *outputsuperscript(ostream &out, char *textptr, char *fontname, doub
 	}
 
 
-static void outputchar(ostream &out, char ch)
+static void outputchar(std::ostream &out, char ch)
 	{
 	if (ch == '(' || ch == ')' || ch == '\\')
 		out << '\\';
@@ -243,7 +243,7 @@ static void outputchar(ostream &out, char ch)
 /* switchfont() only switches fonts if they are actually 
  * different (they should both be the same size
  */
-static void switchfont(ostream &out, char *font_old, char *font_new
+static void switchfont(std::ostream &out, char *font_old, char *font_new
  , double fontsize, int pathonly)
 	{
 	if (strcmp(font_old,font_new) != 0)
@@ -262,10 +262,10 @@ static void switchfont(ostream &out, char *font_old, char *font_new
  * get back to original position and do startfont to get the
  * text going again.
  */
-static void get_overline_coords(ostream &out, char *endptr, char *fontname
+static void get_overline_coords(std::ostream &out, char *endptr, char *fontname
  , double fontsize , int pathonly)
 	{
-	char *outputobj(ostream &out, char *textptr, char *fontname, double fontsize
+	char *outputobj(std::ostream &out, char *textptr, char *fontname, double fontsize
 	 , int pathonly);
 
 	endfont(out,pathonly);
@@ -287,7 +287,7 @@ static void get_overline_coords(ostream &out, char *endptr, char *fontname
  *  how much space they take up.  This eats printer memory - our printer
  *  has a limit of about 30 characters.
  */
-static char *outputobj(ostream &out, char *textptr, char *fontname, double fontsize, int pathonly)
+static char *outputobj(std::ostream &out, char *textptr, char *fontname, double fontsize, int pathonly)
 	{
 	int idx, length, cnt;
 	char *newtextptr;
@@ -340,8 +340,8 @@ static char *outputobj(ostream &out, char *textptr, char *fontname, double fonts
 			{
 			if (*endptr != '{')
 				{
-				cerr << ERRSTR << "Expect '{fontname}' after \\font, but found ";
-				cerr << '\'' << endptr << "'\n";
+				std::cerr << ERRSTR << "Expect '{fontname}' after \\font, but found ";
+				std::cerr << '\'' << endptr << "'\n";
 				exit(1);
 				}
 			++endptr;
@@ -355,7 +355,7 @@ static char *outputobj(ostream &out, char *textptr, char *fontname, double fonts
 			newfontname[cnt] = '\0';
 			if (*endptr != '}')
 				{
-				cerr << ERRSTR << "Missing '}' in \\font{fontname}\n";
+				std::cerr << ERRSTR << "Missing '}' in \\font{fontname}\n";
 				exit(1);
 				}
 			switchfont(out,fontname,newfontname,fontsize,pathonly);
@@ -540,7 +540,7 @@ static char *outputobj(ostream &out, char *textptr, char *fontname, double fonts
  * fontsize - size of font in points
  * fontname - name of Postscript font known by the printer (for normal text)
  */
-void text2PS(ostream &out, char *textptr, double fontsize, char *fontname)
+void text2PS(std::ostream &out, char *textptr, double fontsize, char *fontname)
 	{
 	startfont(out,fontname,fontsize);
 
@@ -571,7 +571,7 @@ void text2PS(ostream &out, char *textptr, double fontsize, char *fontname)
  * flattened path which is used to figure out how much space the text takes
  * up.
  */
-void text2PS(ostream &out, char *textptr, double horizfract, double vertfract
+void text2PS(std::ostream &out, char *textptr, double horizfract, double vertfract
    , double fontsize, char *fontname)
 	{
 	char *tmp;

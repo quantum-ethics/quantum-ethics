@@ -21,7 +21,7 @@
 
 // $Id: fd.h,v 2.6 2003/08/13 06:23:38 billd Exp $
 
-#include <iostream.h>
+#include <iostream>
 #include <math.h>
 #include <FeynDiagram/default.h>
 
@@ -111,7 +111,7 @@ class drawable
 	protected:
 		int           priority;  // Highest priority is drawn first
 		drawable_list *drawlist;  // name of list this is linked into
-		virtual void  dodraw(ostream &out);
+		virtual void  dodraw(std::ostream &out);
 		virtual boundingbox findbbox();
 
 	public:
@@ -120,7 +120,7 @@ class drawable
 		drawable      *next() { return nextptr; }
 		int           ishidden() { return ishiddenflag; }
 		void          hide() { ishiddenflag = 1; }
-		void          draw(ostream &out = cout);
+		void          draw(std::ostream &out = std::cout);
 		boundingbox   bbox();
 		virtual int   find_prolog_needs();
 		int           prolog_needs();  // gives flags for what prologs are needed
@@ -228,15 +228,15 @@ class FeynDiagram : public drawable
 		double        pad_bbox_bottom;
 		double        pad_bbox_left;
 
-		void          prt_begin(ostream &out);
+		void          prt_begin(std::ostream &out);
 		double        inch2pt(double x) { return x * 72.0; }
 		void          setwithmin(deflt_double &param, double val, double min);
 		friend        FDpart::FDpart(FeynDiagram &fd,int priority,drawable_list *);
 		drawable_list drawlist;
-		void          dodraw(ostream &out);
+		void          dodraw(std::ostream &out);
 		boundingbox   findbbox_usercoords();
 		boundingbox   findbbox();
-		void          showbbox(ostream &out, boundingbox bb);
+		void          showbbox(std::ostream &out, boundingbox bb);
 
 	public:
 		void          init(page &pg,double xmin_in, double xmax_in, double yref_in);
@@ -357,13 +357,13 @@ class page : public drawable
 	private:
 		friend        void FeynDiagram::init(page &, double, double, double);
 		drawable_list fdlist;
-		void          prt_begin(ostream &out, int numpages);
-		void          prt_end(ostream &out);
+		void          prt_begin(std::ostream &out, int numpages);
+		void          prt_end(std::ostream &out);
 		static drawable_list pagelist;
 		static int    currentpagenum;  // Which one it is currently outputting
-		void          dodraw(ostream &out);
+		void          dodraw(std::ostream &out);
 		boundingbox   findbbox();
-		void          insert_prolog_file(ostream &out, char *prefix, char *suffix);
+		void          insert_prolog_file(std::ostream &out, char *prefix, char *suffix);
 
 	public:
 		static void   (*adjustparams)(FeynDiagram &fd, double rescale);
@@ -371,7 +371,7 @@ class page : public drawable
 
 		              page();
 		virtual       ~page();
-		void          output(ostream &out = cout);
+		void          output(std::ostream &out = std::cout);
 		boundingbox   total_bbox();  // Gets bounding box for all pages
 		int           find_prolog_needs();
 		int           total_prolog_needs();  // Gets prolog needs for all pages
@@ -384,7 +384,7 @@ class vertex_raw : public FDpart
 		xy            loc;
 		double        orient_angle;
 		void          init(FeynDiagram &fd, double dx, double dy);
-		void          dodraw(ostream &out);
+		void          dodraw(std::ostream &out);
 		boundingbox   findbbox();
 
 	protected:
@@ -469,8 +469,8 @@ class line_raw : public FDpart
 		int           do_whiteline;
 
 	protected:
-		void          dodraw(ostream &out);
-		virtual void  drawline(ostream &out,int whiteline, double thick);
+		void          dodraw(std::ostream &out);
+		virtual void  drawline(std::ostream &out,int whiteline, double thick);
 		boundingbox   pathbbox();
 		double        findangle(double dx,double dy);
 
@@ -496,7 +496,7 @@ class line_raw : public FDpart
 class line_plain : public line_raw
 	{
 	private:
-		void          drawline(ostream &out,int whiteline, double thick);
+		void          drawline(std::ostream &out,int whiteline, double thick);
 		boundingbox   findbbox();
 		static const double  positionprec;
 		static const double  derivprec;
@@ -510,7 +510,7 @@ class line_plain : public line_raw
 class line_doubleplain : public line_raw
 	{
 	private:
-		void          drawline(ostream &out,int whiteline, double thick);
+		void          drawline(std::ostream &out,int whiteline, double thick);
 		boundingbox   findbbox();
 		static const double  positionprec;
 		static const double  derivprec;
@@ -526,7 +526,7 @@ class line_doubleplain : public line_raw
 class line_wiggle : public line_raw
 	{
 	private:
-		void          drawline(ostream &out,int whiteline, double thick);
+		void          drawline(std::ostream &out,int whiteline, double thick);
 		boundingbox   findbbox();
 		static const double  positionprec;
 		static const double  derivprec;
@@ -544,7 +544,7 @@ class line_wiggle : public line_raw
 class line_spring : public line_raw
 	{
 	private:
-		void          drawline(ostream &out,int whiteline, double thick);
+		void          drawline(std::ostream &out,int whiteline, double thick);
 		boundingbox   findbbox();
 		static const double  positionprec;
 		static const double  derivprec;
@@ -568,7 +568,7 @@ class line_spring : public line_raw
 class line_zigzag : public line_raw
 	{
 	private:
-		void          drawline(ostream &out,int whiteline, double thick);
+		void          drawline(std::ostream &out,int whiteline, double thick);
 		boundingbox   findbbox();
 		static const double  positionprec;
 		static const double  derivprec;
@@ -598,7 +598,7 @@ class shading_raw : public FDpart
 class shading_lines : public shading_raw
 	{
 	private:
-		void          dodraw(ostream &out);
+		void          dodraw(std::ostream &out);
 
 	public:
 		deflt_double  thickness;
@@ -612,7 +612,7 @@ class shading_lines : public shading_raw
 class shading_dots : public shading_raw
 	{
 	private:
-		void          dodraw(ostream &out);
+		void          dodraw(std::ostream &out);
 
 	public:
 		deflt_double  radius;
@@ -630,7 +630,7 @@ class blob : public FDpart
 		xy            center;
 		double        radiusx;
 		double        radiusy;
-		void          dodraw(ostream &out);
+		void          dodraw(std::ostream &out);
 		boundingbox   findbbox();
 
 	public:
@@ -653,7 +653,7 @@ class text : public FDpart
 		double        orient_angle;
 		char          *textstr;
 		double        approx_strlen();
-		void          dodraw(ostream &out);
+		void          dodraw(std::ostream &out);
 		boundingbox   findbbox();
 		double        horizfract;
 		double        vertfract;
