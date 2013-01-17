@@ -16,6 +16,7 @@ all:
 	make F=Charged_Fermion_Energy_2b
 	make F=Photon_Energy_2a
 	make F=Photon_Energy_2b
+	make F=Photon
 
 clean:
 	rm Coulomb_Scattering.ps
@@ -24,4 +25,5 @@ clean:
 	rm Charged_Fermion_Energy_2b.ps
 	rm Photon_Energy_2a.ps
 	rm Photon_Energy_2b.ps
+	rm Photon.ps
 
