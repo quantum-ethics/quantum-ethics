@@ -1,22 +1,11 @@
 \documentclass[10pt,a4paper,twoside,openany]{book}
 \usepackage{etoolbox}
-\newtoggle{paperback}
-\toggletrue{paperback}
-\iftoggle{paperback}
-{
 \usepackage{emptypage}
 \pagestyle{myheadings}
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
 \patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
 \let\stdpart\part\renewcommand*\part{\cleardoublepage\stdpart}
 \usepackage[paperwidth=6in,paperheight=9in,top=19mm,bottom=10mm,outer=10mm,inner=14mm,pdftex]{geometry}
-}
-{
-\pagestyle{myheadings}
-\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
-\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
-\usepackage[top=.75in,bottom=.75in,outer=.75in,inner=.75in,pdftex]{geometry}
-}
 \usepackage[utf8]{inputenc}
 \usepackage[american]{babel}
 \usepackage{lmodern}
@@ -261,53 +250,22 @@
 \null
 \vfill
 \begin{center}
-\iftoggle{paperback}
-{
 {\Huge \textbf{Quantum\\Ethics}}
 \vskip 1.2cm
 A Spinozist Interpretation \\
 of Quantum Field Theory
 \vskip 2cm
 {\large Sébastien Fauvel}
-}
-{
-{\LARGE Quantum Ethics} \\
---- \\
-A Spinozist Interpretation \\
-of Quantum Field Theory
-\vskip 1cm
-{\large Sébastien Fauvel\footnotemark[2]}
-\vskip 5mm
-{\large \today}
-\footnotetext[2]{Contact: Sébastien Fauvel, Ackerstrasse~43, CH-4057 Basel, Switzerland. E-mail: \htmladdnormallink{\texttt{sebastien.fauvel@gmx.ch}}{mailto:sebastien.fauvel@gmx.ch}.}
-}
 \end{center}
 \vfill
 \null
 
 \newpage
 
-\iftoggle{paperback}
-{
 \null
 \vfill
 \noindent{\small Cover image: Hubble telescope image of the Carina Nebula, 2007.\\
 Photograph: NASA, ESA, N. Smith (University of California, Berkeley), and The Hubble Heritage Team (STScI/AURA).}
-}
-{
-\null
-\vfill
-\begin{center}
-{\large © Copyright 2010--\the\year~Sébastien Fauvel}
-\vskip 1cm
-This work is licensed under the \\
-Creative Commons Attribution-ShareAlike 3.0 Unported License. \\
-To view a copy of this license, visit \\
-\htmladdnormallink{http://creativecommons.org/licenses/by-sa/3.0/}{http://creativecommons.org/licenses/by-sa/3.0/}.
-\end{center}
-\vfill
-Document available online at \htmladdnormallink{quantum-ethics.org}{http://quantum-ethics.org}.
-}
 
 \cleardoublepage
 \section*{Acknowledgements}
