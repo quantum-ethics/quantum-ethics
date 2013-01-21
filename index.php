@@ -38,10 +38,10 @@
 		</div>
 		<div id="abstract">
 			<div id="download">
-				<a href="Quantum%20Field%20Theory.php">
+				<a href="https://www.createspace.com/4105900">
 					<img src="images/pictures/One_Loop_QED_Vacuum_Energy_Diagram.jpg" width="250" height="325" border="0" alt="" title="One-Loop QED Vacuum Energy Diagram" />
 					<br />
-					Download full PDF
+					Order on Amazon
 					<img src="images/pictures/Quantum_Ethics.gif" align="middle" border="0" alt="" width="35" height="39" title="Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory" />
 				</a>
 			</div>
@@ -65,24 +65,6 @@
 			<br />
 			<p><? $mtime = filemtime( 'Quantum Field Theory.pdf' ); print date( 'F, Y', $mtime ? $mtime : time() ); ?></p>
 			<p>Sébastien Fauvel</p>
-			<br />
-			<div id="sharing">
-				<div class="addthis_toolbox addthis_default_style">
-					<a class="addthis_counter addthis_pill_style"></a>
-				</div>
-				<br />
-				<a href="http://flattr.com/thing/473083/Quantum-Ethics-A-Spinozist-Interpretation-of-Quantum-Field-Theory" target="_blank">
-					<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
-				</a> 
-			</div>
-			<div id="licence">
-				<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
-					<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" />
-				</a>
-				<br />
-				<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Quantum Ethics</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ens.academia.edu/S%C3%A9bastienFauvel" property="cc:attributionName" rel="cc:attributionURL">Sébastien Fauvel</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />
-				<span>Source code available on <a href="https://github.com/fauvel/Quantum-Ethics">GitHub</a> for collaboration.</span>
-			</div>
 		</div>
 	</body>
 </html><? include_once '../../visitors.php'; ?>
