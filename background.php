@@ -1,10 +1,10 @@
 <?
 
-$original_width = 1024;
-$original_height = 768;
+$original_width = 1280;
+$original_height = 1024;
 
-$default_width = 1024;
-$default_height = 768;
+$default_width = 1280;
+$default_height = 1024;
 
 $max_width = $default_width * 2;
 $max_height = $default_height * 2;
@@ -19,8 +19,8 @@ $height = round( $original_height * $scale );
 
 $images_directory = 'images/pictures/';
 
-$original_image_file = 'Particle_Tracks.png';
-$resized_image_file = "Particle_Tracks_{$width}x{$height}.jpg";
+$original_image_file = 'hs-2007-16-f-1280_wallpaper.jpg';
+$resized_image_file = "hs-2007-16-f-1280_wallpaper_{$width}x{$height}.jpg";
 
 if( !file_exists( $images_directory.$resized_image_file ) ) {
 	resizeImage();
@@ -36,7 +36,7 @@ header( 'location:'.$images_directory.rawurlencode( $resized_image_file ) );
 
 function resizeImage() {
 	global $images_directory, $original_image_file, $width, $height, $resized_image_file;
-	$original_image = imagecreatefrompng( $images_directory.$original_image_file );
+	$original_image = imagecreatefromjpeg( $images_directory.$original_image_file );
 	$resized_image = imagecreatetruecolor( $width, $height );
 	imagecopyresampled( $resized_image, $original_image, 0, 0, 0, 0, $width, $height, 1024, 768 );
 	imagejpeg( $resized_image, $images_directory.$resized_image_file );
