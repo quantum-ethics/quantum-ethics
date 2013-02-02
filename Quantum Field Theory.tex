@@ -713,12 +713,12 @@ The functions $\SmE n {E_n, \dotsc, E_0}$ can be calculated recursively accordin
 \SmE{n + 1}{E_{n + 1}, E_n, \dotsc, E_0} = \frac 1 {E_{n + 1} - E_n} \left( \SmE n {E_{n + 1}, \dotsc, E_0} \right. \\
 \left. - \exp{\i 2 \pi \frac{t - t_0} \h ( E_{n + 1} - E_n )} \SmE n {E_n, \dotsc, E_0} \right)
 \end{multline*}
-where the esinc function is defined as in \ref{esinc}. To the second order, for instance, we have:
+where the esinc function is defined as in appendix \ref{esinc}. To the second order, for instance, we have:
 \begin{multline*}
 \SmE 2 {E_2, E_1, E_0} = -\i 2 \pi \frac{t - t_0} \h \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_0 )} \frac 1 {E_2 - E_1} \\
 \left[ \sinc{\frac{t - t_0} \h ( E_2 - E_0 )} - \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_1 )} \sinc{\frac{t - t_0} \h ( E_1 - E_0 )} \right]
 \end{multline*}
-where the sinc function is defined as in \ref{sinc}.
+where the sinc function is defined as in appendix \ref{sinc}.
 
 \section{Perturbative development}
 
@@ -891,7 +891,7 @@ The first interesting terms in the development of the transition probability are
 & = & ( 2 \pi )^2 \frac{t - t_0} \h \left| H'_{f,i} \right|^2 \deltaE2{E_f - E_i} \\
 && -\delta_{f,i} ( 2 \pi )^2 \frac{t - t_0} \h \sum_{\bFQ {N_1} \pt \q \sp} \left| H'_{1,i} \right|^2 \deltaE2{E_1 - E_i}
 \end{eqnarray*}
-where the nascent delta function $\deltaE2{E}$ is defined as in \ref{delta}.
+where the nascent delta function $\deltaE2{E}$ is defined as in appendix \ref{delta}.
 
 \section{Higher order transition probability}
 
@@ -912,7 +912,7 @@ To the third order, for instance, the transition probability for $f \neq i$ read
 \sum_{\bFQ {N_1} \pt \q \sp} \left[ \Im \left( H'_{i,f} H'_{f,1} H'_{1,i} \right ) \deltaE1{E_f - E_1} \deltaE1{E_1 - E_i} \right. \\
 \left. + \Re \left( H'_{i,f} H'_{f,1} H'_{1,i} \right ) \frac{\deltaE1{E_f - E_i} - \cos{\pi \frac{t - t_0} \h ( E_f - E_1 )} \deltaE1{E_1 - E_i}}{\pi ( E_f - E_1 )} \right]
 \end{multline*}
-where the nascent delta function $\deltaE1{E}$ is defined as in \ref{delta}.
+where the nascent delta function $\deltaE1{E}$ is defined as in appendix \ref{delta}.
 
 \section{Ideal experimental setup}
 
@@ -1021,6 +1021,14 @@ The states (modes) of God (the substance) are evidently identified, under their 
 \end{equation*}
 The states of God, taking the general form $(\ket \Psi, \cms)$, are said to be ``real'' if $\ket \Psi \in \H_\cms$ and ``virtual'' otherwise. An elementary evolution step of the state of God proceeds from a real state $(\ket{\Psi_0}, \cms_0)$, first evolving to a generally virtual state $(\op U_\tau \ket{\Psi_0}, \cms_0)$ and eventually collapsing to one of the real states $(\op{\Pi}_{\cms_1} \op U_\tau \ket{\Psi_0}, \cms_1)$ with a probability $\bra{\Psi_0} \dop U_\tau \op{\Pi}_{\cms_1} \op U_\tau \ket{\Psi_0} / \braket{\Psi_0}{\Psi_0}$.
 
+\chapter{Interpretation}
+
+\section{The role of consciousness}
+
+\section{Epistemological considerations}
+
+\section{The Spinozist approach to Quantum Physics}
+
 %TODO Physical issues
 %\chapter{Physical issues}
 
@@ -1115,13 +1123,13 @@ On each point $\n$ of space, the electric charge operator is defined by:
 \begin{equation*}
 \Qop \n \eqdef \e \sum_{\pt,\sp',\sp} \Qp \pt \left( \SCop \pt \n {\sp'} + \SAop {\antiparticle \pt} \n {\sp'} \right) \gammat 0 \left( \SAop \pt \n \sp + \SCop {\antiparticle \pt} \n \sp \right)
 \end{equation*}
-where $\e$ is the elementary electric charge (opposite electric charge of a bare electron) and $\Qp \pt$ the electric charge number of fermions of type $\pt$: $\Qp \pt = 0$ for the neutrinos $\pt \in \{ \neutrinoelectron, \neutrinomuon, \neutrinotauon \}$, $\Qp \pt = -1$ for the charged leptons $\pt \in \{ \electron, \muon, \tauon \}$, $\Qp \pt = \frac 2 3$ for the quarks $\pt \in \{ \quarkup, \quarkcharm, \quarktop \}$ and $\Qp \pt = - \frac 1 3$ for the quarks $\pt \in \{ \quarkdown, \quarkstrange, \quarkbottom \}$. In this expression, the creation and annihilation spinor operators are defined as in \ref{Dirac spinors} and the Dirac matrices as in \ref{Dirac matrices}.
+where $\e$ is the elementary electric charge (opposite electric charge of a bare electron) and $\Qp \pt$ the electric charge number of fermions of type $\pt$: $\Qp \pt = 0$ for the neutrinos $\pt \in \{ \neutrinoelectron, \neutrinomuon, \neutrinotauon \}$, $\Qp \pt = -1$ for the charged leptons $\pt \in \{ \electron, \muon, \tauon \}$, $\Qp \pt = \frac 2 3$ for the quarks $\pt \in \{ \quarkup, \quarkcharm, \quarktop \}$ and $\Qp \pt = - \frac 1 3$ for the quarks $\pt \in \{ \quarkdown, \quarkstrange, \quarkbottom \}$. In this expression, the creation and annihilation spinor operators are defined as in appendix \ref{Dirac spinors} and the Dirac matrices as in appendix \ref{Dirac matrices}.
 
 The anti-particle creation and annihilation spinor operators in this expression yield to a uniformly distributed mean electric charge in the vacuum state, given by:
 \begin{equation*}
 \bra \vac \Qop \n \ket \vac = \e \sum_{\pt,\sp} \Qp \pt = - 4 \e
 \end{equation*}
-Since the charge distribution is uniform, it doesn't have any contribution to the interaction Hamiltonian as defined in \ref{QED interaction Hamiltonian}.
+Since the charge distribution is uniform, it doesn't have any contribution to the interaction Hamiltonian as defined in section \ref{QED interaction Hamiltonian}.
 
 \section{Electric current operator}
 
@@ -1129,7 +1137,7 @@ On each point $\n$ of space, the electric current operator is defined by:
 \begin{equation*}
 \Jop \n \eqdef \e \c \sum_{\pt,\sp',\sp} \Qp \pt \left( \SCop \pt \n {\sp'} + \SAop {\antiparticle \pt} \n {\sp'} \right) \gamvec \left( \SAop \pt \n \sp + \SCop {\antiparticle \pt} \n \sp \right)
 \end{equation*}
-where the summation goes over all fermions $\pt$. In this expression, the creation and annihilation spinor operators are defined as in \ref{Dirac spinors} and the Dirac matrices as in \ref{Dirac matrices}.
+where the summation goes over all fermions $\pt$. In this expression, the creation and annihilation spinor operators are defined as in appendix \ref{Dirac spinors} and the Dirac matrices as in appendix \ref{Dirac matrices}.
 
 \section{Electric potential operator}
 
@@ -1137,7 +1145,7 @@ On each point $\n$ of space, the electric potential operator is defined by:
 \begin{equation*}
 \Vop \n \eqdef \sum_{\n'} \frac{\Qop {\n'}}{8 \pi \vpty \a} ( 1 + 2 \N )^{-3} \sum_{\q_\photon \neq \sv 0} \frac{\exp{\i 2 \pi \q_\photon \ssp ( \n - \n' )}}{\pi q_\photon^2}
 \end{equation*}
-where $\vpty$ is the permittivity of the bare vacuum. Its constant Fourier component has been set to $0$ (which is consistent with the Coulomb gauge condition used in \ref{Photon spinors}), so that the zero-point electric charge in \ref{Electric charge operator} doesn't have any contribution to the interaction Hamiltonian as defined in \ref{QED interaction Hamiltonian}.
+where $\vpty$ is the permittivity of the bare vacuum. Its constant Fourier component has been set to $0$ (which is consistent with the Coulomb gauge condition used in appendix \ref{Photon spinors}), so that the zero-point electric charge in section \ref{Electric charge operator} doesn't have any contribution to the interaction Hamiltonian as defined in section \ref{QED interaction Hamiltonian}.
 
 \section{Magnetic potential operator}
 
@@ -1145,7 +1153,7 @@ On each point $\n$ of space, the magnetic potential operator is defined by:
 \begin{equation*}
 \Aop \n \eqdef \sum_{\sp_\photon} \tSCop \photon \n {\sp_\photon} + \tSAop \photon \n {\sp_\photon}
 \end{equation*}
-In this expression, the creation and annihilation spinor operators are defined as in \ref{Photon spinors}.
+In this expression, the creation and annihilation spinor operators are defined as in appendix \ref{Photon spinors}.
 
 \section{QED interaction Hamiltonian}
 \label{QED interaction Hamiltonian}
@@ -1499,7 +1507,7 @@ In this document, the esinc function is defined by:
 \begin{equation*}
 \esinc{X} \eqdef \exp{\i \pi X} \sinc{X}
 \end{equation*}
-where the sinc function is defined as in \ref{sinc}. This function admits following integral expression:
+where the sinc function is defined as in appendix \ref{sinc}. This function admits following integral expression:
 \begin{equation*}
 \esinc{X} = \frac 1 X \int_0^X \exp{\i 2 \pi x} \dx
 \end{equation*}
@@ -1520,7 +1528,7 @@ In this document, we make use of following nascent delta functions, which conver
 \deltaE1{E} & \eqdef & \frac{t - t_0} \h \sinc{\frac{t - t_0} \h E} \\
 \deltaE2{E} & \eqdef & \frac{t - t_0} \h \sinc{\frac{t - t_0} \h E}^2
 \end{eqnarray*}
-where the sinc function is defined as in \ref{sinc}. The square of the first one can be expressed in terms of the second one as:
+where the sinc function is defined as in appendix \ref{sinc}. The square of the first one can be expressed in terms of the second one as:
 \begin{equation*}
 \deltaE1{E}^2 = \frac{t - t_0} \h \deltaE2{E}
 \end{equation*}
@@ -1529,7 +1537,7 @@ We also make use of following family of functions converging to a distribution a
 \begin{equation*}
 \deltaE\PV{E} \eqdef 2 \frac{t - t_0} \h \esinc{\frac{t - t_0} \h E}
 \end{equation*}
-where the esinc function is defined as in \ref{esinc}. Its limit is given by:
+where the esinc function is defined as in appendix \ref{esinc}. Its limit is given by:
 \begin{equation*}
 \lim_{t - t_0 \to \infty} \deltaE\PV{E} = \delta(E) + \frac \i \pi \PV \left( \frac 1 E \right)
 \end{equation*}
