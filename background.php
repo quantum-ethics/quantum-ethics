@@ -3,11 +3,11 @@
 $original_width = 1280;
 $original_height = 1024;
 
-$default_width = 1280;
-$default_height = 1024;
+$default_width = $original_width;
+$default_height = $original_height;
 
-$max_width = $default_width * 2;
-$max_height = $default_height * 2;
+$max_width = $default_width * 10;
+$max_height = $default_height * 10;
 
 $width = ( intval( $_GET['w'] ) > 0 ) && ( intval( $_GET['w'] ) <= $max_width ) ? intval( $_GET['w'] ) : $default_width;
 $height = ( intval( $_GET['h'] ) > 0 ) && ( intval( $_GET['h'] ) <= $max_height ) ? intval( $_GET['h'] ) : $default_height;
@@ -25,9 +25,10 @@ $resized_image_file = "hs-2007-16-f-1280_wallpaper_{$width}x{$height}.jpg";
 if( !file_exists( $images_directory.$resized_image_file ) ) {
 	resizeImage();
 } else {
+	$script_ctime = filectime( __FILE__ );
 	$original_image_ctime = filectime( $images_directory.$original_image_file );
 	$resized_image_ctime = filectime( $images_directory.$resized_image_file );
-	if( $original_image_ctime >= $resized_image_ctime ) {
+	if( ( $original_image_ctime >= $resized_image_ctime ) || ( $script_ctime >= $resized_image_ctime ) ) {
 		resizeImage();
 	}
 }
@@ -35,10 +36,10 @@ if( !file_exists( $images_directory.$resized_image_file ) ) {
 header( 'location:'.$images_directory.rawurlencode( $resized_image_file ) );
 
 function resizeImage() {
-	global $images_directory, $original_image_file, $width, $height, $resized_image_file;
+	global $images_directory, $original_image_file, $original_width, $original_height, $resized_image_file, $width, $height;
 	$original_image = imagecreatefromjpeg( $images_directory.$original_image_file );
 	$resized_image = imagecreatetruecolor( $width, $height );
-	imagecopyresampled( $resized_image, $original_image, 0, 0, 0, 0, $width, $height, 1024, 768 );
+	imagecopyresampled( $resized_image, $original_image, 0, 0, 0, 0, $width, $height, $original_width, $original_height );
 	imagejpeg( $resized_image, $images_directory.$resized_image_file );
 }
 
