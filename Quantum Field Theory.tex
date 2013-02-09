@@ -394,7 +394,7 @@ We postulate that a one particle state is given by any linear combination of the
 \begin{equation*}
 \ket{\Psi} = \sum_{\pt,\n,\sp} \Psi(\bX 1 \pt \n \sp) \ketX 1 \pt \n \sp
 \end{equation*}
-with arbitrary complex coefficients $\Psi(\bX 1 \pt \n \sp)$. The set of all these vectors, taken as an orthogonal basis, forms a finite dimensional Hilbert space written $\Hn 1$ and given by:
+with arbitrary complex coefficients $\Psi(\bX 1 \pt \n \sp)$. The set of all these vectors, taken as an orthonormal basis, forms a finite dimensional Hilbert space written $\Hn 1$ and given by:
 \begin{equation*}
 \Hn 1 \eqdef \bigoplus^\perp_{\pt,\n,\sp} \IC \ketX 1 \pt \n \sp
 \end{equation*}
@@ -409,7 +409,7 @@ and that the (hypothetical) physical state in which the universe only contains a
 \ketQ 1 \pt \q \sp \eqdef (1+2 \N)^{-3/2} \sum_{\n} \exp{\i 2 \pi \n \ssp \q} \ketX 1 \pt \n \sp
 \end{equation*}
 
-These vectors form an orthogonal basis of the Hilbert space $\Hn 1$ and we will use the notation:
+These vectors form an orthonormal basis of the Hilbert space $\Hn 1$ and we will use the notation:
 \begin{equation*}
 \ket\Psi = \sum_{\pt,\q,\sp} \FT\Psi(\bQ 1 \pt \q \sp) \ketQ 1 \pt \q \sp
 \end{equation*}
@@ -477,7 +477,7 @@ and is called a ``localized state''. We postulate that a many particles state is
 \end{eqnarray*}
 where the (finite) integer $\M \pt$ is the maximum occupation number of the field $\pt$.
 
-The set of all these vectors, taken as an orthogonal basis, forms a finite dimensional Hilbert space given by:
+The set of all these vectors, taken as an orthonormal basis, forms a finite dimensional Hilbert space given by:
 \begin{equation*}
 \H \eqdef \bigoplus^\perp_{\bFX N \pt \n \sp} \IC \ketFX N \pt \n \sp
 \end{equation*}
@@ -527,7 +527,7 @@ Note that this definition can be extended to all $\q \in \IR^3$. The plane wave 
 \begin{equation*}
 \ket{\bFQ N \pt \q \sp} \eqdef \prod_{\pt,\q,\sp} \left( \cop \pt \q \sp \right)^{\bQ N \pt \q \sp} \ket{\vac}
 \end{equation*}
-These vectors form an orthogonal basis of the Hilbert space $\H$ called the ``momentum basis'' and we will use the notation:
+These vectors form an orthonormal basis of the Hilbert space $\H$ called the ``momentum basis'' and we will use the notation:
 \begin{equation*}
 \ket\Psi = \sum_{\bFQ N \pt \q \sp} \FT\Psi \left( \bFQ N \pt \q \sp \right) \ket{\bFQ N \pt \q \sp}
 \end{equation*}
@@ -857,7 +857,7 @@ If the experiment is conceived in such a way that the studied system is isolated
 \begin{equation*}
 \TP{\H_i}{\H_f^\pm} \approx \mathrm{Tr}_{\H_i} \dop U_{t \tau} \op \Pi_{f^\pm} \op U_{t \tau} / \mathrm{dim} \H_i
 \end{equation*}
-and can be written as a sum resp. a mean on quantum states forming an orthogonal basis of $\H_f^\pm$ resp. $\H_i$:
+and can be written as a sum resp. a mean on quantum states forming an orthonormal basis of $\H_f^\pm$ resp. $\H_i$:
 \begin{eqnarray*}
 \TP{\H_i}{\H_f^\pm} & \approx & \sum_f \left< \TP i f \right>_i \\
 \TP i f & \eqdef & \left| \Um f i {t \tau}{0} \right|^2
@@ -944,17 +944,17 @@ In particular, if $\left| H'_{f + (\delta \q_j),i} \right|^2$ admits such a cont
 \section{Quantum measurement}
 \label{Quantum measurement}
 
-Let us consider a simple thought experiment in order to illustrate how measurement processes take place: An excited atom, decaying by emitting a photon detected by a photomultiplier, which is read by an observer. In the initial state, at time $t_0$, the atom has just been switched to its excited state and hasn't decayed yet, the measurement apparatus is indicating that it hasn't detected any photon yet and the observer is waiting for the detector to get activated. We symbolize this situation by:
+Let us consider a simple thought experiment in order to illustrate how measurement processes take place: An excited atom decays by emitting a photon, which is detected by a photomultiplier read by an observer. In the initial state, at time $t_0$, the atom has just been switched to its excited state and hasn't decayed yet, the measurement apparatus is indicating that it hasn't yet detected any photon and the observer is waiting for the detector to get activated. We symbolize this situation by:
 \begin{flushleft}
 \ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \end{flushleft}
-The decay of the excited atom into a stable atom and a photon first brings it into a quantum superposition of states, where both states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. In both cases, the measurement apparatus is still inactive and the observer waiting. We symbolize this situation by:
+The decay of the excited atom into a stable atom and a photon (via the QED processes described in chapter \ref{Quantum Electrodynamics}) first brings it into a quantum superposition of states, where both states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. In both cases, the measurement apparatus is still inactive so far and the observer waiting. We symbolize this situation by:
 \begin{flushleft}
 \ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
 \Atom\hspace*{3mm}\Photon\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \end{flushleft}
-Supposing, to simplify, that the photomultiplier has a detection efficiency of 100\%, the detector gets then with certainty activated by the incoming photon, coming thus at time $t_0 + \Delta t$ into a quantum superposition of states, where all three states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. In all three cases, the observer is still waiting. We symbolize this situation by:
+Supposing, to simplify, that the photomultiplier has a detection efficiency of 100\%, it gets activated with certainty by the incoming photon after a certain delay $\Delta t$, coming thus itself into a quantum superposition of states. At the same time, the excited atom populates again the decayed atom state, as in the preceding step. In all three cases, the observer is still waiting that far. We symbolize this situation by:
 \begin{flushleft}
 \ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
@@ -962,7 +962,7 @@ Supposing, to simplify, that the photomultiplier has a detection efficiency of 1
 \hspace*{3mm}\Superposition\hspace*{3mm}
 \Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOff
 \end{flushleft}
-Finally, the observer is becoming aware of the fact that the detector has been activated and comes itself into a quantum superposition of states, so that all four states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. We symbolize this situation by:
+Finally, the observer is becoming aware of the fact that the detector has been activated and comes herself into a quantum superposition of states, so that four qualitatively different states coexist as a linear combination within the physical state $\ket{\psi}$ of the universe. We symbolize this situation by:
 \begin{flushleft}
 \ExcitedAtom\hspace*{3mm}\DetectorOff\hspace*{3mm}\ObserverOff
 \hspace*{3mm}\Superposition\hspace*{3mm}
@@ -984,17 +984,17 @@ i.e. the detector has still been activated, but the observer didn't yet notice i
 \begin{flushleft}
 \Atom\hspace*{3mm}\DetectorOn\hspace*{3mm}\ObserverOn
 \end{flushleft}
-and the atom has definitely decayed. The probability $\delta P$ of this event to occur is very small, but the process of collapse and collective mind selection take place very often, with a period $\tau$, so that the decay of the atom will eventually be observed. An approximation of this elementary probability is given, to the leading order, by:
+and the atom has definitely decayed. The probability $\delta P$ of this event to occur is very small, but the process of collapse and collective mind selection take place very often, with a period $\tau$, so that the decay of the atom should eventually be observed. The leading order approximation of this elementary probability takes the form:
 \begin{equation*}
-\delta P \approx ( 2 \pi )^2 \frac\tau\h \sum_{\bFQ {N_1} \pt \q \sp} \left| H'_{1,i} \right|^2 \deltaE2{E_1 - E_i}
+\delta P \approx ( 2 \pi )^2 \frac\tau\h \sum_f \left| H'_{f,i} \right|^2 \deltaE2{E_f - E_i}
 \end{equation*}
-where the summation runs over the decay states $\bFQ {N_1} \pt \q \sp$ of the atom and where the delta function can be approximated by the (time independent) density of decay states (with regard to the kinetic energy) around the ``allowed'' decay states conserving kinetic energy. The mean duration until the decay is being observed is given by the general formula:
+where the Coulomb interaction term is supposed to have been shifted into the zeroth order Hamiltonian operator $\Hop_0$, where the summation runs over an orthonormal basis of eigenstates of this operator and where the delta function can be approximated by the (time independent) density of decay states (with regard to energy) around the ``allowed'' decay states conserving zeroth order energy. The duration until the decay is being observed follows a Poisson law and its mean value is given by the general formula:
 \begin{equation*}
 \left< t - t_0 \right> \approx \Delta t + \tau \frac{1 - \delta P}{\delta P}
 \end{equation*}
-and can be approximated in this case, since $\delta P \ll 1$, by:
+It can be approximated in this case, since $\delta P \ll 1$, by:
 \begin{equation*}
-\left< t - t_0 \right> \approx \Delta t + \h \Big[ ( 2 \pi )^2 \sum_{\bFQ {N_1} \pt \q \sp} \left| H'_{1,i} \right|^2 \deltaE2{E_1 - E_i} \Big]^{-1}
+\left< t - t_0 \right> \approx \Delta t + \h \Big[ ( 2 \pi )^2 \sum_f \left| H'_{f,i} \right|^2 \deltaE2{E_f - E_i} \Big]^{-1}
 \end{equation*}
 Note that this result doesn't depend on the period $\tau$ of the collapse and collective mind selection process.
 
