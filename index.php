@@ -8,8 +8,8 @@
 			Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory
 		</title>
 		<link rel="stylesheet" type="text/css;charset=UTF-8" href="style.css" />
-		<script type="text/javascript;charset=UTF-8" src="http://s7.addthis.com/js/250/addthis_widget.js"></script> 
-		<script type="text/javascript;charset=UTF-8">/*<![CDATA[*/
+		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script> 
+		<script type="text/javascript">/*<![CDATA[*/
 			var addthis_config = {
 				data_ga_property: 'UA-26118689-1',
 				data_ga_social: true
@@ -28,7 +28,7 @@
 		</script>
 	</head>
 	<body>
-		<script type="text/javascript;charset=UTF-8">/*<![CDATA[*/
+		<script type="text/javascript">/*<![CDATA[*/
 			document.getElementsByTagName( 'body' )[0].style.backgroundImage = 'url(background.php?w=' + window.screen.width + '&h=' + window.screen.height + ')';
 		/*]]>*/</script>
 		<div id="title">
