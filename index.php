@@ -29,10 +29,10 @@
 			<div id="download">
 				<a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">
 					<img src="images/pictures/One_Loop_QED_Vacuum_Energy_Diagram.jpg" width="250" height="325" border="0" alt="" title="One-Loop QED Vacuum Energy Diagram" />
-					<br />
-					View on Amazon
-					<img src="images/pictures/Quantum_Ethics.gif" align="middle" border="0" alt="" width="35" height="39" title="Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory" />
 				</a>
+				<p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» View on Amazon</a></p>
+				<p><a href="https://github.com/fauvel/Quantum-Ethics">» Contribute on GitHub</a></p>
+				<br />
 			</div>
 			<h4>Abstract</h4>
 			<br />
