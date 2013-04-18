@@ -4,18 +4,21 @@ body {
 	background-attachment: fixed;
 	margin: 0;
 	padding: 20px;
-	font-family: Times,serif;
+	font-family: Times, serif;
 	font-size: 16px;
 }
+
 div#title {
 	text-align: center;
 	margin: 20px;
 	color: #FFFFFF;
 }
+
 div#title a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
+
 h1 {
 	margin: 0;
 	padding: 0;
@@ -23,6 +26,7 @@ h1 {
 	font-weight: bold;
 	text-shadow: 0 1px 4px #000000;
 }
+
 h2 {
 	margin: 0;
 	padding: 0;
@@ -30,6 +34,7 @@ h2 {
 	font-weight: bold;
 	text-shadow: 0 1px 1px #000000;
 }
+
 h3 {
 	margin: 0;
 	padding: 0;
@@ -37,51 +42,66 @@ h3 {
 	font-weight: bold;
 	text-shadow: 0 1px 1px #000000;
 }
+
 h4 {
-	margin: 0;
+	margin: 0 0 16px 0;
 	padding: 0;
 	font-size: 18px;
 	font-weight: bold;
 }
+
 div#abstract {
 	background-color: #FFFFFF;
 	padding: 20px;
 	border: 1px solid #000000;
 	box-shadow: 0 0 10px;
 }
+
 p {
-	margin: 0;
+	margin: 0 0 14px 0;
 	padding: 0;
 	text-align: justify;
 }
+
+p:last-of-type {
+	margin: 0;
+}
+
 div#download {
 	float: right;
 	text-align: center;
 	margin-left: 20px;
 }
+
 div#download p {
 	text-align: center;
+	margin: 0 0 4px 0;
 }
+
 div#download a {
 	color: #1A55AD;
 	text-shadow: 0 0 3px #74ACFF;
 	text-decoration: none;
 	font-weight: bold;
 }
+
 div#sharing {
 	clear: both;
 	float: left;
-	font-family: Arial,sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 12px;
 }
+
 div#sharing a {
 	color: #115BB5;
 	text-decoration: none;
 }
+
 div#licence {
 	text-align: right;
 	font-style: italic;
 }
+
 div#licence a {
 	color: #115BB5;
 	text-decoration: none;
