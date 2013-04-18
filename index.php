@@ -30,7 +30,8 @@
 				<a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">
 					<img src="images/pictures/One_Loop_QED_Vacuum_Energy_Diagram.jpg" width="250" height="325" border="0" alt="" title="One-Loop QED Vacuum Energy Diagram" />
 				</a>
-				<p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» View on Amazon</a></p>
+				<p><a href="http://quantum-ethics.org/Quantum%20Ethics.php">» View as PDF</a></p>
+				<p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» Order on Amazon</a></p>
 				<p><a href="https://github.com/fauvel/Quantum-Ethics">» Contribute on GitHub</a></p>
 				<br />
 			</div>
