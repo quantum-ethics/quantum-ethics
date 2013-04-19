@@ -39,6 +39,7 @@
 \newcommand{\vpty}{\mathrm \varepsilon_0} % Permittivity of the bare vacuum
 
 % Mathematical notations
+\let\minusplus\mp % Minus/plus
 \newcommand{\eqdef}{:=} % Equals by definition
 \newcommand{\IN}{\mathbb{N}} % Integers
 \newcommand{\IZ}{\mathbb{Z}} % Relative integers
@@ -80,6 +81,7 @@
 
 \newcommand{\sv}[1]{\boldsymbol{#1}} % 3-vector
 \newcommand{\ssp}{\cdot} % Scalar product of 3-vectors
+\newcommand{\scp}{\times} % Cross product of 3-vectors
 \newcommand{\svc}[2]{{#1}_{#2}} % 3-vector component
 \newcommand{\norm}[1]{\|{#1}\|}
 
@@ -201,13 +203,16 @@
 \newcommand{\q}{\sv q} % Placeholder wave number
 \renewcommand{\sp}{\lambda} % Placeholder spin state
 \newcommand{\p}{\sv p} % Placeholder 3-momentum
-\newcommand{\Ek}[2]{E^{#1}_{#2}} % Kinetic energy
+\newcommand{\E}{E} % Placeholder energy
+\newcommand{\Ek}[2]{\E^{#1}_{#2}} % Kinetic energy
 \newcommand{\vk}[2]{\sv v^{#1}_{#2}} % Kinetic velocity
-\newcommand{\bk}[2]{\sv \beta^{#1}_{#2}} % Kinetic beta factor
+\newcommand{\bkn}[2]{\beta^{#1}_{#2}} % Kinetic beta factor
+\newcommand{\bk}[2]{\sv \beta^{#1}_{#2}} % Kinetic beta vector
 \newcommand{\gk}[2]{\gamma^{#1}_{#2}} % Kinetic gamma factor
 \newcommand{\mk}[2]{\mathrm m^{#1}_{#2}} % Kinetic mass
 \newcommand{\mkn}[3]{\mathrm m^{#1 ({#3})}_{#2}} % Kinetic mass to the order n
 \renewcommand{\mp}[1]{\mathrm m_{#1}} % Rest mass of a bare particle
+\newcommand{\mpr}[1]{\mathrm M_{#1}} % Reduced rest mass of a bare particle
 \newcommand{\qp}[1]{\mathrm q_{#1}} % Electric charge of a dressed particle
 \newcommand{\Qp}[1]{\mathrm Q_{#1}} % Particle electric charge number
 \newcommand{\I}{I} % Interaction picture
@@ -383,7 +388,7 @@ Deriving such a relation, however, isn't the goal of this book.
 
 \section{One particle states}
 
-\paragraphtitle{Particle types} We don't make in this chapter any assumption about the existing particle types, e.g. electrons, positrons and photons. We are noting them $\pt$ in a generic way. The corresponding spin states $\sp$ depend implicitely, in the notations, on the particle type. The spin state influences the way a particle interacts with other particle fields; this effect is described quantitatively in the expression of the spinor operators in appendix \ref{Photon spinors} and \ref{Dirac spinors}.
+\paragraphtitle{Particle types} We don't make in this chapter any assumption about the existing particle types, e.g. electrons, positrons and photons. We are noting them $\pt$ in a generic way. The corresponding spin states $\sp$ depend implicitly, in the notations, on the particle type. The spin state influences the way a particle interacts with other particle fields; this effect is described quantitatively in the expression of the spinor operators in appendix \ref{Photon spinors} and \ref{Dirac spinors}.
 
 \paragraphtitle{Definition} The (hypothetical) physical state $\ket{\Psi}$ in which the universe only contains a single particle, of type $\pt$, at point $\n$ and in the spin state $\sp$, is written:
 \begin{equation*}
@@ -435,14 +440,14 @@ where $\Ek \pt \q$ is the kinetic energy of the particle in the lattice referenc
 \begin{equation*}
 \Ek \pt \q \eqdef \sqrt{\left( \mp \pt \c^2 \right)^2 + \left( \frac{\h \c}{\a} \eqp \q \right)^2}
 \end{equation*}
-Similarly, we define the relativistic parameters $\bk \pt \q$ and $\gk \pt \q$ by:
+Similarly, we define the relativistic factors $\bk \pt \q$ and $\gk \pt \q$, with the help of the reduced mass $\mpr \pt \eqdef \mp \pt \a \c / \h$, by:
 \begin{equation*}
-\bk \pt \q \eqdef \frac{\eqp \q}{\sqrt{\left( \mp \pt \a \c / \h \right)^2 + \eqp \q^2}}
+\bk \pt \q \eqdef \frac{\eqp \q}{\sqrt{\mpr \pt^2 + \eqp \q^2}}
 \end{equation*}
 \begin{equation*}
-\gk \pt \q \eqdef \sqrt{1 + \left( \frac{\h \eqp \q}{\mp \pt \a \c} \right)^2}
+\gk \pt \q \eqdef \sqrt{1 + \left( \frac{\eqp \q}{\mpr \pt} \right)^2}
 \end{equation*}
-as well as the velocity by $\vk \pt \q \eqdef \bk \pt \q \c$.
+and the velocity by $\vk \pt \q \eqdef \bk \pt \q \c$.
 
 \section{Wave function}
 
@@ -1273,20 +1278,20 @@ E^{(2)} & = & ( 1 + 2 \N )^3 \frac{\e^2}{4 \pi \vpty \a} \sum_{\pt} \Qp \pt^2 \k
 \end{eqnarray*}
 where the spin summations evaluate to:
 \begin{equation*}
-\sum_{\sp',\sp} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \dirspin {\antiparticle \pt} {-\q} \sp \right|^2 = 1 - \frac{( \mp \pt \a \c / \h )^2 + \eqp{\q - \q_\photon} \ssp \q}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \\
+\sum_{\sp',\sp} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \dirspin {\antiparticle \pt} {-\q} \sp \right|^2 = 1 - \frac{\mpr \pt^2 + \eqp{\q - \q_\photon} \ssp \q}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \\
 \end{equation*}
 \begin{multline*}
 \sum_{\sp',\sp,\sp_\photon} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 = \\
-2 \left( 1 + \frac{( \mp \pt \a \c / \h )^2 + ( \eqp{\q - \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \right)
+2 \left( 1 + \frac{\mpr \pt^2 + ( \eqp{\q - \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \right)
 \end{multline*}
 For $\mp \pt = 0$ and in the special cases where $\q = \sv 0$ or $\eqp{\q - \q_\photon} = \sv 0$, they evaluate respectively to $1$ and $2$.
-The numerical coefficients $\kappa^\vac_\pt$ only depend on the masses of the bare particles and are plotted below:
+The numerical coefficients $\kappa^\vac_\pt$ only depend on the reduced masses of the bare particles and are plotted below:
 \begin{center}
 \includegraphics[scale=0.4]{images/graphics/Vacuum_Energy_2.pdf}\\
-\small{$\kappa^\vac_\pt$ as a function of $\mp \pt \a \c / \h$\\
+\small{$\kappa^\vac_\pt$ as a function of $\mpr \pt$\\
 for $\N = 1$, $2$ and $3$ (dotted, dashed and solid lines)}
 \end{center}
-In $\mp \pt \a \c / \h = 0$, we have $\kappa^\vac_\pt \approx 0.266$, $0.248$ and $0.246$ for $\N = 1$, $2$ and $3$ respectively; as $\mp \pt \a \c / \h \to \infty$, we have $\kappa^\vac_\pt \to 0^-$. Since the result converges to an integral expression for $\N \to \infty$, I shall assume that the coefficients obtained by carrying out the computation for $\N = 3$ are already a good approximation.
+In $\mpr \pt = 0$, we have $\kappa^\vac_\pt \approx 0.266$, $0.248$ and $0.246$ for $\N = 1$, $2$ and $3$ respectively; as $\mpr \pt \to \infty$, we have $\kappa^\vac_\pt \to 0^-$. Since the result converges to an integral expression for $\N \to \infty$, I shall assume that the coefficients obtained by carrying out the computation for $\N = 3$ are already a good approximation.
 
 This energy is represented by following Feynman diagram:
 \begin{center}
@@ -1322,10 +1327,10 @@ E^{(2)} & = & E^{(2)} \left( \vac \right) + \frac{\e^2}{4 \pi \vpty \a} \Qp \ptf
 \end{eqnarray*}
 where $E^{(2)} \left( \vac \right)$ is the second order energy of the dressed vacuum. The spin summations evaluate to:
 \begin{eqnarray*}
-\sum_{\sp} \left| \ddirspin \ptf {\q_\ptf - \q_\photon} \sp \dirspin \ptf {\q_\ptf} {\sp_\ptf} \right|^2 & = & \frac 1 2 \left( 1 + \frac{( \mp \ptf \a \c / \h )^2 + \eqp{\q_\ptf - \q_\photon} \ssp \q_\ptf}{\Ek \ptf {\q_\ptf - \q_\photon} \Ek \ptf {\q_\ptf} ( \a / \h \c )^2} \right) \\
-\sum_{\sp,\sp_\photon} \left| \ddirspin \ptf {\q_\ptf - \q_\photon} \sp \gammat 0 \gamvec \dirspin \ptf {\q_\ptf} {\sp_\ptf} \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 - \frac{( \mp \ptf \a \c / \h )^2 + ( \eqp{\q_\ptf - \q_\photon} \ssp \q_\photon ) ( \q_\ptf \ssp \q_\photon ) / q_\photon^2}{\Ek \ptf {\q_\ptf - \q_\photon} \Ek \ptf {\q_\ptf} ( \a / \h \c )^2} \\
-\sum_{\sp} \left| \ddirspin \ptf {\q_\ptf} {\sp_\ptf} \dirspin {\antiparticle \ptf} {-\q_\ptf - \q_\photon} \sp \right|^2 & = & \frac 1 2 \left( 1 - \frac{( \mp \ptf \a \c / \h )^2 + \q_\ptf \ssp \eqp{\q_\ptf + \q_\photon}}{\Ek \ptf {\q_\ptf} \Ek {\antiparticle \ptf} {-\q_\ptf - \q_\photon} ( \a / \h \c )^2} \right) \\
-\sum_{\sp,\sp_\photon} \left| \ddirspin \ptf {\q_\ptf} {\sp_\ptf} \gammat 0 \gamvec \dirspin {\antiparticle \ptf} {-\q_\ptf - \q_\photon} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 + \frac{( \mp \ptf \a \c / \h )^2 + ( \q_\ptf \ssp \q_\photon ) ( \eqp{\q_\ptf + \q_\photon} \ssp \q_\photon ) / q_\photon^2}{\Ek \ptf {\q_\ptf} \Ek {\antiparticle \ptf} {- \q_\ptf - \q_\photon} ( \a / \h \c )^2}
+\sum_{\sp} \left| \ddirspin \ptf {\q_\ptf - \q_\photon} \sp \dirspin \ptf {\q_\ptf} {\sp_\ptf} \right|^2 & = & \frac 1 2 \left( 1 + \frac{\mpr \ptf^2 + \eqp{\q_\ptf - \q_\photon} \ssp \q_\ptf}{\Ek \ptf {\q_\ptf - \q_\photon} \Ek \ptf {\q_\ptf} ( \a / \h \c )^2} \right) \\
+\sum_{\sp,\sp_\photon} \left| \ddirspin \ptf {\q_\ptf - \q_\photon} \sp \gammat 0 \gamvec \dirspin \ptf {\q_\ptf} {\sp_\ptf} \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 - \frac{\mpr \ptf^2 + ( \eqp{\q_\ptf - \q_\photon} \ssp \q_\photon ) ( \q_\ptf \ssp \q_\photon ) / q_\photon^2}{\Ek \ptf {\q_\ptf - \q_\photon} \Ek \ptf {\q_\ptf} ( \a / \h \c )^2} \\
+\sum_{\sp} \left| \ddirspin \ptf {\q_\ptf} {\sp_\ptf} \dirspin {\antiparticle \ptf} {-\q_\ptf - \q_\photon} \sp \right|^2 & = & \frac 1 2 \left( 1 - \frac{\mpr \ptf^2 + \q_\ptf \ssp \eqp{\q_\ptf + \q_\photon}}{\Ek \ptf {\q_\ptf} \Ek {\antiparticle \ptf} {-\q_\ptf - \q_\photon} ( \a / \h \c )^2} \right) \\
+\sum_{\sp,\sp_\photon} \left| \ddirspin \ptf {\q_\ptf} {\sp_\ptf} \gammat 0 \gamvec \dirspin {\antiparticle \ptf} {-\q_\ptf - \q_\photon} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 + \frac{\mpr \ptf^2 + ( \q_\ptf \ssp \q_\photon ) ( \eqp{\q_\ptf + \q_\photon} \ssp \q_\photon ) / q_\photon^2}{\Ek \ptf {\q_\ptf} \Ek {\antiparticle \ptf} {- \q_\ptf - \q_\photon} ( \a / \h \c )^2}
 \end{eqnarray*}
 The vacuum energy diagram is also completed by subtracting following contribution:
 \begin{center}
@@ -1362,8 +1367,8 @@ E^{(2)} & = & E^{(2)} \left( \vac \right) - \frac{\e^2}{4 \pi \vpty \a} \sum_{\p
 \end{eqnarray*}
 where the spin summations evaluate to:
 \begin{eqnarray*}
-\sum_{\sp',\sp} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 + \frac{( \mp \pt \a \c / \h )^2 + ( \eqp{\q - \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \\
-\sum_{\sp',\sp} \left| \ddirspin \pt {\q + \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \photonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 + \frac{( \mp \pt \a \c / \h )^2 + ( \eqp{\q + \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q + \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2}
+\sum_{\sp',\sp} \left| \ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 + \frac{\mpr \pt^2 + ( \eqp{\q - \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q - \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2} \\
+\sum_{\sp',\sp} \left| \ddirspin \pt {\q + \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \photonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 + \frac{\mpr \pt^2 + ( \eqp{\q + \q_\photon} \ssp \q_\photon ) ( \q \ssp \q_\photon ) / q_\photon^2}{\Ek \pt {\q + \q_\photon} \Ek {\antiparticle \pt} {-\q} ( \a / \h \c )^2}
 \end{eqnarray*}
 The vacuum energy diagram is also completed by adding following (negative) contribution:
 \begin{center}
@@ -1411,8 +1416,7 @@ where $\n_0'(\n)$ can be chosen arbitrarily in $\n_0 + ((1+2\N) \IZ)^3$. In the 
 If $w_0 \gg q_0^{-1}$, the saddle-point approximation $\Ek \pt {\q_0+\q} \approx \Ek \pt {\q_0} + \q \ssp \nabla_{\q} \Ek \pt {\q_0}$ can be used and it follows:
 \begin{eqnarray*}
 \ket{\Psi_t} & \approx & \exp{-\i 2 \pi \Ek \pt {\q_0} (t - t_0) / \h} \dop{G^\pt_\sp}(\q_0,\n_t,w_0) \ket \vac \\
-\n_t & \eqdef & \n_0 + \vk \pt {\q_0} (t - t_0) / \a \\
-\vk \pt {\q_0} & \eqdef & \frac{\eqp{\q_0} \c}{\sqrt{(\mp \pt \a \c / \h)^2 + \eqp{\q_0}^2}}
+\n_t & \eqdef & \n_0 + \vk \pt {\q_0} (t - t_0) / \a
 \end{eqnarray*}
 The mean position $\n_t$ of the particle follows therefore, in the toroidal space $(\IR / (1+2\N)\IZ)^3$,  a classical trajectory at the constant velocity $\vk \pt {\q_0}$ which would be attributed classically to a point mass of mass $\mp \pt$ and of momentum $\h \eqp{\q_0} / \a$.
 
@@ -1730,11 +1734,7 @@ In this document, we use following conventions for the Dirac spinors in the latt
 \dirspin {\antiparticle \pt} \q {1/2} & \eqdef & \sqrt{\frac 1 2 \left( 1 + \frac {\mp \pt \c^2} E \right)} \matrix{\left( p_1 - i p_2 \right) / \left( \mp \pt \c + E / \c \right) \\ -p_3 / \left( \mp \pt \c + E / \c \right) \\ 0 \\ 1} \\
 \dirspin {\antiparticle \pt} \q {-1/2} & \eqdef & \sqrt{\frac 1 2 \left( 1 + \frac {\mp \pt \c^2} E \right)} \matrix{ p_3 / \left( \mp \pt \c + E / \c \right) \\ \left( p_1 + i p_2 \right) / \left( \mp \pt \c + E / \c \right) \\ 1 \\ 0}
 \end{eqnarray*}
-In these expressions, energy and momentum are defined by:
-\begin{eqnarray*}
-E & \eqdef & \sqrt{\left( \mp \pt \c^2 \right)^2 + \left( \frac{\h \c}{\a} \q \right)^2} \\
-\p & \eqdef & \frac \h \a \q 
-\end{eqnarray*}
+In these expressions, we used the shorthand notations $\E \eqdef \Ek \pt \q$ and $\p \eqdef \h \q / \a$ for energy and momentum.
 For the special case of the wave vector $\q = \sv 0$, we take the values:
 $$
 \begin{array}{cccc}
@@ -1776,6 +1776,30 @@ where the fermion antisymmetrization operators $\Faop \pt \q \sp$ are defined as
 \SCop {\antiparticle \pt} \n \sp & \eqdef & ( 1+2\N )^{-3/2} \sum_{\q} \exp{-\i 2 \pi \n \ssp \q} \SCop {\antiparticle \pt} \q \sp
 \end{eqnarray*}
 We extend these definitions periodically to all $\q \in \ILD$ by $\SAop \pt \q \sp \eqdef \SAop \pt {\eqp \q} \sp$, $\SCop \pt \q \sp \eqdef \SCop \pt {\eqp \q} \sp$, $\SAop {\antiparticle \pt} \q \sp \eqdef \SAop {\antiparticle \pt} {\eqp \q} \sp$ and $\SCop {\antiparticle \pt} \q \sp \eqdef \SCop {\antiparticle \pt} {\eqp \q} \sp$.
+
+\subsection*{Spinor products}
+
+In the development of the interaction Hamiltonian on the plane waves basis, the Dirac spinors always appear in the form of products. For instance (see section \ref{QED interaction Hamiltonian}), the elastic scattering terms of the Coulomb interaction, with or without spin flip, contain following products, where we use the shorthand notations $\gamma \eqdef \gk \pt \q$ and $\gamma' \eqdef \gk \pt {\q'}$ for the Lorentz factors:
+\begin{eqnarray*}
+\ddirspin \pt {\q'} {\pm 1/2} \dirspin \pt \q {\pm 1/2} & = & \frac 1 2 \sqrt{1 + \frac 1 {\gamma'}} \sqrt{1 + \frac 1 \gamma} \left( 1 + \frac{\q' \ssp \q \pm \i \svc{(\q' \scp \q)} 3}{\mpr \pt^2 (1 + \gamma') (1 + \gamma)} \right) \\
+\ddirspin \pt {\q'} {\minusplus 1/2} \dirspin \pt \q {\pm 1/2} & = & \frac{\i \svc{(\q' \scp \q)} 1 \minusplus \svc{(\q' \scp \q)} 2}{2 \mpr \pt^2 \sqrt{(1 + \gamma') (1 + \gamma) \gamma' \gamma}}
+\end{eqnarray*}
+These expressions are also valid for the corresponding antiparticles $\antiparticle \pt$.
+The particle pair creation and annihilation terms of the Coulomb interaction, with equal or opposite spins, contain following products:
+\begin{eqnarray*}
+\ddirspin \pt {\q'} {\pm 1/2} \dirspin {\antiparticle \pt} \q {\pm 1/2} & = & \frac 1 2 \sqrt{1 + \frac 1 {\gamma'}} \sqrt{1 + \frac 1 \gamma} \left( \frac{\svc{\q'} 1 \minusplus \i \svc{\q'} 2}{\mpr \pt (1 + \gamma')} + \frac{\svc\q 1 \minusplus \i \svc\q 2}{\mpr \pt (1 + \gamma)} \right) \\
+\ddirspin \pt {\q'} {\minusplus 1/2} \dirspin {\antiparticle \pt} \q {\pm 1/2} & = & \frac 1 2 \sqrt{1 + \frac 1 {\gamma'}} \sqrt{1 + \frac 1 \gamma} \left( \frac{\minusplus \svc{\q'} 3}{\mpr \pt (1 + \gamma')} + \frac{\minusplus \svc\q 3}{\mpr \pt (1 + \gamma)} \right)
+\end{eqnarray*}
+The calculation of transition probabilities involves the square of the absolute value of these products, given by:
+\begin{eqnarray*}
+\left| \ddirspin \pt {\q'} \sp \dirspin \pt \q \sp \right|^2 & = & \frac{(\q' \ssp \q)^2 + \svc{(\q' \scp \q)} 3 ^2}{4 \mpr \pt^4 (1 + \gamma') (1 + \gamma) \gamma' \gamma} + \frac 1 {4 \gamma' \gamma} \left( (1 + \gamma') (1 + \gamma) + \frac{2 \q' \ssp \q}{\mpr \pt^2} \right) \\
+\left| \ddirspin \pt {\q'} {-\sp} \dirspin \pt \q \sp \right|^2 & = & \frac{\svc{(\q' \scp \q)} 1 ^2 + \svc{(\q' \scp \q)} 2 ^2}{4 \mpr \pt^4 (1 + \gamma') (1 + \gamma) \gamma' \gamma}
+\end{eqnarray*}
+Their sum, involved when the spin of the scattered particles isn't being measured, takes the form:
+\begin{equation*}
+\sum_{\sp'} \left| \ddirspin \pt {\q'} {\sp'} \dirspin \pt \q \sp \right|^2 = \frac 1 4 \left( \sqrt{1 + \frac 1 {\gamma'}}\sqrt{1 + \frac 1 \gamma} + \sqrt{1 - \frac 1 {\gamma'}}\sqrt{1 - \frac 1 \gamma} \right)^2 - \beta' \beta \sin{\theta / 2}^2
+\end{equation*}
+where we used the shorthand notations $\beta \eqdef \bkn \pt \q$ and $\beta' \eqdef \bkn \pt {\q'}$ and where we introduced the scattering angle $\theta$ between $\q$ and $\q'$. In the case where this angle is undefined because one of $\q$ or $\q'$ is null, the last term can be dropped.
 
 \backmatter
 
