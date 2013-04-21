@@ -39,7 +39,7 @@ if ($_SERVER['SERVER_NAME'] !== 'quantum-ethics.org') {
 				</a>
 				<p><a href="http://quantum-ethics.org/Quantum%20Ethics.php">» View as PDF</a></p>
 				<p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» Order on Amazon</a></p>
-				<p><a href="https://github.com/fauvel/Quantum-Ethics">» Contribute on GitHub</a></p><br>
+				<p><a href="https://github.com/sebastien-fauvel/quantum-ethics">» Contribute on GitHub</a></p><br>
 			</div>
 			<h4>Abstract</h4>
 			<p>This groundbreaking work is bringing together quantum physicists and philosophers in an unprecedented way... Making a tabula rasa from all its historical and heuristical developments, it presents Quantum Field Theory in its modern form in a exquisitely simple mathematical apparatus, nonetheless completely well-defined and fully functional... Focusing on the underlying ontology of Quantum Field Theory, which turns out to be very similar to the classical metaphysics of Spinoza's Ethics, it provides a solid fundament for any philosophical discussion of its interpretation.</p>
