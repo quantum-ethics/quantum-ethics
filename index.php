@@ -12,8 +12,8 @@ if ($_SERVER['SERVER_NAME'] !== 'quantum-ethics.org') {
 		<meta name="language" content="english">
 		<meta name="description" content="Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory, by Sébastien Fauvel">
 		<title>Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory</title>
-		<link rel="stylesheet" type="text/css;charset=UTF-8" href="style.css">
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<script type="text/javascript">
