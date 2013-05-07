@@ -1,6 +1,3 @@
-Quantum-Ethics
-==============
+This is *Quantum Ethics*, an Open Science project designed to develop a mathematically and conceptually coherent Quantum Field Theory and to derive its ethical implications. The results are being published as a [PDF](http://quantum-ethics.org/Quantum%20Ethics.php) on [quantum-ethics.org](http://quantum-ethics.org/) and as a [book](http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/) by the [CreateSpace Independent Publishing Platform](https://www.createspace.com/).
 
-A Spinozist Interpretation of Quantum Field Theory
-
-See http://quantum-ethics.org
+If you are interested in getting involved in this project at any level — as a co-author, a peer-reviewer or simply to give me feedback —, please feel free to contact me at sebastien.fauvel@gmx.ch. I would really appreciate your help.
