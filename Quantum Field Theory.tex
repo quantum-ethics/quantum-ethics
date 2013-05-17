@@ -97,7 +97,7 @@
 % Lattice parameters
 \newcommand{\N}{\mathrm N} % Lattice size
 \renewcommand{\a}{\mathrm a} % Lattice step
-\newcommand{\M}[1]{\mathrm M_{#1}} % Maximum occupation number for a given particle type
+\newcommand{\M}[1]{N_{#1}^{max}} % Maximum occupation number for a given particle type
 
 % Lattice notations
 \newcommand{\FL}{\IntRange{-\N}{\N}^3} % Lattice
@@ -269,7 +269,9 @@ of Quantum Field Theory
 
 \null
 \vfill
-\noindent{\small Cover image: Hubble telescope image of the Carina Nebula, 2007.\\
+\noindent{\small Copyright © 2013 Sébastien Fauvel \\
+\\
+Cover image: Hubble telescope image of the Carina Nebula, 2007.\\
 Photograph: NASA, ESA, N. Smith (University of California, Berkeley), and The Hubble Heritage Team (STScI/AURA).}
 
 \cleardoublepage
@@ -466,7 +468,7 @@ and the velocity by $\vk \pt \q \eqdef \bk \pt \q \c$.
 
 \section{Wave function}
 
-\paragraphtitle{Remark} We can associate following wave function components to each one particle state:
+\paragraphtitle{Complements} We can associate following wave function components to each one particle state:
 \begin{equation*}
 \wf \Psi \pt \sp {\sv x} \eqdef (1+2 \N)^{-3/2} \sum_{\q} \FT\Psi(\bQ 1 \pt \q \sp) \exp{\i 2 \pi \frac{\sv x \ssp \q}{\a}}
 \end{equation*}
@@ -477,7 +479,7 @@ Eigenstates of the momentum operator are thus associated with plane waves on $\I
 \end{eqnarray*}
 We define thus an isomorphism between a finite set, indexed on $( \pt,\sp )$, of complementary subspaces of $\Hn 1$, and a finite dimensional subspace of $\mathrm C^\infty\left(\IR^3,\IC\right)$ containing functions of period $(1+2\N)\a$ along each coordinate.
 
-\paragraphtitle{Complements} In that space, the (image of the) momentum operator acts according to:
+In that space, the (image of the) momentum operator acts according to:
 \begin{equation*}
 \Pop \wf \Psi \pt \sp {\sv x} = \frac{\h}{\i 2 \pi} \sv \nabla \wf \Psi \pt \sp {\sv x}
 \end{equation*}
@@ -1720,7 +1722,7 @@ This allows us to label the particles of any field $(\pt, \sp)$ present in a pla
 The fermion antisymmetrization operators $\Faop \pt \q \sp$ can be defined conventionally with the help of this standard particle numbering function by their action on the momentum basis:
 \begin{eqnarray*}
 \Faop \pt \q \sp \ket{\bFQ N \pt \q \sp} & \eqdef & (-1)^\sigma \ket{\bFQ N \pt \q \sp} \\
-\sigma & = & \left| \{ i | \q_i < \q \} \right| \\
+\sigma & = & \left| \{ i | \q_i \leq \q \} \right| \\
 (\q_i) & = & \Pn \pt \sp \left( \bFQ N \pt \q \sp \right)
 \end{eqnarray*}
 These hermitian, unitary operators are always used together with the corresponding creation and annihilation operators for fermion fields. They verify following essential anticommutation properties, where the anticommutation notation $\{\cdot, \cdot\}$ is defined by $\{ \op a, \op b\} \eqdef \op a \op b + \op b \op a$:
