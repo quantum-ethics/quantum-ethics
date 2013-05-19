@@ -5,7 +5,7 @@ if ($_SERVER['SERVER_NAME'] !== 'quantum-ethics.org') {
 	exit;
 }
 
-$file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Quantum Field Theory.pdf';
+$file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'quantum-ethics.pdf';
 
 $headers = array(
 	'Accept-Ranges'       => 'bytes',
