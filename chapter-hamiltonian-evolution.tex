@@ -1,0 +1,191 @@
+\chapter{Hamiltonian evolution}
+\label{Hamiltonian evolution}
+
+\section{Schrödinger equation}
+\label{Schrödinger equation}
+
+We postulate that the state of the quantum field evolves according to an equation of the form:
+\begin{equation*}
+\ddt \ket\Psi = -\i 2 \pi \frac 1 \h \Hop \ket\Psi
+\end{equation*}
+called ``Schrödinger equation'' where $\Hop$ is the (time independent) Hamiltonian operator of the field. This operator is supposed to be hermitian and is therefore diagonalizable (with real eigenvalues) on the finite dimensional Hilbert space $\H$. The equation can also be integrated as:
+\begin{eqnarray*}
+\ket{\Psi(t)} & = & \Uop t {t_0} \ket{\Psi(t_0)} \\
+\Uop t {t_0} & \eqdef & \exp{- \i 2 \pi \frac{t - t_0} \h \Hop}
+\end{eqnarray*}
+
+\section{Kinetic energy Hamiltonian}
+\label{Kinetic energy Hamiltonian}
+
+The Hamiltonian operator of the field can be separated into a kinetic energy Hamiltonian depending only on the momentum of the particles and an interaction term as follows:
+\begin{equation*}
+\Hop = \Hop_0 + \Hop'
+\end{equation*}
+In the lattice reference frame, the kinetic energy Hamiltonian is given by:
+\begin{equation*}
+\Hop_0 \eqdef \sum_{\pt,\q,\sp} \Ek \pt \q \Nop \pt \q \sp
+\end{equation*}
+
+In another reference frame, moving with a velocity $\sv v$ relative to the lattice, this operator is given by:
+\begin{equation*}
+\Hop_0 \eqdef \sum_{\pt,\q,\sp} \gamma \left\{ \Ek \pt \q - \frac \h \a \q \ssp \sv v \right\} \Nop \pt \q \sp
+\end{equation*}
+
+\section{Interaction picture}
+
+The kinetic energy Hamiltonian can be integrated as:
+\begin{equation*}
+\UopK t {t_0} \eqdef \exp{- \i 2 \pi \frac{t - t_0} \h \Hop_0}
+\end{equation*}
+
+The state of the quantum field in the interaction picture is defined in such a way that it would be a time constant if the interaction term $\Hop'$ vanishes:
+\begin{equation*}
+\ket{\Psi_\I} \eqdef \UopK 0 t \ket{\Psi}
+\end{equation*}
+
+The Hamiltonian operator in the interaction picture is defined is such a way that the state of the quantum field in the interaction picture obeys following Schrödinger-like equation, where the Hamiltonian is time-dependent:
+\begin{eqnarray*}
+\ddt \ket{\Psi_\I} & = & -\i 2 \pi \frac 1 \h \Hop_\I \ket{\Psi_\I} \\
+\Hop_\I & \eqdef & \UopK 0 t \Hop' \UopK t 0
+\end{eqnarray*}
+
+The integration of this equation yields to:
+\begin{equation*}
+\ket{\Psi_\I(t)} = \UopI t {t_0} \ket{\Psi_I({t_0})} \\
+\end{equation*}
+where the evolution operator in the interaction picture is given by a series of the form (assuming $t > t_0$):
+\begin{eqnarray*}
+\UopI t {t_0} & \eqdef & \Id + \sum_{n=1}^\infty \UopIn n t {t_0} \\
+\UopIn n t {t_0} & \eqdef & \left( \frac{-\i 2 \pi} \h \right)^n \int_{t > t_n > \dotsb > t_1 > t_0} \dt_1 \dotsm \dt_n \\
+&& \UopK 0 {t_n} \Hop' \UopK {t_n} {t_{n-1}} \dotsm \UopK {t_2} {t_1} \Hop' \UopK {t_1} 0
+\end{eqnarray*}
+The evolution operator in the interaction picture verifies:
+\begin{equation*}
+\UopI t {t_0} = \UopK 0 t \Uop t {t_0} \UopK {t_0} 0
+\end{equation*}
+The usual evolution operator can also be written too as a series of the form:
+\begin{eqnarray*}
+\Uop t {t_0} & \eqdef & \sum_{n=0}^\infty \Uopn n t {t_0} \\
+\Uopn 0 t {t_0} & \eqdef & \UopK t {t_0} \\
+\Uopn n t {t_0} & \eqdef & \left( \frac{-\i 2 \pi} \h \right)^n \int_{t > t_n > \dotsb > t_1 > t_0} \dt_1 \dotsm \dt_n \\
+&& \UopK t {t_n} \Hop' \UopK {t_n} {t_{n-1}} \dotsm \UopK {t_2} {t_1} \Hop' \UopK {t_1} {t_0}
+\end{eqnarray*}
+
+\section{Transition amplitudes}
+
+In scattering experiments, the evolution operator in the interaction picture is often called ``scattering operator''. In this context, cross sections are usually calculated in the limit $t_0 \to - \infty$ and $t \to + \infty$, so the variables $t_0$ and $t$ are implicit in the notation:
+\begin{equation*}
+\Sop \eqdef \UopI t {t_0}
+\end{equation*}
+Its matrix elements, called ``scattering amplitudes'' and written:
+\begin{eqnarray*}
+\Sm f i & \eqdef & \bra{\Psi_f} \Sop \ket{\Psi_i} \\
+& = & \bra{\Psi_f} \UopI t {t_0} \ket{\Psi_i}
+\end{eqnarray*}
+can be developed in a series of the form (assuming $t > t_0$):
+\begin{eqnarray*}
+\Sm f i & = & \sum_{n=0}^\infty \Smn f i n \\
+\Smn f i 0 & \eqdef & \braket{\Psi_f}{\Psi_i} \\
+\Smn f i n & \eqdef & \left( \frac{-\i 2 \pi} \h \right)^n \int_{t > t_n > \dotsb > t_1 > t_0} \dt_1 \dotsm \dt_n \\
+&& \bra{\Psi_f} \UopK 0 {t_n} \Hop' \UopK {t_n} {t_{n-1}} \dotsm \UopK {t_2} {t_1} \Hop' \UopK {t_1} 0 \ket{\Psi_i}
+\end{eqnarray*}
+For plane wave states $\ket{\Psi_i} = \ket{\bFQ {N_i} \pt \q \sp}$ and $\ket{\Psi_f} = \ket{\bFQ {N_f} \pt \q \sp}$, they are directly related to the matrix elements of the evolution operator, called ``transition amplitudes'', by:
+\begin{eqnarray*}
+\Um f i t {t_0} & = & \exp{-\i 2 \pi ( t E_f - t_0 E_i ) / \h} \Sm f i \\
+\Um f i t {t_0} & \eqdef & \bra{\Psi_f} \Uop t {t_0} \ket{\Psi_i} \\
+E_i & \eqdef & \bra{\Psi_i} \Hop_0 \ket{\Psi_i} \\
+E_f & \eqdef & \bra{\Psi_f} \Hop_0 \ket{\Psi_f}
+\end{eqnarray*}
+The transition amplitude from a plane wave state $\ket{\Psi_i} = \ket{\bFQ {N_i} \pt \q \sp}$ to a localized state $\ket{\Psi_f} = \ket{\bFX {N_f} \pt \n \sp}$ can in turn be written as:
+\begin{equation*}
+\Um f i t {t_0} = \sum_{\bFQ {N_f} \pt \q \sp} \Sm f i \exp{\i 2 \pi t_0 E_i / \h} \psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ), t \right)
+\end{equation*}
+with:
+\begin{multline*}
+\psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ), t \right) \eqdef \prod_{\substack{\pt, \sp \\ {N_f}^\pt_\sp \neq 0}} \frac{(1+2 \N)^{-3 {N_f}^\pt_\sp / 2} }{\prod_{\n} \bX {N_f} \pt \n \sp !} \sum_{\sigma \in \mathfrak{S}_{{N_f}^\pt_\sp}} \prod_{j = 1}^{{N_f}^\pt_\sp} \\
+\exp{\i 2 \pi ( \n^{\pt, \sp}_{\sigma_j} \ssp \q^{\pt, \sp}_j - \Ek \pt {\q^{\pt, \sp}_j} t / \h )}
+\end{multline*}
+where the summation runs over plane wave states $\bFQ {N_f} \pt \q \sp$ such as $\sum_{\q} \bQ {N_f} \pt \q \sp = \sum_{\n} \bX {N_f} \pt \n \sp$ for each mode $( \pt, \sp )$ of the field, where we use the notations $\Sm f i \eqdef \bra{\bFQ {N_f} \pt \q \sp} \Sop \ket{\bFQ {N_i} \pt \q \sp}$ and ${N_f}^\pt_\sp \eqdef \sum_{\n} \bX {N_f} \pt \n \sp$, where $\mathfrak{S}_{{N_f}^\pt_\sp}$ denotes the symmetric group of order ${N_f}^\pt_\sp$ and where we have chosen for each mode $( \pt, \sp )$ of the field the families $( \n^{\pt, \sp}_j )$ and $( \q^{\pt, \sp}_j )$ such as:
+\begin{eqnarray*}
+\ket{\bFX {N_f} \pt \n \sp} & = & \prod_{\pt, \sp, j} \cop \pt {\n^{\pt, \sp}_j} \sp \ket{\vac} \\
+\ket{\bFQ {N_f} \pt \q \sp} & = & \prod_{\pt, \sp, j} \cop \pt {\q^{\pt, \sp}_j} \sp \ket{\vac}
+\end{eqnarray*}
+In the definition of $\psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ), t \right)$, we used for convenience the symbols $\bX {N_f} \pt \n \sp$ and ${N_f}^\pt_\sp$, which can be defined as a function of $( \n^{\pt, \sp}_j )$ with $\bX {N_f} \pt \n \sp \eqdef \left|  \{ j | \n^{\pt, \sp}_j = \n \} \right|$.
+
+The transition amplitude from any initial state $\ket{\Psi_i}$ to a localized final state $\ket{\Psi_f} = \ket{\bFX {N_f} \pt \n \sp}$ is finally given by:
+\begin{equation*}
+\Um f i t {t_0} = \sum_{\bFQ {N_i} \pt \q \sp} \sum_{\bFQ {N_f} \pt \q \sp} \Sm f i \FT{\Psi_i} \left( \bFQ {N_i} \pt \q \sp \right) \exp{\i 2 \pi t_0 E_i / \h} \psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ), t \right)
+\end{equation*}
+with the same notations.
+
+\section{Scattering matrix}
+\label{Scattering matrix}
+
+The scattering matrix can be developed quite easily on the basis of the plane wave states, i.e. by developing the initial and final states as:
+\begin{eqnarray*}
+\ket{\Psi_i} & = & \sum_{\bFQ N \pt \q \sp} \FT{\Psi_i} \left( \bFQ N \pt \q \sp \right) \ket{\bFQ N \pt \q \sp} \\
+\ket{\Psi_f} & = & \sum_{\bFQ N \pt \q \sp} \FT{\Psi_f} \left( \bFQ N \pt \q \sp \right) \ket{\bFQ N \pt \q \sp}
+\end{eqnarray*}
+
+With these notations, we have to the zeroth order:
+\begin{equation*}
+\Smn f i 0 = \sum_{\bFQ {N_0} \pt \q \sp} \cc{\FT{\Psi_f} \left( \bFQ {N_0} \pt \q \sp \right) } \FT{\Psi_i} \left( \bFQ {N_0} \pt \q \sp \right)
+\end{equation*}
+and to the n-th order:
+\begin{eqnarray*}
+\Smn f i n & = & \sideset{}{_{k=0}^n}\sum_{\bFQ {N_k} \pt \q \sp} \cc{\FT{\Psi_f} \left( \bFQ {N_n} \pt \q \sp \right) } \FT{\Psi_i} \left( \bFQ {N_0} \pt \q \sp \right) \Smp n {n,\dotsc,0} \\
+\Smp n {n,\dotsc,0} & \eqdef & \exp{\i 2 \pi \frac{t_0} \h ( E_n - E_0 )} \left( \prod_{k=1}^n H'_{k,k-1} \right) \SmE n {E_n, \dotsc, E_0}
+\end{eqnarray*}
+\begin{multline*}
+\SmE n {E_n, \dotsc, E_0} \eqdef \left( \frac{-\i 2 \pi} \h \right)^n \int_{t - t_0 > t_n > \dotsb > t_1 > 0} \\
+\prod_{k=1}^n \exp{\i 2 \pi \frac{t_k} \h ( E_k - E_{k - 1} )} \dt_n \dotsm \dt_1
+\end{multline*}
+The functions $\SmE n {E_n, \dotsc, E_0}$ can be calculated recursively according to:
+\begin{equation*}
+\SmE 1 {E_1, E_0} = -\i 2 \pi \frac{t - t_0} \h \esinc{\frac{t - t_0} \h ( E_1 - E_0 )}
+\end{equation*}
+\begin{multline*}
+\SmE{n + 1}{E_{n + 1}, E_n, \dotsc, E_0} = \frac 1 {E_{n + 1} - E_n} \left( \SmE n {E_{n + 1}, \dotsc, E_0} \right. \\
+\left. - \exp{\i 2 \pi \frac{t - t_0} \h ( E_{n + 1} - E_n )} \SmE n {E_n, \dotsc, E_0} \right)
+\end{multline*}
+where the esinc function is defined as in appendix \ref{esinc}. To the second order, for instance, we have:
+\begin{multline*}
+\SmE 2 {E_2, E_1, E_0} = -\i 2 \pi \frac{t - t_0} \h \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_0 )} \frac 1 {E_2 - E_1} \\
+\left[ \sinc{\frac{t - t_0} \h ( E_2 - E_0 )} - \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_1 )} \sinc{\frac{t - t_0} \h ( E_1 - E_0 )} \right]
+\end{multline*}
+where the sinc function is defined as in appendix \ref{sinc}.
+
+\section{Perturbative development}
+
+The explicit perturbative development of the transition amplitude between two plane wave states $\ket{\Psi_i} = \ket{\bFQ {N_i} \pt \q \sp}$ and $\ket{\Psi_f} = \ket{\bFQ {N_f} \pt \q \sp}$ is therefore given by:
+\begin{equation*}
+\Umn f i 0 t {t_0} = \exp{-\i 2 \pi \frac{t - t_0} \h E_f} \delta_{f,i}
+\end{equation*}
+\begin{equation*}
+\Umn f i 1 t {t_0} = -\i 2 \pi \frac{t - t_0} \h \exp{-\i \pi \frac{t - t_0} \h ( E_f + E_i )} \sinc{\frac{t - t_0} \h ( E_f - E_i )} H'_{f,i}
+\end{equation*}
+\begin{equation*}
+\Umn f i n t {t_0} = \exp{-\i 2 \pi \frac{t - t_0} \h E_f} \sideset{}{_{k=0}^n}\sum_{\bFQ {N_k} \pt \q \sp} \SmE n {E_n, \dotsc, E_0} \prod_{k=1}^n H'_{k,k-1}
+\end{equation*}
+where we take in the last sum $\bFQ {N_0} \pt \q \sp = \bFQ {N_i} \pt \q \sp$ and $\bFQ {N_n} \pt \q \sp = \bFQ {N_f} \pt \q \sp$ and where we have:
+\begin{multline*}
+\SmE n {E_n, \dotsc, E_0} \eqdef \left( \frac{-\i 2 \pi} \h \right)^n \int_{t - t_0 > t_n > \dotsb > t_1 > 0} \\
+\prod_{k=1}^n \exp{\i 2 \pi \frac{t_k} \h ( E_k - E_{k - 1} )} \dt_n \dotsm \dt_1
+\end{multline*}
+
+More generally, the explicit perturbative development of the transition amplitude from any initial state $\ket{\Psi_i}$ to a localized final state $\ket{\Psi_f} = \ket{\bFX {N_f} \pt \n \sp}$ is given by:
+\begin{equation*}
+\Umn f i 0 t {t_0} = \sum_{\bFQ {N_f} \pt \q \sp} \FT{\Psi_i} \left( \bFQ {N_f} \pt \q \sp \right) \psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ) \right) \exp{-\i 2 \pi \frac{t - t_0} \h E_f}
+\end{equation*}
+\begin{multline*}
+\Umn f i 1 t {t_0} = -\i 2 \pi \frac{t - t_0} \h \sum_{\bFQ {N_i} \pt \q \sp} \FT{\Psi_i} \left( \bFQ {N_i} \pt \q \sp \right) \sum_{\bFQ {N_f} \pt \q \sp} \psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ) \right) \\
+\exp{-\i \pi \frac{t - t_0} \h ( E_f + E_i )} \sinc{\frac{t - t_0} \h ( E_f - E_i )} H'_{f,i}
+\end{multline*}
+\begin{multline*}
+\Umn f i n t {t_0} = \sum_{\bFQ {N_i} \pt \q \sp} \FT{\Psi_i} \left( \bFQ {N_i} \pt \q \sp \right) \sum_{\bFQ {N_f} \pt \q \sp} \psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ) \right) \\
+\exp{-\i 2 \pi \frac{t - t_0} \h E_f} \sideset{}{_{k=0}^n}\sum_{\bFQ {N_k} \pt \q \sp} \SmE n {E_n, \dotsc, E_0} \prod_{k=1}^n H'_{k,k-1}
+\end{multline*}
+where the summation runs over plane wave states $\bFQ {N_f} \pt \q \sp$ such as $\sum_{\q} \bQ {N_f} \pt \q \sp = \sum_{\n} \bX {N_f} \pt \n \sp$ for each mode $( \pt, \sp )$ of the field, and where we use the notation:
+\begin{equation*}
+\psi \left( ( \q^{\pt, \sp}_j ), ( \n^{\pt, \sp}_j ) \right) \eqdef \prod_{\substack{\pt, \sp \\ {N_f}^\pt_\sp \neq 0}} \frac{(1+2 \N)^{-3 {N_f}^\pt_\sp / 2} }{\prod_{\n} \bX {N_f} \pt \n \sp !} \sum_{\sigma \in \mathfrak{S}_{{N_f}^\pt_\sp}} \prod_{j = 1}^{{N_f}^\pt_\sp} \exp{\i 2 \pi \n^{\pt, \sp}_{\sigma_j} \ssp \q^{\pt, \sp}_j}
+\end{equation*}

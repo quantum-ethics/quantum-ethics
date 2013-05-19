@@ -1,0 +1,67 @@
+\chapter{Usual functions}
+
+\section{The sinc function}
+\label{sinc}
+
+In this document, the sinc function is defined by:
+\begin{equation*}
+\sinc{X} \eqdef \begin{cases}
+1 & \text{for $X = 0$} \\
+\sin{\pi X} / ( \pi X ) & \text{otherwise}
+\end{cases}
+\end{equation*}
+This function admits following integral expression:
+\begin{equation*}
+\sinc{X} = \frac 1 X \int_{-X/2}^{X/2} \exp{\i 2 \pi x} \dx
+\end{equation*}
+and is normalized by:
+\begin{equation*}
+\int_{-\infty}^{+\infty} \sinc{X} \dX = 1
+\end{equation*}
+
+\section{The esinc function}
+\label{esinc}
+
+In this document, the esinc function is defined by:
+\begin{equation*}
+\esinc{X} \eqdef \exp{\i \pi X} \sinc{X}
+\end{equation*}
+where the sinc function is defined as in appendix \ref{sinc}. This function admits following integral expression:
+\begin{equation*}
+\esinc{X} = \frac 1 X \int_0^X \exp{\i 2 \pi x} \dx
+\end{equation*}
+can be written:
+\begin{equation*}
+\esinc{X} = \frac{\sin{2 \pi X}}{2 \pi X} + \i \frac{1 - \cos{2 \pi X}}{2 \pi X}
+\end{equation*}
+and verifies:
+\begin{equation*}
+\esinc{-X} = \cc{\esinc{X}}
+\end{equation*}
+
+\section{Nascent delta functions}
+\label{delta}
+
+In this document, we make use of following nascent delta functions, which converge to the delta energy distribution for $t - t_0 \to \infty$:
+\begin{eqnarray*}
+\deltaE1{E} & \eqdef & \frac{t - t_0} \h \sinc{\frac{t - t_0} \h E} \\
+\deltaE2{E} & \eqdef & \frac{t - t_0} \h \sinc{\frac{t - t_0} \h E}^2
+\end{eqnarray*}
+where the sinc function is defined as in appendix \ref{sinc}. The square of the first one can be expressed in terms of the second one as:
+\begin{equation*}
+\deltaE1{E}^2 = \frac{t - t_0} \h \deltaE2{E}
+\end{equation*}
+
+We also make use of following family of functions converging to a distribution as $t - t_0 \to \infty$:
+\begin{equation*}
+\deltaE\PV{E} \eqdef 2 \frac{t - t_0} \h \esinc{\frac{t - t_0} \h E}
+\end{equation*}
+where the esinc function is defined as in appendix \ref{esinc}. Its limit is given by:
+\begin{equation*}
+\lim_{t - t_0 \to \infty} \deltaE\PV{E} = \delta(E) + \frac \i \pi \PV \left( \frac 1 E \right)
+\end{equation*}
+where the Cauchy principal value of $1/E$ is defined by its action on any test function $\phi(E)$ by:
+\begin{eqnarray*}
+\left( \PV \left( \frac 1 E \right), \phi(E) \right) & \eqdef & \PV \int_{-\infty}^{+\infty} \frac{\phi(E)}E \dE \\
+& = & \lim_{\varepsilon \to 0^+} \left( \int_{-\infty}^{-\varepsilon} \frac{\phi(E)}E \dE + \int_{\varepsilon}^{+\infty} \frac{\phi(E)}E \dE \right)
+\end{eqnarray*}

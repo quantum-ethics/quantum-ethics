@@ -1,0 +1,41 @@
+\chapter{Dirac and Pauli matrices}
+
+\section{Pauli matrices}
+
+In this document, the Pauli matrices, which act canonically as endomorphisms of $\H^2$, are represented by:
+$$
+\begin{array}{ccc}
+\sigmat 1 \eqdef \matrix{0 & 1 \\ 1 & 0} &
+\sigmat 2 \eqdef \matrix{0 & -i \\ i & 0} &
+\sigmat 3 \eqdef \matrix{1 & 0 \\ 0 & -1}
+\end{array}
+$$
+These matrices verify the anticommutation relations:
+\begin{equation*}
+\left\{ \sigmat a, \sigmat b \right\} \eqdef \sigmat a \sigmat b + \sigmat b \sigmat a = 2 \delta_{a,b} I_2
+\end{equation*}
+
+\section{Dirac matrices}
+\label{Dirac matrices}
+
+In this document, the Dirac matrices, which act canonically as endomorphisms of $\H^4$, are represented by:
+$$
+\begin{array}{cc}
+\gammat 0 \eqdef \matrix{I_2 & 0 \\ 0 & -I_2} &
+\gammat 1 \eqdef \matrix{0 & \sigmat 1 \\ -\sigmat 1 & 0}
+\end{array}
+$$
+$$
+\begin{array}{cc}
+\gammat 2 \eqdef \matrix{0 & \sigmat 2 \\ -\sigmat 2 & 0} &
+\gammat 3 \eqdef \matrix{0 & \sigmat 3 \\ -\sigmat 3 & 0}
+\end{array}
+$$
+These matrices verify the anticommutation relations:
+\begin{equation*}
+\left\{ \gammat \mu, \gammat \nu \right\} \eqdef \gammat \mu \gammat \nu + \gammat \nu \gammat \mu = 2 \stthh g \mu \nu I_4
+\end{equation*}
+We will make use of the condensed vectorial notation:
+\begin{equation*}
+\gamvec \eqdef \matrix{ \gammat 1 \\ \gammat 2 \\ \gammat 3 }
+\end{equation*}
