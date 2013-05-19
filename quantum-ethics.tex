@@ -1,0 +1,40 @@
+\documentclass[10pt,a4paper,twoside,openany]{book}
+\usepackage{etoolbox}
+\usepackage{emptypage}
+\pagestyle{myheadings}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{myheadings}}{}{}
+\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
+\let\stdpart\part\renewcommand*\part{\cleardoublepage\stdpart}
+\usepackage[paperwidth=6in,paperheight=9in,top=19mm,bottom=10mm,outer=10mm,inner=14mm,pdftex]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[american]{babel}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex,pdfauthor=Sébastien\ Fauvel,pdftitle=Quantum\ Ethics:\ A\ Spinozist\ Interpretation\ of\ Quantum\ Field\ Theory]{hyperref}
+\usepackage{appendix}
+%\usepackage{makeidx}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsbsy}
+\usepackage{mathbbol}
+\usepackage[pdftex]{graphicx}
+\usepackage{flafter}
+\usepackage{epigraph}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\makeindex
+\setlength{\parskip}{2pt}
+
+\begin{document}
+
+\input{contents}
+
+\end{document}
+
+% Back cover
+
+%This groundbreaking work is bringing together quantum physicists and philosophers in an unprecedented way... Making a tabula rasa from all its historical and heuristical developments, it presents Quantum Field Theory in its modern form in a exquisitely simple mathematical apparatus, nonetheless completely well-defined and fully functional... Focusing on the underlying ontology of Quantum Field Theory, which turns out to be very similar to the classical metaphysics of Spinoza's Ethics, it provides a solid fundament for any philosophical discussion of its interpretation.
+%This book ought to become compulsory reading not only for all philosophers interested by the metaphysical and ethical implications of Quantum Physics, but also for all physicists working on the foundations of Physics, on Quantum Measurement and on Decoherence Theory.
+
+%About the author:
+%Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative Literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.
