@@ -16,21 +16,39 @@ where $\op{\Pi}_\cms$ is the orthogonal projection operator on $\H_\cms$. Furthe
 \end{equation*}
 
 \section{Mental evolution}
+\label{Mental evolution}
 
-Fundamentally, Quantum Field Theory also defines the probability that any given succession of collective mind states be experienced, an initial quantum state being given. In the case where the actually experienced collective mind state has a relatively high probability, our mental state may give us some clues about the physics of the world we live in; on the opposite, if our collective mind state has a very low probability, our mental experience has very little to do with the laws of the physical world and we live in a mere illusion of knowing something about the material reality -- without having any mean of noticing it. This dilemma is very well known of particle physicists, who have to accept they cannot make more precise statements about reality than, for instance, ``in the context of the standard model and in the presence of a sequential fourth family of fermions with high masses [...] a Higgs boson with mass between 144 and 207 GeV/$\mathrm{c}^2$ is ruled out at 95\% confidence level''~\cite{CMS2011}. Any physical model can also be conventionally, but not definitely, ``ruled out'' if it predicts the observed results with a probability considered to be too low.
-
-Given an initial quantum state $\ket{\Psi_0} \in \H_{\cms_0}$ at $t = 0$, the probability $P(\cms_t,t)$ that a given collective mind state $\cms_t$ is being realized at time $t \tau$, where $t \in \IN^*$, reads for $t = 1$:
+Fundamentally, Quantum Field Theory also defines the probability that any given succession of collective mind states be experienced, an initial quantum state being given. Explicitely, for an initial quantum state $\ket{\Psi_i} \in \H_{\cms_i}$ at time $t_i = 0$, the probability $\mathrm P_t(\cms_0, \dotsc, \cms_t)$, where $t \in \IN$, that a given sequence $\cms_0, \dotsc, \cms_t$ is being experienced at times $0, \dotsc, t \tau$, reads for $t = 0$:
 \begin{equation*}
-P(\cms_1,1) = \bra{\Psi_0} \dop U_\tau \op \Pi_{\cms_1} \op U_\tau \ket{\Psi_0} / \braket{\Psi_0}{\Psi_0}
+\mathrm P_0(\cms_0) = \bra{\Psi_i} \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i} = \delta_{\cms_i}(\cms_0)
+\end{equation*}
+for $t = 1$:
+\begin{equation*}
+\mathrm P_1(\cms_0, \cms_1) = \bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
 \end{equation*}
 where $\op U_\tau \eqdef \exp{- \i 2 \pi \Hop \tau / \h}$, and more generally for $t \geq 2$:
 \begin{equation*}
-P(\cms_t,t) = \sum_{\cms_{t - 1}} \dotsm \sum_{\cms_1} \bra{\Psi_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \ket{\Psi_0} / \braket{\Psi_0}{\Psi_0}
+\mathrm P_t(\cms_0, \dotsc, \cms_t) = \bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
 \end{equation*}
-If the initial vector state isn't exactly known, averaging on an orthonormal basis of $\H_{\cms_0}$ leads to:
+
+The total probability $P_t(\cms_t)$ that a given collective mind state $\cms_t$ is being experienced at time $t \tau$, where $t \in \IN$, reads for $t = 0$:
 \begin{equation*}
-\left< P(\cms_t,t) \right>_{\cms_0} = \sum_{\cms_{t - 1}} \dotsm \sum_{\cms_1} \mathrm{Tr}_{\H_{\cms_0}} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau / \mathrm{dim} \H_{\cms_0}
+P_0(\cms_0) = \mathrm P_0(\cms_0)
 \end{equation*}
+and more generally for $t \geq 1$:
+\begin{equation*}
+P_t(\cms_t) = \sum_{\cms_{t - 1}} \dotsm \sum_{\cms_0} \mathrm P_t(\cms_0, \dotsc, \cms_t)
+\end{equation*}
+
+\paragraphtitle{Remark} If the initial vector state isn't exactly known, averaging on an orthonormal basis of $\H_{\cms_i}$ leads to:
+\begin{equation*}
+\left< P_1(\cms_1) \right>_{\cms_i} = \mathrm{Tr}_{\H_{\cms_i}} \dop U_\tau \op \Pi_{\cms_1} \op U_\tau / \mathrm{dim} \H_{\cms_i}
+\end{equation*}
+\begin{equation*}
+\left< P_t(\cms_t) \right>_{\cms_i} = \sum_{\cms_{t - 1}} \dotsm \sum_{\cms_1} \mathrm{Tr}_{\H_{\cms_i}} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau / \mathrm{dim} \H_{\cms_i}
+\end{equation*}
+
+\paragraphtitle{Complements} In the case where the actually experienced collective mind state has a relatively high probability, our mental state may give us some clues about the physics of the world we live in; on the opposite, if our collective mind state has a very low probability, our mental experience has very little to do with the laws of the physical world and we live in a mere illusion of knowing something about the material reality -- without having any mean of noticing it. This dilemma is very well known of particle physicists, who have to accept they cannot make more precise statements about reality than, for instance, ``in the context of the standard model and in the presence of a sequential fourth family of fermions with high masses [...] a Higgs boson with mass between 144 and 207 GeV/$\mathrm{c}^2$ is ruled out at 95\% confidence level''~\cite{CMS2011}. Any physical model can also be conventionally, but not definitely, ``ruled out'' if it predicts the observed results with a probability considered to be too low.
 
 \section{Transition probability}
 
