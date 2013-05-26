@@ -60,7 +60,7 @@ Of course, this hypothesis is logically perfectly correct, but it is utmost diff
 \mathrm P_t(\cms_0, \dotsc, \cms_t) = \bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
 \end{equation*}
 
-\paragraphtitle{Definitions} An infinite sequence $(\cms_t)$, indexed on $t \in \IN$, is said to be `certain' if $\mathrm P_t(\cms_0, \dotsc, \cms_t) = 1$ for all $t \in \IN$; `impossible' if there exists a $t_1 \in \IN$ such that $\mathrm P_t(\cms_0, \dotsc, \cms_t) = 0$ for all $t \geq t_1$; and `contingent' otherwise.
+\paragraphtitle{Definitions} An infinite sequence $(\cms_t)$, indexed on $t \in \IN$, is said to be `certain' if $\mathrm P_t(\cms_0, \dotsc, \cms_t) = 1$ for all $t \in \IN$; `impossible' if $\lim_{t \to \infty} \mathrm P_t(\cms_0, \dotsc, \cms_t) = 0$; and `contingent' otherwise.
 
 It is said to be `dead' if it is constant, i.e. if $\cms_t = \cms_0$ for all $t \in \IN$; to be `dying' if it is eventually constant, i.e. if there exists a $t_1 \in \IN$ such that $\cms_t = \cms_{t_1}$ for all $t \geq t_1$, although $\cms_{t_0} \neq \cms_{t_1}$ for some $t_0 < t_1$; and to be `immortal' otherwise.
 
