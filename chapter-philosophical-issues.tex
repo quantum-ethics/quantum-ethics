@@ -68,6 +68,34 @@ A quantum state is said to be ``certainly dead'' if, taken as an initial state, 
 
 \paragraphtitle{Lemma} Eventually dying sequences are infinitely improbable.
 
+\paragraphtitle{Proof} An eventually dying sequence $(\cms_t)$ is characterized, per definition, by the existence of a $t_f \in \IN^*$ such that:
+\begin{equation*}
+t_f = \mathrm{min} \{ t \in \IN\ |\ \forall t' > t,\ \cms_{t'} = \cms_t \}
+\end{equation*}
+This sequence is, per definition, infinitely improbable if and only if, for any initial quantum state $\ket{\Psi_i} \neq 0$, we have:
+\begin{equation*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} 0
+\end{equation*}
+The analysis of the asymptotical behavior can be simplified by using, for $t \geq t_f$, following factorization:
+\begin{multline*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = \mathrm P_{t_f}(\cms_0, \dotsc, \cms_{t_f}; \ket{\Psi_i}) \\
+\mathrm P_{t - t_f}(\cms_{t_f}, \dotsc, \cms_t; \op \Pi_{\cms_{t_f}} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i})
+\end{multline*}
+The asymptotical behavior is governed by the second factor, which we will analyze under the generic form:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} (\op \Pi_{\cms} \dop U_\tau)^t \op \Pi_{\cms} (\op U_\tau \op \Pi_{\cms})^t \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+We will show that it admits a limit of the form:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \xrightarrow{t \to \infty} \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+where $\H_\cms^\infty$ is a subspace of $\H_\cms$ that we will define subsequently. We have therefore:
+\begin{multline*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} \\
+\bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\H_{\cms_{t_f}}^\infty} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
+\end{multline*}
+and proving that $\op \Pi_{\H_\cms^\infty} \op U_\tau \op \Pi_{\cms'} = 0$ for any $\cms' \neq \cms$ will yield the conclusion.
+
 \paragraphtitle{Theorem} No quantum state is mortal.
 
 \paragraphtitle{Corollary} There will be with certainty extra-terrestrial forms of conscious life.
