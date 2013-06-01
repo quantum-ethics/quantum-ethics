@@ -62,7 +62,7 @@ Of course, this hypothesis is logically perfectly correct, but it is utmost diff
 
 \paragraphtitle{Definitions} An infinite sequence $(\cms_t)$, indexed on $t \in \IN$, is said to be ``dead'' if it is constant, i.e. if $\cms_t = \cms_0$ for all $t \in \IN$; to be ``eventually dying'' if it becomes constant after a certain point, i.e. if there exists a $t_1 \in \IN^*$ such that $\cms_t = \cms_{t_1}$ for all $t \geq t_1$, although $\cms_{t_0} \neq \cms_{t_1}$ for some $t_0 < t_1$; and to be ``immortal'' otherwise.
 
-It is said to be ``certain'', for a given initial state, if $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 1$ for all $t \in \IN$; ``infinitely improbable'' if $\lim_{t \to \infty} \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 0$; and ``contingent'' otherwise.
+It is said to be ``certain'', for a given initial quantum state $\ket{\Psi_i} \neq 0$, if we have $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 1$ for all $t \in \IN$; to be ``infinitely improbable'' if, for any initial quantum state $\ket{\Psi_i} \neq 0$, $\lim_{t \to \infty} \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 0$; and to be ``contingent'' otherwise.
 
 A quantum state is said to be ``certainly dead'' if, taken as an initial state, one of the dead sequences is certain; to be ``possibly dead'' if a dead sequence is contingent; to be ``mortal'' if an eventually dying sequence is certain or at least contingent; and to be ``immortal'' otherwise.
 
