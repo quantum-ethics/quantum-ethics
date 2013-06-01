@@ -96,6 +96,19 @@ where $\H_\cms^\infty$ is a subspace of $\H_\cms$ that we will define subsequent
 \end{multline*}
 and proving that $\op \Pi_{\H_\cms^\infty} \op U_\tau \op \Pi_{\cms'} = 0$ for any $\cms' \neq \cms$ will yield the conclusion.
 
+Let us first analyze the structure of a mental subspace $\H_\cms$. Let $\H_\cms^{n+}$ be the subspace of the quantum states in $\H_\cms$ remaining in $\H_\cms$ after $1, \dotsc, n$ applications of the elementary evolution operator $\op U_\tau$. This operator being unitary, it is inversible, so that we can define these subspaces by:
+\begin{equation*}
+\H_\cms^{n+} \eqdef \bigcap_{t = 0}^n \op U_\tau^{-t} \H_\cms
+\end{equation*}
+where $n \in \IN$. These subspaces are included in each other by construction, and we write $\H_\cms^\infty$ their intersection, given by:
+\begin{equation*}
+\H_\cms^\infty \eqdef \bigcap_{t = 0}^\infty \op U_\tau^{-t} \H_\cms
+\end{equation*}
+Let $\H_\cms^n$ be the supplementary subspace of $\H_\cms^{(n + 1)+}$ in $\H_\cms^{n+}$, defined by:
+\begin{equation*}
+\H_\cms^{n+} = \H_\cms^{(n + 1)+} \bigoplus^\perp \H_\cms^n
+\end{equation*}
+
 \paragraphtitle{Theorem} No quantum state is mortal.
 
 \paragraphtitle{Corollary} There will be with certainty extra-terrestrial forms of conscious life.
