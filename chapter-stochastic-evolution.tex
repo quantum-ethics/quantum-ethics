@@ -18,7 +18,7 @@ where $\op{\Pi}_\cms$ is the orthogonal projection operator on $\H_\cms$. Furthe
 \section{Mental evolution}
 \label{Mental evolution}
 
-Fundamentally, Quantum Field Theory also defines the probability that any given succession of collective mind states be experienced, an initial quantum state being given. Explicitely, for an initial quantum state $\ket{\Psi_i} \neq 0$ at time $t_i = 0$, the probability $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i})$, where $t \in \IN$, that a given sequence $\cms_0, \dotsc, \cms_t$ is being experienced at times $0, \dotsc, t \tau$, reads for $t = 0$:
+Fundamentally, Quantum Field Theory also defines the probability that any given succession of collective mind states be experienced, an initial quantum state being given. Explicitly, for an initial quantum state $\ket{\Psi_i} \neq 0$ at time $t_i = 0$, the probability $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i})$, where $t \in \IN$, that a given sequence $\cms_0, \dotsc, \cms_t$ is being experienced at times $0, \dotsc, t \tau$, reads for $t = 0$:
 \begin{equation*}
 \mathrm P_0(\cms_0; \ket{\Psi_i}) = \bra{\Psi_i} \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
 \end{equation*}
@@ -31,6 +31,17 @@ where $\op U_\tau \eqdef \exp{- \i 2 \pi \Hop \tau / \h}$, and more generally fo
 \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = \bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
 \end{equation*}
 
+\paragraphtitle{Remarks} The probability laws obey following factorization rule, where $t' \leq t$:
+\begin{multline*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = \mathrm P_{t'}(\cms_0, \dotsc, \cms_{t'}; \ket{\Psi_i}) \\
+\mathrm P_{t - t'}(\cms_{t'}, \dotsc, \cms_t; \op \Pi_{\cms_{t'}} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i})
+\end{multline*}
+
+If the initial vector state isn't exactly known, but belongs to a given subspace $\H_i$, averaging on an orthonormal basis of this subspace leads to:
+\begin{equation*}
+\left< \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \right>_{\H_i} = \mathrm{Tr}_{\H_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} / \mathrm{dim} \H_i
+\end{equation*}
+
 The total probability $P_t(\cms_t; \ket{\Psi_i})$ that a given collective mind state $\cms_t$ is being experienced at time $t \tau$, where $t \in \IN$, reads for $t = 0$:
 \begin{equation*}
 P_0(\cms_0; \ket{\Psi_i}) = \mathrm P_0(\cms_0; \ket{\Psi_i})
@@ -38,11 +49,6 @@ P_0(\cms_0; \ket{\Psi_i}) = \mathrm P_0(\cms_0; \ket{\Psi_i})
 and more generally for $t \geq 1$:
 \begin{equation*}
 P_t(\cms_t; \ket{\Psi_i}) = \sum_{\cms_{t - 1}} \dotsm \sum_{\cms_0} \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i})
-\end{equation*}
-
-\paragraphtitle{Remark} If the initial vector state isn't exactly known, but belongs to a given subspace $\H_i$, averaging on an orthonormal basis of this subspace leads to:
-\begin{equation*}
-\left< \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \right>_{\H_i} = \mathrm{Tr}_{\H_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} / \mathrm{dim} \H_i
 \end{equation*}
 
 \paragraphtitle{Complements} In the case where the actually experienced collective mind state has a relatively high probability, our mental state may give us some clues about the physics of the world we live in; on the opposite, if our collective mind state has a very low probability, our mental experience has very little to do with the laws of the physical world and we live in a mere illusion of knowing something about the material reality -- without having any mean of noticing it. This dilemma is very well known of particle physicists, who have to accept they cannot make more precise statements about reality than, for instance, ``in the context of the standard model and in the presence of a sequential fourth family of fermions with high masses [...] a Higgs boson with mass between 144 and 207 GeV/$\mathrm{c}^2$ is ruled out at 95\% confidence level''~\cite{CMS2011}. Any physical model can also be conventionally, but not definitely, ``ruled out'' if it predicts the observed results with a probability considered to be too low.
