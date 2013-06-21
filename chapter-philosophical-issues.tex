@@ -126,7 +126,7 @@ for any quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$ and any $t \in \IN$.
 \begin{equation*}
 \H_\cms = \H_\cms^{\infty} \operp \H_\cms^{\infty \perp}
 \end{equation*}
-is not null. We will consider the endomorphism $U_\cms$ induced by $U_\tau$ on $\H_\cms$, given by:
+isn't reduced to the zero subspace. We will consider the endomorphism $U_\cms$ induced by $U_\tau$ on $\H_\cms$, given by:
 \begin{equation*}
 U_\cms \eqdef \op \Pi_\cms U_\tau \op \Pi_\cms
 \end{equation*}
@@ -165,6 +165,36 @@ where $\lfloor \cdot \rfloor$ denotes the floor function. In particular, for any
 \begin{equation*}
 \mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \leq p_\cms^{n_\cms \lfloor t / n_\cms \rfloor} \xrightarrow{t \to \infty} 0
 \end{equation*}
+
+\paragraphtitle{§} It is easy to show that, for any quantum state $\ket{\Psi} \in \H$ orthogonal to $\H_\cms^\infty$ and for any mental state $\cms' \in \CMS$, $\op U_{\cms'} \ket{\Psi}$ is still orthogonal to $\H_\cms^\infty$. For any mental state $\cms' \neq \cms$, this is trivial because $\op U_{\cms'} \ket{\Psi} \in \H_{\cms'}$, which is orthogonal to the mental subspace $\H_\cms$ and \textit{a fortiori} to its subspace $\H_\cms^\infty$. We assume from now on $\cms' = \cms$. The decomposition $\op \Pi_\cms = \op \Pi_{\H_\cms^\infty} + \op \Pi_{\H_\cms^{\infty \perp}}$ reduces to $\op \Pi_\cms \ket{\Psi} = \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} \in \H_\cms^{\infty \perp}$ since $\ket{\Psi}$ is orthogonal to $\H_\cms^\infty$. $\op U_\tau$ being unitary, it preserves orthogonality, so that $\op U_\tau \op \Pi_\cms \ket{\Psi}$ is orthogonal to $\op U_\tau \H_\cms^\infty = \H_\cms^\infty$. The above decomposition of $\op \Pi_\cms$ reduces therefore again to $\op \Pi_\cms \op U_\tau \op \Pi_\cms \ket{\Psi} = \op \Pi_{\H_\cms^{\infty \perp}} \op U_\tau \op \Pi_\cms \ket{\Psi}$, which proves that $\op U_\cms \ket{\Psi} \in \H_\cms^{\infty \perp}$.
+
+\paragraphtitle{§} For any quantum state $\ket{\Psi} \in \H$, any mental state $\cms \in \CMS$ and any $n \in \IN^*$, $\op U_\cms^n \ket{\Psi}$ can thus be decomposed by linearity into the orthogonal sum of a quantum state $\op U_\tau^n \op \Pi_{\H_\cms^\infty} \ket{\Psi} \in \H_\cms^\infty$ and of a quantum state $\op U_\cms^n \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} \in \H_\cms^{\infty \perp}$. Hence its squared norm can be decomposed into:
+\begin{equation*}
+\bra{\Psi} \dop U_\cms^n \op U_\cms^n \ket{\Psi} = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} + \bra{\Psi} \op \Pi_{\H_\cms^{\infty \perp}} \dop U_\cms^n \op U_\cms^n \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi}
+\end{equation*}
+If the quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$ is orthogonal to $\H_\cms^{\infty \perp}$, the second term is zero, so that we have for any $t \in \IN^*$:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+Otherwise, for any quantum state $\ket{\Psi}$ having a non-zero component in $\H_\cms^{\infty \perp}$, we can write for any $t \in \IN$:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi} + \bra{\Psi} \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} / \braket{\Psi}{\Psi} \mathrm P_t(\cms, \dotsc, \cms; \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi})
+\end{equation*}
+so that we have more generally:
+\begin{equation*}
+\forall \ket{\Psi} \in \H \setminus \{ 0 \},\ \mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \xrightarrow{t \to \infty} \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+
+\paragraphtitle{§} It is now easy to conclude. For any sequence $(\cms_t)$ eventually dying at $t_f$, as stated above, we have for any initial quantum state $\ket{\Psi_i} \in \H \setminus \{ 0 \}$:
+\begin{multline*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} \\
+\bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \dotsm \op \Pi_{\cms_{t_f-1}} \dop U_\tau \op \Pi_{\H_{\cms_{t_f}}^\infty} \op U_\tau \op \Pi_{\cms_{t_f-1}} \dotsm \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
+\end{multline*}
+Now we've already seen that, for any quantum state $\ket{\Psi}$ orthogonal to $\H_{\cms_{t_f}}^\infty$, $\op U_\tau \ket{\Psi}$ is orthogonal to this subspace too. Since $\cms_{t_f-1} \neq \cms_{t_f}$ by hypothesis, the subspaces $\H_\cms_{t_f-1}$ and $\H_{\cms_{t_f}}^\infty \subset \H_\cms_{t_f}$ are orthogonal to each other, so that we have $\op \Pi_{\H_{\cms_{t_f}}^\infty} \op U_\tau \op \Pi_{\cms_{t_f-1}} = 0$. As a consequence,
+\begin{equation*}
+\forall \ket{\Psi_i} \in \H \setminus \{ 0 \},\ \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} 0
+\end{equation*}
+Any eventually dying sequence is therefore infinitely improbable, \textit{QED}.
 
 \paragraphtitle{Theorem} No quantum state is mortal.
 
