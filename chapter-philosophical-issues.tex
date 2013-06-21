@@ -177,9 +177,10 @@ If the quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$ is orthogonal to $\H_
 \mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
 \end{equation*}
 Otherwise, for any quantum state $\ket{\Psi}$ having a non-zero component in $\H_\cms^{\infty \perp}$, we can write for any $t \in \IN$:
-\begin{equation*}
-\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi} + \bra{\Psi} \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} / \braket{\Psi}{\Psi} \mathrm P_t(\cms, \dotsc, \cms; \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi})
-\end{equation*}
+\begin{multline*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi} \\
++ \mathrm P_t(\cms, \dotsc, \cms; \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi}) \bra{\Psi} \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{multline*}
 so that we have more generally:
 \begin{equation*}
 \forall \ket{\Psi} \in \H \setminus \{ 0 \},\ \mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \xrightarrow{t \to \infty} \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
