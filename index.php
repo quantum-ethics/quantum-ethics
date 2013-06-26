@@ -98,6 +98,7 @@ function curl_get($url, array $get = array(), array $options = array()) {
 				<p><a href="https://github.com/sebastien-fauvel/quantum-ethics">» Contribute on GitHub</a></p><br>
 			</div>
 <? print latex2html(curl_get('https://raw.github.com/sebastien-fauvel/quantum-ethics/master/chapter-history-of-this-book.tex')); ?>
+			<p><a href="http://quantum-ethics.org/Quantum%20Ethics.php">Read more...</a></p>
 			<h4>About the Author</h4>
 			<p>Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative Literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.</p>
 		</div>
