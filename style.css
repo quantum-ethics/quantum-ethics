@@ -82,31 +82,10 @@ div#download p {
 	margin: 0 0 4px 0;
 }
 
-div#download a {
+div#abstract a {
 	color: #1A55AD;
 	text-shadow: 0 0 3px #74ACFF;
 	text-decoration: none;
 	font-weight: bold;
 }
 
-div#sharing {
-	clear: both;
-	float: left;
-	font-family: Arial, sans-serif;
-	font-size: 12px;
-}
-
-div#sharing a {
-	color: #115BB5;
-	text-decoration: none;
-}
-
-div#licence {
-	text-align: right;
-	font-style: italic;
-}
-
-div#licence a {
-	color: #115BB5;
-	text-decoration: none;
-}
