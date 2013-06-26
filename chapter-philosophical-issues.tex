@@ -53,6 +53,168 @@ Of course, this hypothesis is logically perfectly correct, but it is utmost diff
 %Und was gab das den Frauen für eine wehmütige Schönheit, wenn sie schwanger waren und standen, und in ihrem großen Leib, auf welchem die schmalen Hände unwillkürlich liegen blieben, waren zwei Früchte: ein Kind und ein Tod. Kam das dichte, beinah nahrhafte Lächeln in ihrem ganz ausgeräumten Gesicht nicht davon her, daß sie manchmal meinten, es wüchsen beide?
 %Rainer Maria Rilke: Die Aufzeichnungen des Malte Laurids Brigge
 
+\section{Soul immortality theorem}
+
+\paragraphtitle{Reminder} As stated in section \ref{Mental evolution}, Quantum Field Theory defines, for an arbitrary initial quantum state $\ket{\Psi_i} \neq 0$ realized at the initial time $t_i = 0$, the probability laws $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i})$, where $t \in \IN$, that a given sequence of collective mind states $\cms_0, \dotsc, \cms_t$ is being experienced at times $0, \dotsc, t \tau$. These probability laws read:
+\begin{equation*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = \bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\cms_t} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
+\end{equation*}
+
+\paragraphtitle{Definitions} An infinite sequence $(\cms_t)$, indexed on $t \in \IN$, is said to be ``dead'' if it is constant, \textit{i.e.} if $\cms_t = \cms_0$ for all $t \in \IN$; to be ``eventually dying'' if it becomes constant after a certain point, \textit{i.e.} if there exists a $t_1 \in \IN^*$ such that $\cms_t = \cms_{t_1}$ for all $t \geq t_1$, although $\cms_{t_0} \neq \cms_{t_1}$ for some $t_0 < t_1$; and to be ``immortal'' otherwise.
+
+It is said to be ``certain'', for a given initial quantum state $\ket{\Psi_i} \neq 0$, if we have $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 1$ for all $t \in \IN$; to be ``infinitely improbable'' if $\lim_{t \to \infty} \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 0$; and to be ``contingent'' otherwise.
+
+A quantum state is said to be ``certainly dead'' if, taken as an initial state, one of the dead sequences is certain; to be ``possibly dead'' if a dead sequence is contingent; to be ``mortal'' if an eventually dying sequence is certain or at least contingent; and to be ``immortal'' otherwise.
+
+\paragraphtitle{Lemma} Eventually dying sequences are infinitely improbable.
+
+\paragraphtitle{Proof} An eventually dying sequence $(\cms_t)$ is characterized, per definition, by the existence of a $t_f \in \IN^*$ such that:
+\begin{equation*}
+t_f = \min \{ t \in \IN\ |\ \forall t' > t,\ \cms_{t'} = \cms_t \}
+\end{equation*}
+This sequence is, per definition, infinitely improbable if and only if, for any initial quantum state $\ket{\Psi_i} \neq 0$, we have:
+\begin{equation*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} 0
+\end{equation*}
+The analysis of the asymptotic behavior can be simplified by using, for $t \geq t_f$, following factorization:
+\begin{multline*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = \mathrm P_{t_f}(\cms_0, \dotsc, \cms_{t_f}; \ket{\Psi_i}) \\
+\mathrm P_{t - t_f}(\cms_{t_f}, \dotsc, \cms_t; \op \Pi_{\cms_{t_f}} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i})
+\end{multline*}
+The asymptotic behavior is governed by the second factor, which we will analyze under the generic form:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} (\op \Pi_{\cms} \dop U_\tau)^t \op \Pi_{\cms} (\op U_\tau \op \Pi_{\cms})^t \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+We will show that it admits a limit of the form:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \xrightarrow{t \to \infty} \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+where $\H_\cms^\infty$ is a subspace of $\H_\cms$ that we will define subsequently. We have therefore:
+\begin{multline*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} \\
+\bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \op \Pi_{\cms_1} \dotsm \dop U_\tau \op \Pi_{\H_{\cms_{t_f}}^\infty} \op U_\tau \dotsm \op \Pi_{\cms_1} \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
+\end{multline*}
+and proving that $\op \Pi_{\H_\cms^\infty} \op U_\tau \op \Pi_{\cms'} = 0$ for any $\cms' \neq \cms$ will yield the conclusion.
+
+\paragraphtitle{§} Let us first analyze the structure of a mental subspace $\H_\cms$. Let $\H_\cms^n$ be the subspace of the quantum states in $\H_\cms$ remaining in $\H_\cms$ after $1, \dotsc, n$ applications of the elementary evolution operator $\op U_\tau$. This operator being unitary, it is invertible, so that we can define these subspaces by:
+\begin{equation*}
+\H_\cms^n \eqdef \bigcap_{t = 0}^n \op U_\tau^{-t} \H_\cms
+\end{equation*}
+where $n \in \IN$. These subspaces are included in each other by construction, and we write $\H_\cms^\infty$ their intersection, given by:
+\begin{equation*}
+\H_\cms^\infty \eqdef \bigcap_{t = 0}^\infty \op U_\tau^{-t} \H_\cms
+\end{equation*}
+
+\paragraphtitle{§} $\H_\cms$ being finite dimensional, there must exist a finite number of distinct nested subspaces $\H_\cms^n$. Indeed, $\op U_\tau^{-1}$ being injective, we have
+\begin{equation*}
+\H_\cms^{n+1} = \H_\cms \cap \op U_\tau^{-1} \H_\cms^n
+\end{equation*}
+for any $n \in \IN$; if there exists a $n \in \IN$ such that $\H_\cms^n = \H_\cms^{n+1}$, we have therefore by recurrence $\H_\cms^n = \H_\cms^{n'} = \H_\cms^\infty$ for any $n' \geq n$. If there didn't exist such a $n \in \IN$, the inclusions $\H_\cms^{n+1} \subset \H_\cms^n$ would all be strict, so that the dimension of $\H_\cms^0 = \H_\cms$ would be infinite, which isn't the case. There must also exist a $n_\cms \in \IN$ such that
+\begin{equation*}
+n_\cms = \min \{ n \in \IN\ |\ \H_\cms^n = \H_\cms^{n+1} \}
+\end{equation*}
+and we have $\H_\cms^{n_\cms} = \H_\cms^\infty$.
+
+\paragraphtitle{§} In the special case $n_\cms = 0$, it is trivial to show that $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi})$ tends to $\bra{\Psi} \op \Pi_{\H_\cms^\infty} / \braket{\Psi}{\Psi}$ for any initial quantum state $\ket{\Psi} \neq 0$. In this case, we have $\H_\cms^\infty = \H_\cms$ and we will see that  $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}$ for any $t \in \IN$. The assertion holds for $t = 0$ per definition, and $\op \Pi_\cms \ket{\Psi} \in \H_\cms$ since $\op \Pi_\cms$ is a projection operator on $\H_\cms$. For any quantum state $\ket{\Psi_\cms} \in \H_\cms$, $\op U_\tau \ket{\Psi_\cms}$ has the same norm as $\ket{\Psi_\cms}$ because of the unitarity of $\op U_\tau$, and since $\H_\cms = \H_\cms^\infty \subset \op U_\tau^{-1} \H_\cms$, $\op U_\tau \ket{\Psi_\cms}$ belongs to $\H_\cms$, so that $\op \Pi_\cms \op U_\tau \ket{\Psi_\cms}$ is equal to $\op U_\tau \ket{\Psi_\cms}$ and has the same norm as $\ket{\Psi_\cms}$, too. It is easy then to prove by recurrence that $(\op \Pi_\cms \op U_\tau)^t \ket{\Psi_\cms}$ is equal to $\op U_\tau^t \ket{\Psi_\cms}$ and has therefore the same norm as $\ket{\Psi_\cms}$ for any $t \in \IN$, so that we have:
+\begin{eqnarray*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) & = & \bra{\Psi} \op \Pi_\cms (\dop U_\tau \op \Pi_\cms)^t (\op \Pi_\cms \op U_\tau)^t \op \Pi_\cms \ket{\Psi} / \braket{\Psi}{\Psi} \\
+& = & \bra{\Psi} \op \Pi_\cms \ket{\Psi} / \braket{\Psi}{\Psi} = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{eqnarray*}
+for any quantum state $\ket{\Psi} \neq 0$ and any $t \in \IN$.
+
+\paragraphtitle{§} We assume from now on $n_\cms \geq 1$, so that the supplementary subspace $\H_\cms^{\infty \perp}$ of $\H_\cms^{\infty}$ in $\H_\cms$, defined by:
+\begin{equation*}
+\H_\cms = \H_\cms^{\infty} \operp \H_\cms^{\infty \perp}
+\end{equation*}
+isn't reduced to the zero subspace. We will consider the endomorphism $\op U_\cms$ induced by $\op U_\tau$ on $\H_\cms$, given by:
+\begin{equation*}
+\op U_\cms \eqdef \op \Pi_\cms \op U_\tau \op \Pi_\cms
+\end{equation*}
+With this operator, we can write for any $t \in \IN^*$ and any quantum state $\ket{\Psi} \neq 0$:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \dop U_\cms^t \op U_\cms^t \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+and we will see that the subspaces $\H_\cms^n$ can be characterized, for any $n \in \IN^*$, by:
+\begin{equation*}
+\H_\cms^n = \{ \ket{\Psi} \in \H\ |\ \bra{\Psi} \dop U_\cms^n \op U_\cms^n \ket{\Psi} = \braket{\Psi}{\Psi} \}
+\end{equation*}
+
+\paragraphtitle{§} Let us prove it by recurrence. $\op \Pi_\cms$ being the orthogonal projection operator on $\H_\cms$, for any quantum state $\ket{\Psi} \in \H$, $\op \Pi_\cms \ket{\Psi}$ and $\ket{\Psi}$ have the same norm if and only if $\ket{\Psi} \in \H_\cms$, otherwise $\bra{\Psi} \op \Pi_\cms \ket{\Psi} < \braket{\Psi}{\Psi}$. $\op U_\tau$ being unitary, it preserves the norm of $\op \Pi_\cms \ket{\Psi}$. Consequently, $\op U_\cms \ket{\Psi}$ and $\ket{\Psi}$ have the same norm if and only if $\ket{\Psi} \in \H_\cms$ and $\op U_\tau \op \Pi_\cms \ket{\Psi} \in \H_\cms$, otherwise $\bra{\Psi} \dop U_\cms \op U_\cms \ket{\Psi} < \braket{\Psi}{\Psi}$. For any $\ket{\Psi} \in \H_\cms$, $\op \Pi_\cms \ket{\Psi} = \ket{\Psi}$, so that this condition is equivalent to $\ket{\Psi} \in \H_\cms \cap \op U_\tau^{-1} \H_\cms = \H_\cms^1$. We have therefore:
+\begin{equation*}
+\H_\cms^1 = \{ \ket{\Psi} \in \H\ |\ \bra{\Psi} \dop U_\cms \op U_\cms \ket{\Psi} = \braket{\Psi}{\Psi} \}
+\end{equation*}
+which proves the assertion for $n = 1$. Let us assume that, for a given $n \in \IN^*$, $\op U_\cms^n \ket{\Psi}$ and $\ket{\Psi}$ have the same norm if and only if $\ket{\Psi} \in \H_\cms^n$, whereas $\bra{\Psi} \dop U_\cms^n \op U_\cms^n \ket{\Psi} < \braket{\Psi}{\Psi}$ otherwise. It can then be proved like above that $\op U_\cms^{n+1} \ket{\Psi}$ and $\ket{\Psi}$ have the same norm if and only if $\ket{\Psi} \in \H_\cms^n$, $\op U_\cms^n \ket{\Psi} \in \H_\cms$ and $\op U_\tau \op U_\cms^n \ket{\Psi} \in \H_\cms$, whereas $\bra{\Psi} \dop U_\cms^{n+1} \op U_\cms^{n+1} \ket{\Psi} < \braket{\Psi}{\Psi}$ otherwise. For any $\ket{\Psi} \in \H_\cms^n$, $\op U_\cms^n \ket{\Psi} = \op U_\tau^n \ket{\Psi}$, so that this condition is equivalent to $\ket{\Psi} \in \H_\cms^n \cap \op U_\tau^{-n} \H_\cms \cap \op U_\tau^{-(n+1)} \H_\cms = \H_\cms^{n+1}$, which proves the assertion for any $n \in \IN^*$ by recurrence.
+
+\paragraphtitle{§} As a consequence, since $\H_\cms^{n_\cms} = \H_\cms^\infty$ and $\H_\cms^{\infty \perp}$ are disjoint  by construction, we have in particular:
+\begin{equation*}
+\forall \ket{\Psi} \in \H_\cms^{\infty \perp} \setminus \{ 0 \},\ \mathrm P_{n_\cms}(\cms, \dotsc, \cms; \ket{\Psi}) < 1
+\end{equation*}
+The function $\mathrm P_{n_\cms}(\cms, \dotsc, \cms; \ket{\Psi})$ is continuous on $\H \setminus \{ 0 \}$ and, being constant on the rays $\IC^* \ket{\Psi}$, its maximum on $\H_\cms^{\infty \perp} \setminus \{ 0 \}$ can be evaluated on the unit sphere of this subspace. Because of the finite dimensionality of $\H_\cms^{\infty \perp}$, the unit sphere is compact, so that this maximum exists and is being reached. There exists therefore a $p_\cms \in [0, 1[$ such that:
+\begin{equation*}
+p_\cms^{n_\cms} = \max \{ \mathrm P_{n_\cms}(\cms, \dotsc, \cms; \ket{\Psi})\ | \ket{\Psi} \in \H_\cms^{\infty \perp} \setminus \{ 0 \} \}
+\end{equation*}
+This will allow us to set an upper bound to $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi})$ for any $t \geq n_\cms$. Per factorization, for any quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$ and any $k \in \IN^*$, we have:
+\begin{equation*}
+\mathrm P_{k n_\cms}(\cms, \dotsc, \cms; \ket{\Psi}) = \mathrm P_{n_\cms}(\cms, \dotsc, \cms; \ket{\Psi})^k
+\end{equation*}
+and, $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi})$ being a decreasing function of $t$, we have more generally for any $t \geq n_\cms$:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \leq \mathrm P_{n_\cms}(\cms, \dotsc, \cms; \ket{\Psi})^{\lfloor t / n_\cms \rfloor}
+\end{equation*}
+where $\lfloor \cdot \rfloor$ denotes the floor function. In particular, for any quantum state $\ket{\Psi} \in \H_\cms^{\infty \perp} \setminus \{ 0 \}$, we have the estimation:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \leq p_\cms^{n_\cms \lfloor t / n_\cms \rfloor} \xrightarrow{t \to \infty} 0
+\end{equation*}
+
+\paragraphtitle{§} It is easy to show that, for any quantum state $\ket{\Psi} \in \H$ orthogonal to $\H_\cms^\infty$ and for any mental state $\cms' \in \CMS$, $\op U_{\cms'} \ket{\Psi}$ is still orthogonal to $\H_\cms^\infty$. For any mental state $\cms' \neq \cms$, this is trivial because $\op U_{\cms'} \ket{\Psi} \in \H_{\cms'}$, which is orthogonal to the mental subspace $\H_\cms$ and \textit{a fortiori} to its subspace $\H_\cms^\infty$. We assume from now on $\cms' = \cms$. The decomposition $\op \Pi_\cms = \op \Pi_{\H_\cms^\infty} + \op \Pi_{\H_\cms^{\infty \perp}}$ reduces to $\op \Pi_\cms \ket{\Psi} = \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} \in \H_\cms^{\infty \perp}$ since $\ket{\Psi}$ is orthogonal to $\H_\cms^\infty$. $\op U_\tau$ being unitary, it preserves orthogonality, so that $\op U_\tau \op \Pi_\cms \ket{\Psi}$ is orthogonal to $\op U_\tau \H_\cms^\infty = \H_\cms^\infty$. The above decomposition of $\op \Pi_\cms$ reduces therefore again to $\op \Pi_\cms \op U_\tau \op \Pi_\cms \ket{\Psi} = \op \Pi_{\H_\cms^{\infty \perp}} \op U_\tau \op \Pi_\cms \ket{\Psi}$, which proves that $\op U_\cms \ket{\Psi} \in \H_\cms^{\infty \perp}$.
+
+\paragraphtitle{§} For any quantum state $\ket{\Psi} \in \H$, any mental state $\cms \in \CMS$ and any $n \in \IN^*$, $\op U_\cms^n \ket{\Psi}$ can thus be decomposed by linearity into the orthogonal sum of a quantum state $\op U_\tau^n \op \Pi_{\H_\cms^\infty} \ket{\Psi} \in \H_\cms^\infty$ and of a quantum state $\op U_\cms^n \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} \in \H_\cms^{\infty \perp}$. Hence its squared norm can be decomposed into:
+\begin{equation*}
+\bra{\Psi} \dop U_\cms^n \op U_\cms^n \ket{\Psi} = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} + \bra{\Psi} \op \Pi_{\H_\cms^{\infty \perp}} \dop U_\cms^n \op U_\cms^n \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi}
+\end{equation*}
+If the quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$ is orthogonal to $\H_\cms^{\infty \perp}$, the second term is zero, so that we have for any $t \in \IN^*$:
+\begin{equation*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+Otherwise, for any quantum state $\ket{\Psi}$ having a non-zero component in $\H_\cms^{\infty \perp}$, we can write for any $t \in \IN$:
+\begin{multline*}
+\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi} \\
++ \mathrm P_t(\cms, \dotsc, \cms; \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi}) \bra{\Psi} \op \Pi_{\H_\cms^{\infty \perp}} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{multline*}
+so that we have more generally:
+\begin{equation*}
+\forall \ket{\Psi} \in \H \setminus \{ 0 \},\ \mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) \xrightarrow{t \to \infty} \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
+\end{equation*}
+
+\paragraphtitle{§} It is now easy to conclude. For any sequence $(\cms_t)$ eventually dying at $t_f$, as stated above, we have for any initial quantum state $\ket{\Psi_i} \in \H \setminus \{ 0 \}$:
+\begin{multline*}
+\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} \\
+\bra{\Psi_i} \op \Pi_{\cms_0} \dop U_\tau \dotsm \op \Pi_{\cms_{t_f-1}} \dop U_\tau \op \Pi_{\H_{\cms_{t_f}}^\infty} \op U_\tau \op \Pi_{\cms_{t_f-1}} \dotsm \op U_\tau \op \Pi_{\cms_0} \ket{\Psi_i} / \braket{\Psi_i}{\Psi_i}
+\end{multline*}
+Now we've already seen that, for any quantum state $\ket{\Psi}$ orthogonal to $\H_{\cms_{t_f}}^\infty$, $\op U_\tau \ket{\Psi}$ is orthogonal to this subspace too. Since $\cms_{t_f-1} \neq \cms_{t_f}$ by hypothesis, the subspaces $\H_\cms_{t_f-1}$ and $\H_{\cms_{t_f}}^\infty \subset \H_\cms_{t_f}$ are orthogonal to each other, so that we have $\op \Pi_{\H_{\cms_{t_f}}^\infty} \op U_\tau \op \Pi_{\cms_{t_f-1}} = 0$. As a consequence,
+\begin{equation*}
+\forall \ket{\Psi_i} \in \H \setminus \{ 0 \},\ \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) \xrightarrow{t \to \infty} 0
+\end{equation*}
+Any eventually dying sequence is therefore infinitely improbable, \textit{Q.~E.~D.}
+
+\paragraphtitle{Remark} This result is actually a quite intuitive consequence of the finite dimensionality of the Hilbert space $\H$. Precisely, the key argument -- the compacity of the unit sphere of $\H_\cms^{\infty \perp}$ -- requires that these subspaces -- the ``accessible'' part of the mental subspaces -- be finite dimensional. This condition being given, the result would still hold if the ``inaccessible'' part $\H_\cms^\infty$ of the mental subspaces were infinite dimensional, and/or if there were an infinite number of possible mental states.
+
+\paragraphtitle{Theorem} No quantum state is mortal.
+
+\paragraphtitle{Proof} This is an immediate consequence of the lemma.
+
+\paragraphtitle{Corollary} There will be with certainty extra-terrestrial forms of conscious life.
+
+\paragraphtitle{Proof} The mental state $\cms_{t_1}$ we are experiencing right now at time $t_1$ is presumably not the only mental state we have ever experienced, so we take for granted that there has already been a time $t_0 < t_1$ in the past where a mental state $\cms_{t_0} \neq \cms_{t_1}$ has been experienced. The probability that we keep experiencing the same mental state $\cms_{t_1}$ forever from now on can be expessed as a conditional probability of the form:
+\begin{equation*}
+\lim_{t \to \infty} \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) / \mathrm P_{t_1}(\cms_0, \dotsc, \cms_{t_1}; \ket{\Psi_i})
+\end{equation*}
+where the sequence $(\cms_t)$ is eventually dying. As a consequence of the lemma, this probability is zero, hence we will experience with certainty a different mental state in the future. This theorem holds for any time $t > t_1$, too: There will be with certainty a time $t' > t$ such that $\cms_{t'} \neq \cms_t$. So basically, once the experienced mental state has changed for the first time in the history of the universe, it will ``keep moving'' forever, although it is still possible that there are long periods of ``mental inactivity'' in between.
+
+This applies in particular to the moment when the Sun, in about five billions of years, will have eventually evolved to a red giant and made the Earth an unsuitable place for any form of conscious life. By then, if there isn't yet any extra-terrestrial form of conscious life, the experienced mental state should be $\cms_\vac$, \textit{i.e.} the absence of any mental experience. But this state cannot last forever, as we have just seen. If we call ``extra-terrestrial form of conscious life'' the material substrate of the mental state that would get experienced next, then there will be some with certainty.
+
+\paragraphtitle{Commentaries} Proving such theorems in a book on the foundations of physics could be taken as a provocation, but actually I included them here because they are obvious consequences of the formalism and are independent of the details of the physical interactions. They show clearly enough, I think, both the philosophical potential and the dangers of any well-defined interpretation of Quantum Physics. These theorems are in no way a proof of the reality of life after death or of the existence of UFOs, but they would have good chances to get over-interpreted if they would happen to be vulgarized. Developing well-defined interpretations of Quantum Physics obviously has the potential of addressing philosophical issues which are of interest to the public, and it would be a pity not to investigate them from a naturalistic point of view.
+
 %TODO: Philosophical issues: Thought experiments
 %\chapter{Thought experiments}
 
