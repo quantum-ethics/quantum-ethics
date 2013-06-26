@@ -62,7 +62,7 @@ Of course, this hypothesis is logically perfectly correct, but it is utmost diff
 
 \paragraphtitle{Definitions} An infinite sequence $(\cms_t)$, indexed on $t \in \IN$, is said to be ``dead'' if it is constant, \textit{i.e.} if $\cms_t = \cms_0$ for all $t \in \IN$; to be ``eventually dying'' if it becomes constant after a certain point, \textit{i.e.} if there exists a $t_1 \in \IN^*$ such that $\cms_t = \cms_{t_1}$ for all $t \geq t_1$, although $\cms_{t_0} \neq \cms_{t_1}$ for some $t_0 < t_1$; and to be ``immortal'' otherwise.
 
-It is said to be ``certain'', for a given initial quantum state $\ket{\Psi_i} \neq 0$, if we have $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 1$ for all $t \in \IN$; to be ``infinitely improbable'' if, for any initial quantum state $\ket{\Psi_i} \neq 0$, $\lim_{t \to \infty} \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 0$; and to be ``contingent'' otherwise.
+It is said to be ``certain'', for a given initial quantum state $\ket{\Psi_i} \neq 0$, if we have $\mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 1$ for all $t \in \IN$; to be ``infinitely improbable'' if $\lim_{t \to \infty} \mathrm P_t(\cms_0, \dotsc, \cms_t; \ket{\Psi_i}) = 0$; and to be ``contingent'' otherwise.
 
 A quantum state is said to be ``certainly dead'' if, taken as an initial state, one of the dead sequences is certain; to be ``possibly dead'' if a dead sequence is contingent; to be ``mortal'' if an eventually dying sequence is certain or at least contingent; and to be ``immortal'' otherwise.
 
@@ -115,12 +115,12 @@ n_\cms = \min \{ n \in \IN\ |\ \H_\cms^n = \H_\cms^{n+1} \}
 \end{equation*}
 and we have $\H_\cms^{n_\cms} = \H_\cms^\infty$.
 
-\paragraphtitle{§} In the special case $n_\cms = 0$, it is trivial to show that $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi})$ tends to $\bra{\Psi} \op \Pi_{\H_\cms^\infty} / \braket{\Psi}{\Psi}$ for any initial quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$. In this case, we have $\H_\cms^\infty = \H_\cms$ and we will see that  $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}$ for any $t \in \IN$. The assertion holds for $t = 0$ per definition, and $\op \Pi_\cms \ket{\Psi} \in \H_\cms$ since $\op \Pi_\cms$ is a projection operator on $\H_\cms$. For any quantum state $\ket{\Psi_\cms} \in \H_\cms$, $\op U_\tau \ket{\Psi_\cms}$ has the same norm as $\ket{\Psi_\cms}$ because of the unitarity of $\op U_\tau$, and since $\H_\cms = \H_\cms^\infty \subset \op U_\tau^{-1} \H_\cms$, $\op U_\tau \ket{\Psi_\cms} \in \H_\cms$, so that $\op \Pi_\cms \op U_\tau \ket{\Psi_\cms}$ is equal to $\op U_\tau \ket{\Psi_\cms}$ and has the same norm as $\ket{\Psi_\cms}$, too. It is easy then to prove by recurrence that $(\op \Pi_\cms \op U_\tau)^t \ket{\Psi_\cms}$ is equal to $\op U_\tau^t \ket{\Psi_\cms}$ and has therefore the same norm as $\ket{\Psi_\cms}$ for any $t \in \IN$, so that we have:
+\paragraphtitle{§} In the special case $n_\cms = 0$, it is trivial to show that $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi})$ tends to $\bra{\Psi} \op \Pi_{\H_\cms^\infty} / \braket{\Psi}{\Psi}$ for any initial quantum state $\ket{\Psi} \neq 0$. In this case, we have $\H_\cms^\infty = \H_\cms$ and we will see that  $\mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}$ for any $t \in \IN$. The assertion holds for $t = 0$ per definition, and $\op \Pi_\cms \ket{\Psi} \in \H_\cms$ since $\op \Pi_\cms$ is a projection operator on $\H_\cms$. For any quantum state $\ket{\Psi_\cms} \in \H_\cms$, $\op U_\tau \ket{\Psi_\cms}$ has the same norm as $\ket{\Psi_\cms}$ because of the unitarity of $\op U_\tau$, and since $\H_\cms = \H_\cms^\infty \subset \op U_\tau^{-1} \H_\cms$, $\op U_\tau \ket{\Psi_\cms}$ belongs to $\H_\cms$, so that $\op \Pi_\cms \op U_\tau \ket{\Psi_\cms}$ is equal to $\op U_\tau \ket{\Psi_\cms}$ and has the same norm as $\ket{\Psi_\cms}$, too. It is easy then to prove by recurrence that $(\op \Pi_\cms \op U_\tau)^t \ket{\Psi_\cms}$ is equal to $\op U_\tau^t \ket{\Psi_\cms}$ and has therefore the same norm as $\ket{\Psi_\cms}$ for any $t \in \IN$, so that we have:
 \begin{eqnarray*}
 \mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) & = & \bra{\Psi} \op \Pi_\cms (\dop U_\tau \op \Pi_\cms)^t (\op \Pi_\cms \op U_\tau)^t \op \Pi_\cms \ket{\Psi} / \braket{\Psi}{\Psi} \\
 & = & \bra{\Psi} \op \Pi_\cms \ket{\Psi} / \braket{\Psi}{\Psi} = \bra{\Psi} \op \Pi_{\H_\cms^\infty} \ket{\Psi} / \braket{\Psi}{\Psi}
 \end{eqnarray*}
-for any quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$ and any $t \in \IN$.
+for any quantum state $\ket{\Psi} \neq 0$ and any $t \in \IN$.
 
 \paragraphtitle{§} We assume from now on $n_\cms \geq 1$, so that the supplementary subspace $\H_\cms^{\infty \perp}$ of $\H_\cms^{\infty}$ in $\H_\cms$, defined by:
 \begin{equation*}
@@ -130,7 +130,7 @@ isn't reduced to the zero subspace. We will consider the endomorphism $\op U_\cm
 \begin{equation*}
 \op U_\cms \eqdef \op \Pi_\cms \op U_\tau \op \Pi_\cms
 \end{equation*}
-With this operator, we can write for any $t \in \IN^*$ and any quantum state $\ket{\Psi} \in \H \setminus \{ 0 \}$:
+With this operator, we can write for any $t \in \IN^*$ and any quantum state $\ket{\Psi} \neq 0$:
 \begin{equation*}
 \mathrm P_t(\cms, \dotsc, \cms; \ket{\Psi}) = \bra{\Psi} \dop U_\cms^t \op U_\cms^t \ket{\Psi} / \braket{\Psi}{\Psi}
 \end{equation*}
