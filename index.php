@@ -66,8 +66,8 @@ function curl_get($url, array $get = array(), array $options = array()) {
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
 		<meta name="language" content="english">
-		<meta name="description" content="Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory, by Sébastien Fauvel">
-		<title>Quantum Ethics - A Spinozist Interpretation of Quantum Field Theory</title>
+		<meta name="description" content="Quantum Ethics - A Spinozist Interpretation of Constructive Quantum Field Theory on the Lattice, by Sébastien Fauvel">
+		<title>Quantum Ethics - A Spinozist Interpretation of Constructive Quantum Field Theory on the Lattice</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
 	</head>
@@ -85,7 +85,7 @@ function curl_get($url, array $get = array(), array $options = array()) {
 		</script>
 		<div id="title">
 			<h1>Quantum Ethics</h1>
-			<h2>&mdash;<br>A Spinozist Interpretation<br>of Quantum Field Theory</h2>
+			<h2>&mdash;<br>A Spinozist Interpretation<br>of Constructive Quantum Field Theory<br>on the Lattice</h2>
 			<h3><br><a href="http://ens.academia.edu/S%C3%A9bastienFauvel">Sébastien Fauvel</a></h3>
 		</div>
 		<div id="abstract">
