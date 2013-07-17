@@ -95,7 +95,7 @@ function curl_get($url, array $get = array(), array $options = array()) {
 				</a>
 				<p><a href="http://quantum-ethics.org/Quantum%20Ethics.php">» View as PDF</a></p>
 				<p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» Order on Amazon</a></p>
-				<p><a href="https://github.com/sebastien-fauvel/quantum-ethics">» Contribute on GitHub</a></p><br>
+				<p><a href="https://github.com/quantum-ethics/quantum-ethics">» Contribute on GitHub</a></p><br>
 			</div>
 <? print latex2html(curl_get('https://raw.github.com/sebastien-fauvel/quantum-ethics/master/chapter-history-of-this-book.tex')); ?>
 			<p><a href="http://quantum-ethics.org/Quantum%20Ethics.php">» Read full PDF</a></p>
