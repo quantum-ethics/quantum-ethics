@@ -215,6 +215,25 @@ This applies in particular to the moment when the Sun, in about five billions of
 
 \paragraphtitle{Commentaries} Proving such theorems in a book on the foundations of physics could be taken as a provocation, but actually I included them here because they are obvious consequences of the formalism and are independent of the details of the physical interactions. They show clearly enough, I think, both the philosophical potential and the dangers of any well-defined interpretation of Quantum Physics. These theorems are in no way a proof of the reality of life after death or of the existence of UFOs, but they would have good chances to get over-interpreted if they would happen to be vulgarized. Developing well-defined interpretations of Quantum Physics obviously has the potential of addressing philosophical issues which are of interest to the public, and it would be a pity not to investigate them from a naturalistic point of view.
 
+\section{Reincarnation theorem}
+
+\paragraphtitle{Lemma} Let $\CMS_0$ be a non empty subset of $\CMS$ and let us write $\H_{\CMS_0}$ the corresponding mental subspace, given by:
+\begin{equation*}
+\H_{\CMS_0} \eqdef \bigoplus_{\cms \in \CMS_0}^\perp \H_\cms
+\end{equation*}
+Let us define by recurrence, for any $n \in \IN$, the hermitian operators $\op P_{\CMS_0}^{(n)}$ by:
+\begin{eqnarray*}
+\op P_{\CMS_0}^{(0)} & \eqdef & \sum_{\cms \in \CMS_0} \op \Pi_\cms \\
+\op P_{\CMS_0}^{(n+1)} & \eqdef & \sum_{\cms \in \CMS_0} \op \Pi_\cms \dop U_\tau \op P_{\CMS_0}^{(n)} \op U_\tau \op \Pi_\cms
+\end{eqnarray*}
+For any initial quantum state $\ket \Psi \neq 0$, $\bra \Psi \op P_{\CMS_0}^{(n)} \ket \Psi / \braket \Psi \Psi$ represents the probability that the experienced mental state belongs to $\CMS_0$ at all times $t = 0, \dotsc, n$. Finally, let us define by recurrence, for any $n \in \IN$, the subspaces $\H_{\CMS_0}^n$ by:
+\begin{equation*}
+\H_{\CMS_0}^0 \eqdef \H_{\CMS_0}
+\end{equation*}
+\begin{equation*}
+\H_{\CMS_0}^{n+1} \eqdef \H_{\CMS_0}^n \cap \{ \ket \Psi \in \H\ |\ \forall \cms_0, \dotsc, \cms_n \in \CMS_0,\ \op U_\tau \op \Pi_{\cms_n} \dotsm \op U_\tau \op \Pi_{\cms_0} \ket \Psi \in \H_{\CMS_0} \}
+\end{equation*}
+
 %TODO: Philosophical issues: Thought experiments
 %\chapter{Thought experiments}
 
