@@ -217,22 +217,32 @@ This applies in particular to the moment when the Sun, in about five billions of
 
 \section{Reincarnation theorem}
 
-\paragraphtitle{Lemma} Let $\CMS_0$ be a non empty subset of $\CMS$ and let us write $\H_{\CMS_0}$ the corresponding mental subspace, given by:
+\paragraphtitle{Notations} Let $\CMS_0$ be a non empty subset of $\CMS$ and let us write $\H_{\CMS_0}$ the corresponding mental subspace, given by:
 \begin{equation*}
 \H_{\CMS_0} \eqdef \bigoplus_{\cms \in \CMS_0}^\perp \H_\cms
 \end{equation*}
-Let us define by recurrence, for any $n \in \IN$, the hermitian operators $\op P_{\CMS_0}^{(n)}$ by:
+Let us define by recurrence, for any $n \in \IN$, the operators $\op P_{\CMS_0}^{(n)}$ by:
 \begin{eqnarray*}
 \op P_{\CMS_0}^{(0)} & \eqdef & \sum_{\cms \in \CMS_0} \op \Pi_\cms \\
 \op P_{\CMS_0}^{(n+1)} & \eqdef & \sum_{\cms \in \CMS_0} \op \Pi_\cms \dop U_\tau \op P_{\CMS_0}^{(n)} \op U_\tau \op \Pi_\cms
 \end{eqnarray*}
-For any initial quantum state $\ket \Psi \neq 0$, $\bra \Psi \op P_{\CMS_0}^{(n)} \ket \Psi / \braket \Psi \Psi$ represents the probability that the experienced mental state belongs to $\CMS_0$ at all times $t = 0, \dotsc, n$. Finally, let us define by recurrence, for any $n \in \IN$, the subspaces $\H_{\CMS_0}^n$ by:
+Finally, let us define by recurrence, for any $n \in \IN$, the subspaces $\H_{\CMS_0}^n$ by:
 \begin{equation*}
 \H_{\CMS_0}^0 \eqdef \H_{\CMS_0}
 \end{equation*}
 \begin{equation*}
 \H_{\CMS_0}^{n+1} \eqdef \H_{\CMS_0}^n \cap \{ \ket \Psi \in \H\ |\ \forall \cms_0, \dotsc, \cms_n \in \CMS_0,\ \op U_\tau \op \Pi_{\cms_n} \dotsm \op U_\tau \op \Pi_{\cms_0} \ket \Psi \in \H_{\CMS_0} \}
 \end{equation*}
+Let us write $\H_{\CMS_0}^\infty$ their intersection and $\H_{\CMS_0}^{\infty \perp}$ its supplementary subspace in $\H_{\CMS_0}$.
+
+\paragraphtitle{Remarks} For any initial quantum state $\ket \Psi \neq 0$, $\bra \Psi \op P_{\CMS_0}^{(n)} \ket \Psi / \braket \Psi \Psi$ represents the probability that the experienced mental state belongs to $\CMS_0$ at all times $t = 0, \dotsc, n$. The operators $\op P_{\CMS_0}^{(n)}$ are hermitian and therefore diagonalizable on an orthogonal basis with real eigenvalues. These eigenvalues being probabilities, they lie between 0 and 1. The eigenspace for the eigenvalue 1 can be easily identified with $\H_{\CMS_0}^n$. The subspace $\H_{\CMS_0}^\infty$ is therefore the set of all initial quantum states for which the experienced mental state belongs with certainty to $\CMS_0$ at all times.
+
+\paragraphtitle{Lemma 1} For any mental state $\cms \in \CMS$ and any quantum state $\ket \Psi \in \H$ orthogonal to $\H_{\CMS_0}^\infty$, the quantum state $\op U_\tau \op \Pi_\cms \ket \Psi$ is orthogonal to $\H_{\CMS_0}^\infty$, too.
+\end{equation*}
+
+\paragraphtitle{Lemma 2} The sequence of operators $(\op P_{\CMS_0}^{(n)})$ converges towards $\op \Pi_{\H_{\CMS_0}^\infty}$.
+
+\paragraphtitle{Theorem} An initial mental state $\cms_i \in \CMS$ being given, for any initial quantum state $\ket \Psi \in \H_{\cms_i}$, the probability that the mental state $\cms_i$ be experienced again in the future equals 1.
 
 %TODO: Philosophical issues: Thought experiments
 %\chapter{Thought experiments}
