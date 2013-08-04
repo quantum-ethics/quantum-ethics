@@ -274,6 +274,15 @@ Now the recurrence hypothesis yields $\op P_{\CMS_0}^{(n)} \ket \Psi = \ket \Psi
 \end{eqnarray*}
 Now for any quantum state $\ket \Phi \in \H$, $\sum_{\cms \in \CMS_0} \| \op U_\tau \op \Pi_\cms \ket \Phi \|^2 \leq \braket \Phi \Phi$, the case of an equality happening if and only if $\ket \Phi \in \H_{\CMS_0}$. The sequence $(\bra \Psi \op P_{\CMS_0}^{(n)} \ket \Psi)$ is therefore decreasing, with an initial value $\bra \Psi \op P_{\CMS_0}^{(0)} \ket \Psi = \bra \Psi \op \Pi_{\CMS_0} \ket \Psi$, and we have $\bra \Psi \op P_{\CMS_0}^{(n+1)} \ket \Psi = \bra \Psi \op P_{\CMS_0}^{(n)} \ket \Psi$ if and only if, for all $\cms_0, \dotsc, \cms_n \in \CMS_0$, $\op U_\tau \op \Pi_{\cms_n} \dotsm \op U_\tau \op \Pi_{\cms_0} \ket \Psi \in \H_{\CMS_0}$. Let us suppose now that we have $\bra \Psi \op P_{\CMS_0}^{(n+1)} \ket \Psi = \braket \Psi \Psi$. This implies, because of the decrease of the sequence and of its initial vaue, that $\ket \Psi \in \H_{\CMS_0}$ and that $\bra \Psi \op P_{\CMS_0}^{(n)} \ket \Psi = \braket \Psi \Psi$. We have thus $\bra \Psi \op P_{\CMS_0}^{(n+1)} \ket \Psi = \bra \Psi \op P_{\CMS_0}^{(n)} \ket \Psi$, which implies, as we have just seen, that for all $\cms_0, \dotsc, \cms_n \in \CMS_0$, $\op U_\tau \op \Pi_{\cms_n} \dotsm \op U_\tau \op \Pi_{\cms_0} \ket \Psi \in \H_{\CMS_0}$. The recurrence hypothesis yielding $\ket \Psi \in \H_{\CMS_0}^n$, we have therefore $\ket \Psi \in \H_{\CMS_0}^{n+1}$, which proves the recurrence. The eigenspace of $\op P_{\CMS_0}^{(n)}$ for the eigenvalue 1 is therefore $\H_{\CMS_0}^n$ for all $n \in \IN$.
 
+\paragraphtitle{§} Now the subspace $\H_{\CMS_0}$ being finite dimensional, there must exist a finite number of distinct nested subspaces $\H_{\CMS_0}^n$, so that there exists an integer $n_{\CMS_0}$ such that:
+\begin{equation}
+n_{\CMS_0} \eqdef \min \{ n \in \IN\ |\ \H_{\CMS_0}^n = \H_{\CMS_0}^\infty \}
+\end{equation}
+The eigenspace of $\op P_{\CMS_0}^{(n)}$ for the eigenvalue 1 is therefore $\H_{\CMS_0}^\infty$ for any $n \geq n_{\CMS_0}$. Since $\op P_{\CMS_0}^{(n)}$ induces an hermitian operator on $\H_{\CMS_0}$, it induces also, for $n \geq n_{\CMS_0}$, an hermitian operator on the supplementary subspace $\H_{\CMS_0}^{\infty \perp}$ of its eigenspace $\H_{\CMS_0}^\infty$. It is diagonalizable on an orthogonal basis of $\H_{\CMS_0}^{\infty \perp}$, with a finite number of real eigenvalues, which are all lying in the interval $[0, 1[$. There exists therefore a number $p_{\CMS_0} \in [0, 1[$ such that $p_{\CMS_0}^{n_{\CMS_0}}$ be the greatest eigenvalue of this operator, which can be defined by:
+\begin{equation}
+p_{\CMS_0}^{n_{\CMS_0}} \eqdef \max \{ \bra \Psi \op P_{\CMS_0}^{(n_{\CMS_0})} \ket \Psi / \braket \Psi \Psi \ |\ \ket \Psi \in \H_{\CMS_0}^{\infty \perp} \setminus \{ 0 \} \}
+\end{equation}
+
 %TODO: Philosophical issues: Thought experiments
 %\chapter{Thought experiments}
 
