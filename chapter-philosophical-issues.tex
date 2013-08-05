@@ -305,6 +305,24 @@ Now this partial trace is the sum of the eigenvalues multiplied by the dimension
 
 \paragraphtitle{§} We have already seen the eigenspace of $\op P_{\CMS_0}^{(t)}$ for the eigenvalue 1 is $\H_{\CMS_0}^\infty$ for any $t \geq n_{\CMS_0}$, and that the operator induced on $\H_{\CMS_0}^{\infty \perp}$ converges towards 0. Furthermore, for any quantum state $\ket \Psi$ orthogonal to the subspace $\H_{\CMS_0}$, we have $\op P_{\CMS_0}^{(t)} \ket \Psi = 0$. The sequence of operators $(\op P_{\CMS_0}^{(t)})$ converges therefore towards $\op \Pi_{\H_{\CMS_0}^\infty}$, \textit{Q.~E.~D.}
 
+\paragraphtitle{Proof of the theorem} An initial mental state $\cms_i \in \CMS$ and an initial quantum state $\ket \Psi \in \H_{\cms_i} \setminus \{0\}$ being given, the probability $p_1$ that the mental state $\cms_i$ be experienced again at the next time step is given by:
+\begin{equation*}
+p_1 = \bra \Psi \dop U_\tau \op \Pi_{\cms_i} \op U_\tau \ket \Psi / \braket \Psi \Psi
+\end{equation*}
+If the mental state experienced at the next time step is different from $\cms_i$, which happens with a probability $1 - p_1$, then this mental state belongs to $\CMS_0 \eqdef \CMS \setminus \{ \cms_i \}$. More generally, for any $t \in \IN^*$, the probability $p_t$ that the mental state $\cms_i$ have been experienced again at any time $t' \leq t$ is given by:
+\begin{equation*}
+p_t = 1 - \bra \Psi \dop U_\tau \op P_{\CMS_0}^{(t-1)} \op U_\tau \ket \Psi / \braket \Psi \Psi
+\end{equation*}
+The second lemma yields:
+\begin{equation*}
+p_t \xrightarrow{t \to \infty} 1 - \bra \Psi \dop U_\tau \op \Pi_{\H_{\CMS_0}^\infty} \op U_\tau \ket \Psi / \braket \Psi \Psi
+\end{equation*}
+and since the initial quantum state $\ket \Psi$, belonging to $\H_{\cms_i}$, is orthogonal to $\H_{\CMS_0}^\infty$, the first lemma yields:
+\begin{equation*}
+p_t \xrightarrow{t \to \infty} 1
+\end{equation*}
+The initial mental state $\cms_i$ will therefore be experienced again in the future with certainty,  \textit{Q.~E.~D.}
+
 %TODO: Philosophical issues: Thought experiments
 %\chapter{Thought experiments}
 
