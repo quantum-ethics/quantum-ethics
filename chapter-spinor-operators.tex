@@ -13,7 +13,8 @@ For the special case of wave vectors $\q$ parallel to the third axis, we use the
 \photonspin \q 1 & \eqdef & - \frac 1 {\sqrt 2} \matrix{ 1 \\ \i \svc q 3 / q \\ 0 } \\
 \photonspin \q {-1} & \eqdef & \frac 1 {\sqrt 2} \matrix{ 1 \\ - \i \svc q 3 / q \\ 0 }
 \end{eqnarray*}
-For the special case of the wave vector $\q = \sv 0$, we take $\photonspin \q \sp \eqdef \sv 0$. We extend this definition periodically to all $\q \in \ILD$ by $\photonspin \q \sp \eqdef \photonspin {\eqp \q} \sp$.
+For the special case of the wave vector $\q = \sv 0$, we take $\photonspin \q \sp \eqdef \sv 0$.
+We extend this definition periodically to all $\q \in \ILD$ by $\photonspin \q \sp \eqdef \photonspin {\eqp \q} \sp$.
 
 The polarization vectors of photons verify the Coulomb gauge conditions:
 \begin{eqnarray*}
@@ -35,7 +36,9 @@ The photon annihilation and creation spinor operators, which act canonically as 
 \tSAop \photon \q \sp & \eqdef & \left( ( 1 + 2 \N ) \a \right)^{-3/2} \sqrt{ \frac {\h \a} {8 \pi^2 \vpty \c q} } \photonspin \q \sp \aop \photon \q \sp \sqrt{\Nop \photon \q \sp} \\
 \tSCop \photon \q \sp & \eqdef & \left( ( 1 + 2 \N ) \a \right)^{-3/2} \sqrt{ \frac {\h \a} {8 \pi^2 \vpty \c q} } \cphotonspin \q \sp \cop \photon \q \sp \sqrt{1 + \Nop \photon \q \sp}
 \end{eqnarray*}
-where $\vpty$ is the permittivity of the bare vacuum. For $\q = \sv 0$, we take $\tSAop \photon \q \sp = \sv 0$ and $\tSCop \photon \q \sp = \sv 0$. The spinor operators can also be defined on the position basis by:
+where $\vpty$ is the permittivity of the bare vacuum.
+For $\q = \sv 0$, we take $\tSAop \photon \q \sp = \sv 0$ and $\tSCop \photon \q \sp = \sv 0$.
+The spinor operators can also be defined on the position basis by:
 \begin{eqnarray*}
 \tSAop \photon \n \sp & \eqdef & \sum_{\q} \exp{\i 2 \pi \n \ssp \q} \tSAop \photon \q \sp \\
 \tSCop \photon \n \sp & \eqdef & \sum_{\q} \exp{-\i 2 \pi \n \ssp \q} \tSCop \photon \q \sp
@@ -87,7 +90,8 @@ The fermion antisymmetrization operators $\Faop \pt \q \sp$ can be defined conve
 \sigma & = & \left| \{ i\ |\ \q_i \leq \q \} \right| \\
 (\q_i) & = & \Pn \pt \sp \left( \bFQ N \pt \q \sp \right)
 \end{eqnarray*}
-These hermitian, unitary operators are always used together with the corresponding creation and annihilation operators for fermion fields. They verify following essential anticommutation properties, where the anticommutation notation $\{\cdot, \cdot\}$ is defined by $\{ \op a, \op b\} \eqdef \op a \op b + \op b \op a$:
+These hermitian, unitary operators are always used together with the corresponding creation and annihilation operators for fermion fields.
+They verify following essential anticommutation properties, where the anticommutation notation $\{\cdot, \cdot\}$ is defined by $\{ \op a, \op b\} \eqdef \op a \op b + \op b \op a$:
 \begin{equation*}
 \{\Faop \pt \q \sp, \aop \pt \q \sp\} = 0
 \end{equation*}
@@ -147,7 +151,8 @@ The annihilation and creation spinor operators of these particles and of their a
 \SAop {\antiparticle \pt} \q \sp & \eqdef & \ddirspin {\antiparticle \pt} \q \sp \gammat 0 \Faop {\antiparticle \pt} \q \sp \aop {\antiparticle \pt} \q \sp \\
 \SCop {\antiparticle \pt} \q \sp & \eqdef & \dirspin {\antiparticle \pt} \q \sp \cop {\antiparticle \pt} \q \sp \Faop {\antiparticle \pt} \q \sp
 \end{eqnarray*}
-where the fermion antisymmetrization operators $\Faop \pt \q \sp$ are defined as in appendix \ref{Antisymmetrization operators}. These spinor operators can also be defined on the position basis by:
+where the fermion antisymmetrization operators $\Faop \pt \q \sp$ are defined as in appendix \ref{Antisymmetrization operators}.
+These spinor operators can also be defined on the position basis by:
 \begin{eqnarray*}
 \SAop \pt \n \sp & \eqdef & ( 1+2\N )^{-3/2} \sum_{\q} \exp{\i 2 \pi \n \ssp \q} \SAop \pt \q \sp \\
 \SCop \pt \n \sp & \eqdef & ( 1+2\N )^{-3/2} \sum_{\q} \exp{-\i 2 \pi \n \ssp \q} \SCop \pt \q \sp \\
@@ -158,7 +163,8 @@ We extend these definitions periodically to all $\q \in \ILD$ by $\SAop \pt \q \
 
 \subsection*{Spinor products}
 
-In the development of the interaction Hamiltonian on the plane waves basis, the Dirac spinors always appear in the form of products. For instance (see section \ref{QED interaction Hamiltonian}), the elastic scattering terms of the Coulomb interaction, with or without spin flip, contain following products, where we use the shorthand notations $\gamma \eqdef \gk \pt \q$ and $\gamma' \eqdef \gk \pt {\q'}$ for the Lorentz factors:
+In the development of the interaction Hamiltonian on the plane waves basis, the Dirac spinors always appear in the form of products.
+For instance (see section \ref{QED interaction Hamiltonian}), the elastic scattering terms of the Coulomb interaction, with or without spin flip, contain following products, where we use the shorthand notations $\gamma \eqdef \gk \pt \q$ and $\gamma' \eqdef \gk \pt {\q'}$ for the Lorentz factors:
 \begin{eqnarray*}
 \ddirspin \pt {\q'} {\pm 1/2} \dirspin \pt \q {\pm 1/2} & = & \frac 1 2 \sqrt{1 + \frac 1 {\gamma'}} \sqrt{1 + \frac 1 \gamma} \left( 1 + \frac{\q' \ssp \q \pm \i \svc{(\q' \scp \q)} 3}{\mpr \pt^2 (1 + \gamma') (1 + \gamma)} \right) \\
 \ddirspin \pt {\q'} {\minusplus 1/2} \dirspin \pt \q {\pm 1/2} & = & \frac{\i \svc{(\q' \scp \q)} 1 \minusplus \svc{(\q' \scp \q)} 2}{2 \mpr \pt^2 \sqrt{(1 + \gamma') (1 + \gamma) \gamma' \gamma}}
@@ -178,4 +184,5 @@ Their sum, involved when the spin of the scattered particles isn't being measure
 \begin{equation*}
 \sum_{\sp'} \left| \ddirspin \pt {\q'} {\sp'} \dirspin \pt \q \sp \right|^2 = \frac 1 4 \left( \sqrt{1 + \frac 1 {\gamma'}}\sqrt{1 + \frac 1 \gamma} + \sqrt{1 - \frac 1 {\gamma'}}\sqrt{1 - \frac 1 \gamma} \right)^2 - \beta' \beta \sin{\theta / 2}^2
 \end{equation*}
-where we used the shorthand notations $\beta \eqdef \bkn \pt \q$ and $\beta' \eqdef \bkn \pt {\q'}$ and where we introduced the scattering angle $\theta$ between $\q$ and $\q'$. In the case where this angle is undefined because one of $\q$ or $\q'$ is zero, the last term can be dropped.
+where we used the shorthand notations $\beta \eqdef \bkn \pt \q$ and $\beta' \eqdef \bkn \pt {\q'}$ and where we introduced the scattering angle $\theta$ between $\q$ and $\q'$.
+In the case where this angle is undefined because one of $\q$ or $\q'$ is zero, the last term can be dropped.
