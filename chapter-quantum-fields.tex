@@ -4,15 +4,28 @@
 \renewcommand{\epigraphwidth}{7cm}
 \epigraph{The first simplification to be considered involves the very existence of the theory.}{John Collins,\\\textit{Renormalization}~\cite{Collins1984}}
 
-The aim of this chapter is to develop a well-defined, divergence-free mathematical formalism for the Standard Model of particle physics. To achieve this, we suppose that elementary particles are bounded to a finite lattice, also a finite set of world lines in the flat space-time (so that the particle field only has a finite number of modes), and that there is a maximum occupation number for any single mode of the field, for bosons as well as for fermions. This makes the Hilbert space of the states of the universe finite dimensional, so that the theory is trivially well-defined. We will develop here a general formalism, valid for any set of elementary particles and for any form of the interaction Hamiltonian, and define the notations used in the rest of this book.
+The aim of this chapter is to develop a well-defined, divergence-free mathematical formalism for the Standard Model of particle physics.
+To achieve this, we suppose that elementary particles are bounded to a finite lattice, also a finite set of world lines in the flat space-time (so that the particle field only has a finite number of modes), and that there is a maximum occupation number for any single mode of the field, for bosons as well as for fermions.
+This makes the Hilbert space of the states of the universe finite dimensional, so that the theory is trivially well-defined.
+We will develop here a general formalism, valid for any set of elementary particles and for any form of the interaction Hamiltonian, and define the notations used in the rest of this book.
 
 \section{Space}
 
 \paragraphtitle{Definition} Space is a finite set of points of the form $\FL$, where the physical constant $\N$ is a positive integer.
 
-\paragraphtitle{Remarks} This constant is supposed to be a ``huge'' integer ($\gtrsim~10^{46}$) which hasn't been measured experimentally yet. The finiteness of space is one of the conditions of the finite dimensionality of the Hilbert space of the quantum states, which will be defined in section \ref{Many particles states}. This is in turn a necessary condition of the well-definedness of the evolution equation \ref{Schrödinger equation} for an arbitrary Hamiltonian operator. It is therefore a theoretical necessity, which I shall assume although this fact hasn't been proved experimentally yet.
+\paragraphtitle{Remarks} This constant is supposed to be a ``huge'' integer ($\gtrsim~10^{46}$) which hasn't been measured experimentally yet.
+The finiteness of space is one of the conditions of the finite dimensionality of the Hilbert space of the quantum states, which will be defined in section \ref{Many particles states}.
+This is in turn a necessary condition of the well-definedness of the evolution equation \ref{Schrödinger equation} for an arbitrary Hamiltonian operator.
+It is therefore a theoretical necessity, which I shall assume although this fact hasn't been proved experimentally yet.
 
-\paragraphtitle{Commentaries} No notion of distance emerges from this definition of space. Indeed, according to the ideas developed in Einstein's vulgarization work \textit{Relativity: The Special and General Theory}~\cite{Einstein1916}, we consider that distance and duration are actually no fundamental notions but have to be defined on an empirical basis. Distance and duration are measured using physical apparatus like rods or clocks, and their theoretical definition must rely on a theoretical modeling of these apparatus and of the observer making use of them. These concepts will emerge from the evolution equation \ref{Schrödinger equation} and from the expression of the Hamiltonian operator defined in sections \ref{Kinetic energy Hamiltonian} and \ref{QED interaction Hamiltonian}. According to this expression, we will see that space has a toroidal structure, \textit{i.e.} that opposite points on the boundary of the lattice $\FL$ are actually nearest neighbors. This boundary is also a mere artifact, like the boundary of a world map, and doesn't represent in any way the ``frontier of the universe''. The physical constant $\a$ in the expression of the interaction Hamiltonian plays the role of the lattice step, \textit{i.e.} of the distance between nearest neighbors. It is supposed to be very small ($\lesssim~10^{-20}~\mathrm m$) and hasn't yet been measured experimentally either.
+\paragraphtitle{Commentaries} No notion of distance emerges from this definition of space.
+Indeed, according to the ideas developed in Einstein's vulgarization work \textit{Relativity: The Special and General Theory}~\cite{Einstein1916}, we consider that distance and duration are actually no fundamental notions but have to be defined on an empirical basis.
+Distance and duration are measured using physical apparatus like rods or clocks, and their theoretical definition must rely on a theoretical modeling of these apparatus and of the observer making use of them.
+These concepts will emerge from the evolution equation \ref{Schrödinger equation} and from the expression of the Hamiltonian operator defined in sections \ref{Kinetic energy Hamiltonian} and \ref{QED interaction Hamiltonian}.
+According to this expression, we will see that space has a toroidal structure, \textit{i.e.} that opposite points on the boundary of the lattice $\FL$ are actually nearest neighbors.
+This boundary is also a mere artifact, like the boundary of a world map, and doesn't represent in any way the ``frontier of the universe''.
+The physical constant $\a$ in the expression of the interaction Hamiltonian plays the role of the lattice step, \textit{i.e.} of the distance between nearest neighbors.
+It is supposed to be very small ($\lesssim~10^{-20}~\mathrm m$) and hasn't yet been measured experimentally either.
 
 \paragraphtitle{Complements} We could equivalently postulate that, in the Minkowski space-time $(\ST,\stt g)$, defined by:
 \begin{eqnarray*}
@@ -33,7 +46,9 @@ In a reference frame moving with a velocity $\sv v$ relative to the lattice, the
 \end{eqnarray*}
 where we use the notations $\n_\parallel \eqdef ( \n \ssp \sv v ) \sv v / v^2$ and $\n_\perp \eqdef \n - \n_\parallel$.
 
-The lattice reference frame itself as well as the physical constants $\N$ and $\a$ are free parameters of the theory. As a working hypothesis, we will assume that the lattice reference frame corresponds to a rest frame of the cosmic microwave background radiation. The relative velocity $\sv v$ of the sun relative to the lattice would then verify~\cite{Kogut1993}:
+The lattice reference frame itself as well as the physical constants $\N$ and $\a$ are free parameters of the theory.
+As a working hypothesis, we will assume that the lattice reference frame corresponds to a rest frame of the cosmic microwave background radiation.
+The relative velocity $\sv v$ of the sun relative to the lattice would then verify~\cite{Kogut1993}:
 \begin{equation*}
 v \approx 3.7~10^5\ \mathrm m / \mathrm s
 \end{equation*}
@@ -54,7 +69,10 @@ Deriving such a relation, however, isn't the goal of this book.
 
 \section{One particle states}
 
-\paragraphtitle{Particle types} We don't make in this chapter any assumption about the existing particle types, e.g. electrons, positrons and photons. We are noting them $\pt$ in a generic way. The corresponding spin states $\sp$ depend implicitly, in the notations, on the particle type. The spin state influences the way a particle interacts with other particle fields; this effect is described quantitatively in the expression of the spinor operators in appendix \ref{Photon spinors} and \ref{Dirac spinors}.
+\paragraphtitle{Particle types} We don't make in this chapter any assumption about the existing particle types, e.g. electrons, positrons and photons.
+We are noting them $\pt$ in a generic way.
+The corresponding spin states $\sp$ depend implicitly, in the notations, on the particle type.
+The spin state influences the way a particle interacts with other particle fields; this effect is described quantitatively in the expression of the spinor operators in appendix \ref{Photon spinors} and \ref{Dirac spinors}.
 
 \paragraphtitle{Definition} The (hypothetical) quantum state $\ket{\Psi}$ in which the universe only contains a single particle, of type $\pt$, at point $\n$ and in the spin state $\sp$, is written:
 \begin{equation*}
@@ -65,7 +83,8 @@ We postulate that a one particle state is given by any linear combination of the
 \begin{equation*}
 \ket{\Psi} = \sum_{\pt,\n,\sp} \Psi(\bX 1 \pt \n \sp) \ketX 1 \pt \n \sp
 \end{equation*}
-with arbitrary complex coefficients $\Psi(\bX 1 \pt \n \sp)$. The set of all these vectors, taken as an orthonormal basis, forms a finite dimensional Hilbert space written $\Hn 1$ and given by:
+with arbitrary complex coefficients $\Psi(\bX 1 \pt \n \sp)$.
+The set of all these vectors, taken as an orthonormal basis, forms a finite dimensional Hilbert space written $\Hn 1$ and given by:
 \begin{equation*}
 \Hn 1 \eqdef \bigoplus^\perp_{\pt,\n,\sp} \IC \ketX 1 \pt \n \sp
 \end{equation*}
@@ -85,7 +104,8 @@ These vectors form an orthonormal basis of the Hilbert space $\Hn 1$ and we will
 \ket\Psi = \sum_{\pt,\q,\sp} \FT\Psi(\bQ 1 \pt \q \sp) \ketQ 1 \pt \q \sp
 \end{equation*}
 
-\paragraphtitle{Notation} In order to simplify the notations, when defining and using periodical functions on all $\q \in \IR^3$, we will define $\eqp \q \in \left]-\frac 1 2,\frac 1 2\right]^3$ by the equivalence relation $\eqp \q - \q \in \IZ^3$. We have then in particular $\eqp \q = \q$ for all $\q \in \FLD$ and $\eqp \q \in \FLD$ for all $\q \in \ILD$.
+\paragraphtitle{Notation} In order to simplify the notations, when defining and using periodical functions on all $\q \in \IR^3$, we will define $\eqp \q \in \left]-\frac 1 2,\frac 1 2\right]^3$ by the equivalence relation $\eqp \q - \q \in \IZ^3$.
+We have then in particular $\eqp \q = \q$ for all $\q \in \FLD$ and $\eqp \q \in \FLD$ for all $\q \in \ILD$.
 
 \section{Position and momentum operators}
 
@@ -121,7 +141,8 @@ and the velocity by $\vk \pt \q \eqdef \bk \pt \q \c$.
 \begin{equation*}
 \wf \Psi \pt \sp {\sv x} \eqdef (1+2 \N)^{-3/2} \sum_{\q} \FT\Psi(\bQ 1 \pt \q \sp) \exp{\i 2 \pi \frac{\sv x \ssp \q}{\a}}
 \end{equation*}
-Eigenstates of the momentum operator are thus associated with plane waves on $\IR^3$. Equivalently, we can write:
+Eigenstates of the momentum operator are thus associated with plane waves on $\IR^3$.
+Equivalently, we can write:
 \begin{eqnarray*}
 \wf \Psi \pt \sp {\sv x} & = & \sum_{\n} \Psi(\bX 1 \pt \n \sp) \deltaX{\sv x - \a \n} \\
 \deltaX{\sv x} & \eqdef & (1+2 \N)^{-3} \prod_i \frac{\sin{\pi \svc x i / \a}}{\sin{\pi \svc x i / (1+2 \N)\a}}
@@ -141,7 +162,8 @@ The quantum state $\ket{\Psi}$ in which each point $\n$ is being occupied by $\b
 \begin{equation*}
 \ket{\Psi} = \ketFX N \pt \n \sp
 \end{equation*}
-and is called a ``localized state''. We postulate that a many particles state is given by any linear combination of the form:
+and is called a ``localized state''.
+We postulate that a many particles state is given by any linear combination of the form:
 \begin{eqnarray*}
 \ket{\Psi} & = & \sum_{\bFX N \pt \n \sp} \Psi \left(\bFX N \pt \n \sp \right) \ketFX N \pt \n \sp \\
 \bX N \pt \n \sp & \in & \IntRange{0}{\M \pt}
@@ -154,7 +176,8 @@ The set of all these vectors, taken as an orthonormal basis, forms a finite dime
 \end{equation*}
 and the basis of the localized states is called ``position basis''.
 
-\paragraphtitle{Remark} For fermions, we have experimentally $\M \pt = 1$. For bosons, no upper limit of the occupation number is experimentally known; a lower limit of about $\M \photon \gtrsim 10^{21}$ for photons has been reached experimentally by high intensity lasers.
+\paragraphtitle{Remark} For fermions, we have experimentally $\M \pt = 1$.
+For bosons, no upper limit of the occupation number is experimentally known; a lower limit of about $\M \photon \gtrsim 10^{21}$ for photons has been reached experimentally by high intensity lasers.
 
 \section{Creation and annihilation operators}
 
@@ -178,14 +201,16 @@ The (hypothetical) state of the universe in which no particles are present is wr
 \ket \Psi = \ket{\vac} \eqdef \ket{\bFX 0 \pt \n \sp}
 \end{equation*}
 
-\paragraphtitle{Remark} The annihilation (resp. creation) operators form a (finite) set of generators of a commutative algebra $\aAlg$ (resp. $\cAlg$). Any state of the universe can be obtained by applying creation operators on the vacuum according to:
+\paragraphtitle{Remark} The annihilation (resp. creation) operators form a (finite) set of generators of a commutative algebra $\aAlg$ (resp. $\cAlg$).
+Any state of the universe can be obtained by applying creation operators on the vacuum according to:
 \begin{eqnarray*}
 \ket{\Psi} & = & \dop{\Psi} \ket{\vac} \\
 \dop{\Psi} & \eqdef & \sum_{\bFX N \pt \n \sp} \Psi \left(\bFX N \pt \n \sp \right) \prod_{\pt,\n,\sp} \left( \cop \pt \n \sp \right)^{\bX N \pt \n \sp}
 \end{eqnarray*}
 associating thus an operator $\dop{\Psi} \in \cAlg$ to each vector $\ket{\Psi} \in \H$ canonically.
 
-\paragraphtitle{Commentaries} We are defining here at purpose very basic creation and annihilation operators. The normalization factor relevant for boson fields and the antisymmetry factor relevant for fermion fields are included explicitly in the interaction Hamiltonian, e.g. in the photon spinor operators defined in appendix \ref{Photon spinors} and in the Dirac spinor operators defined in appendix \ref{Dirac spinors}.
+\paragraphtitle{Commentaries} We are defining here at purpose very basic creation and annihilation operators.
+The normalization factor relevant for boson fields and the antisymmetry factor relevant for fermion fields are included explicitly in the interaction Hamiltonian, e.g. in the photon spinor operators defined in appendix \ref{Photon spinors} and in the Dirac spinor operators defined in appendix \ref{Dirac spinors}.
 
 \section{Plane wave field modes}
 
@@ -194,7 +219,8 @@ associating thus an operator $\dop{\Psi} \in \cAlg$ to each vector $\ket{\Psi} \
 \aop \pt \q \sp & \eqdef & (1+2 \N)^{-3/2} \sum_{\n} \exp{-\i 2 \pi \n \ssp \q} \aop \pt \n \sp \\
 \cop \pt \q \sp & \eqdef & (1+2 \N)^{-3/2} \sum_{\n} \exp{\i 2 \pi \n \ssp \q} \cop \pt \n \sp
 \end{eqnarray*}
-Note that this definition can be extended to all $\q \in \IR^3$. The plane wave states of the field are then defined by:
+Note that this definition can be extended to all $\q \in \IR^3$.
+The plane wave states of the field are then defined by:
 \begin{equation*}
 \ket{\bFQ N \pt \q \sp} \eqdef \prod_{\pt,\q,\sp} \left( \cop \pt \q \sp \right)^{\bQ N \pt \q \sp} \ket{\vac}
 \end{equation*}
@@ -226,7 +252,8 @@ The total particle number operator is defined as the (finite) sum:
 \begin{equation*}
 \op N \eqdef \sum_{\pt,\n,\sp} \Nop \pt \n \sp = \sum_{\pt,\q,\sp} \Nop \pt \q \sp
 \end{equation*}
-Its eigenspace for the eigenvalue $N$ is written $\Hn N$ and its elements are called ``$N$ particle states'' of the field. The Hilbert space can be decomposed into a (finite) sum of the form:
+Its eigenspace for the eigenvalue $N$ is written $\Hn N$ and its elements are called ``$N$ particle states'' of the field.
+The Hilbert space can be decomposed into a (finite) sum of the form:
 \begin{equation*}
 \H = \bigoplus_{N}^\perp \Hn N
 \end{equation*}

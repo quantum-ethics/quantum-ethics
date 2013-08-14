@@ -8,7 +8,9 @@ We postulate that the state of the quantum field evolves according to an equatio
 \begin{equation*}
 \ddt \ket\Psi = -\i 2 \pi \frac 1 \h \Hop \ket\Psi
 \end{equation*}
-called ``Schrödinger equation'' where $\Hop$ is the (time independent) Hamiltonian operator of the field. This operator is supposed to be hermitian and is therefore diagonalizable (with real eigenvalues) on the finite dimensional Hilbert space $\H$. The equation can also be integrated as:
+called ``Schrödinger equation'' where $\Hop$ is the (time independent) Hamiltonian operator of the field.
+This operator is supposed to be hermitian and is therefore diagonalizable (with real eigenvalues) on the finite dimensional Hilbert space $\H$.
+The equation can also be integrated as:
 \begin{eqnarray*}
 \ket{\Psi(t)} & = & \Uop t {t_0} \ket{\Psi(t_0)} \\
 \Uop t {t_0} & \eqdef & \exp{- \i 2 \pi \frac{t - t_0} \h \Hop}
@@ -73,7 +75,8 @@ The usual evolution operator can also be written too as a series of the form:
 
 \section{Transition amplitudes}
 
-In scattering experiments, the evolution operator in the interaction picture is often called ``scattering operator''. In this context, cross sections are usually calculated in the limit $t_0 \to - \infty$ and $t \to + \infty$, so the variables $t_0$ and $t$ are implicit in the notation:
+In scattering experiments, the evolution operator in the interaction picture is often called ``scattering operator''.
+In this context, cross sections are usually calculated in the limit $t_0 \to - \infty$ and $t \to + \infty$, so the variables $t_0$ and $t$ are implicit in the notation:
 \begin{equation*}
 \Sop \eqdef \UopI t {t_0}
 \end{equation*}
@@ -148,7 +151,8 @@ The functions $\SmE n {E_n, \dotsc, E_0}$ can be calculated recursively accordin
 \SmE{n + 1}{E_{n + 1}, E_n, \dotsc, E_0} = \frac 1 {E_{n + 1} - E_n} \left( \SmE n {E_{n + 1}, \dotsc, E_0} \right. \\
 \left. - \exp{\i 2 \pi \frac{t - t_0} \h ( E_{n + 1} - E_n )} \SmE n {E_n, \dotsc, E_0} \right)
 \end{multline*}
-where the esinc function is defined as in appendix \ref{esinc}. To the second order, for instance, we have:
+where the esinc function is defined as in appendix \ref{esinc}.
+To the second order, for instance, we have:
 \begin{multline*}
 \SmE 2 {E_2, E_1, E_0} = -\i 2 \pi \frac{t - t_0} \h \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_0 )} \frac 1 {E_2 - E_1} \\
 \left[ \sinc{\frac{t - t_0} \h ( E_2 - E_0 )} - \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_1 )} \sinc{\frac{t - t_0} \h ( E_1 - E_0 )} \right]
