@@ -10,13 +10,15 @@ On each point $\n$ of space, the electric charge operator is defined by:
 \begin{equation*}
 \Qop \n \eqdef \e \sum_{\pt,\sp',\sp} \Qp \pt \left( \SCop \pt \n {\sp'} + \SAop {\antiparticle \pt} \n {\sp'} \right) \gammat 0 \left( \SAop \pt \n \sp + \SCop {\antiparticle \pt} \n \sp \right)
 \end{equation*}
-where $\e$ is the elementary electric charge (opposite electric charge of a bare electron) and $\Qp \pt$ the electric charge number of fermions of type $\pt$: $\Qp \pt = 0$ for the neutrinos $\pt \in \{ \neutrinoelectron, \neutrinomuon, \neutrinotauon \}$, $\Qp \pt = -1$ for the charged leptons $\pt \in \{ \electron, \muon, \tauon \}$, $\Qp \pt = \frac 2 3$ for the quarks $\pt \in \{ \quarkup, \quarkcharm, \quarktop \}$ and $\Qp \pt = - \frac 1 3$ for the quarks $\pt \in \{ \quarkdown, \quarkstrange, \quarkbottom \}$. In this expression, the creation and annihilation spinor operators are defined as in appendix \ref{Dirac spinors} and the Dirac matrices as in appendix \ref{Dirac matrices}.
+where $\e$ is the elementary electric charge (opposite electric charge of a bare electron) and $\Qp \pt$ the electric charge number of fermions of type $\pt$: $\Qp \pt = 0$ for the neutrinos $\pt \in \{ \neutrinoelectron, \neutrinomuon, \neutrinotauon \}$, $\Qp \pt = -1$ for the charged leptons $\pt \in \{ \electron, \muon, \tauon \}$, $\Qp \pt = \frac 2 3$ for the quarks $\pt \in \{ \quarkup, \quarkcharm, \quarktop \}$ and $\Qp \pt = - \frac 1 3$ for the quarks $\pt \in \{ \quarkdown, \quarkstrange, \quarkbottom \}$.
+In this expression, the creation and annihilation spinor operators are defined as in appendix \ref{Dirac spinors} and the Dirac matrices as in appendix \ref{Dirac matrices}.
 
 The anti-particle creation and annihilation spinor operators in this expression yield to a uniformly distributed mean electric charge in the vacuum state, given by:
 \begin{equation*}
 \bra \vac \Qop \n \ket \vac = \e \sum_{\pt,\sp} \Qp \pt = - 4 \e
 \end{equation*}
-and called `zero-point electric charge'. Since this charge distribution is uniform, it doesn't have any contribution to the interaction Hamiltonian as defined in section \ref{QED interaction Hamiltonian}.
+and called `zero-point electric charge'.
+Since this charge distribution is uniform, it doesn't have any contribution to the interaction Hamiltonian as defined in section \ref{QED interaction Hamiltonian}.
 
 \section{Electric current operator}
 
@@ -24,7 +26,8 @@ On each point $\n$ of space, the electric current operator is defined by:
 \begin{equation*}
 \Jop \n \eqdef \e \c \sum_{\pt,\sp',\sp} \Qp \pt \left( \SCop \pt \n {\sp'} + \SAop {\antiparticle \pt} \n {\sp'} \right) \gamvec \left( \SAop \pt \n \sp + \SCop {\antiparticle \pt} \n \sp \right)
 \end{equation*}
-where the summation goes over all fermions $\pt$. In this expression too, the creation and annihilation spinor operators are defined as in appendix \ref{Dirac spinors} and the Dirac matrices as in appendix \ref{Dirac matrices}.
+where the summation goes over all fermions $\pt$.
+In this expression too, the creation and annihilation spinor operators are defined as in appendix \ref{Dirac spinors} and the Dirac matrices as in appendix \ref{Dirac matrices}.
 
 \section{Electric potential operator}
 
@@ -32,7 +35,8 @@ On each point $\n$ of space, the electric potential operator is defined by:
 \begin{equation*}
 \Vop \n \eqdef \sum_{\n'} \frac{\Qop {\n'}}{8 \pi \vpty \a} ( 1 + 2 \N )^{-3} \sum_{\q_\photon \neq \sv 0} \frac{\exp{\i 2 \pi \q_\photon \ssp ( \n - \n' )}}{\pi q_\photon^2}
 \end{equation*}
-where $\vpty$ is the permittivity of the bare vacuum. Its constant Fourier component has been set to $0$ (which is consistent with the Coulomb gauge condition used in appendix \ref{Photon spinors}), so that the zero-point electric charge in section \ref{Electric charge operator} doesn't have any contribution to the interaction Hamiltonian as defined in section \ref{QED interaction Hamiltonian}.
+where $\vpty$ is the permittivity of the bare vacuum.
+Its constant Fourier component has been set to $0$ (which is consistent with the Coulomb gauge condition used in appendix \ref{Photon spinors}), so that the zero-point electric charge in section \ref{Electric charge operator} doesn't have any contribution to the interaction Hamiltonian as defined in section \ref{QED interaction Hamiltonian}.
 
 \section{Magnetic potential operator}
 
@@ -65,9 +69,13 @@ Its development on the plane waves basis is given by:
 
 \section{Dressed states}
 
-As a consequence of the electromagnetic interaction between the photon and the charged fermion fields, an excitation of a single particle field like $\ketQ N \pt \q \sp$ is unstable and is also a poor model for observed particles. In fact, these particles are always being observed ``dressed'', \textit{i.e.} forming a particle complex together with excitations of the other fields. As a consequence, the ``bare'' rest mass, electric charge and magnetic moment of these particles, as they appear in the QED model, do not correspond to the values observed by dressed particles. These renormalized values as well as the composition of dressed particles can be calculated in the frame of QED as a function of the bare values, which can also be indirectly determined experimentally.
+As a consequence of the electromagnetic interaction between the photon and the charged fermion fields, an excitation of a single particle field like $\ketQ N \pt \q \sp$ is unstable and is also a poor model for observed particles.
+In fact, these particles are always being observed ``dressed'', \textit{i.e.} forming a particle complex together with excitations of the other fields.
+As a consequence, the ``bare'' rest mass, electric charge and magnetic moment of these particles, as they appear in the QED model, do not correspond to the values observed by dressed particles.
+These renormalized values as well as the composition of dressed particles can be calculated in the frame of QED as a function of the bare values, which can also be indirectly determined experimentally.
 
-We consider a bare state of the form $\ket{{\bFQ N \pt \q \sp}_0}$ and will derive the corresponding dressed state $\ket{\Psi}$ as eigenstate of $\Hop_0 + \Hop'$ for an eigenvalue $E$ to be determined. Assuming the bare and dressed states aren't orthogonal to each other, we write the latter as:
+We consider a bare state of the form $\ket{{\bFQ N \pt \q \sp}_0}$ and will derive the corresponding dressed state $\ket{\Psi}$ as eigenstate of $\Hop_0 + \Hop'$ for an eigenvalue $E$ to be determined.
+Assuming the bare and dressed states aren't orthogonal to each other, we write the latter as:
 \begin{equation*}
 \ket{\Psi} \eqdef \FT \Psi \left( {\bFQ N \pt \q \sp}_0 \right) \sum_{\bFQ N \pt \q \sp} \FT \Phi_0 \left( \bFQ N \pt \q \sp \right) \ket{\bFQ N \pt \q \sp}
 \end{equation*}
@@ -122,7 +130,9 @@ E^{(n)} & = & \sum_{{\bFQ N \pt \q \sp}_2 \neq {\bFQ N \pt \q \sp}_0} \left( H'^
 
 \section{Dressed vacuum}
 
-The vacuum state itself isn't stable and would become populated by pair creation processes. Up to the first order, the dressed vacuum is composed of the bare vacuum $\ket \vac$ as well as of states of the form $\ket{\bQ 1 \pt {\eqp{\q-\q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp \bQ 1 \photon {\q_\photon} {\sp_\photon}}$, where $\pt$ is any electrically charged fermion and $\q_\photon \neq \sv 0$. The corresponding unnormalized coefficients  are given by:
+The vacuum state itself isn't stable and would become populated by pair creation processes.
+Up to the first order, the dressed vacuum is composed of the bare vacuum $\ket \vac$ as well as of states of the form $\ket{\bQ 1 \pt {\eqp{\q-\q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp \bQ 1 \photon {\q_\photon} {\sp_\photon}}$, where $\pt$ is any electrically charged fermion and $\q_\photon \neq \sv 0$.
+The corresponding unnormalized coefficients  are given by:
 \begin{equation*}
 \FT \Phi^{(1)} = - \sqrt{\frac{\e^2}{4 \pi \vpty \h \c}} ( 1 + 2 \N )^{-3/2} \Qp \pt \frac{\ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon}}{( 2 \pi q_\photon )^{1 / 2} \left( \Ek \pt {\q - \q_\photon} + \Ek {\antiparticle \pt} {-\q} + \Ek \photon {\q_\photon} \right) \a / \h \c}
 \end{equation*}
@@ -148,7 +158,8 @@ The numerical coefficients $\kappa^\vac_\pt$ only depend on the reduced masses o
 \small{$\kappa^\vac_\pt$ as a function of $\mpr \pt$\\
 for $\N = 1$, $2$ and $3$ (dotted, dashed and solid lines)}
 \end{center}
-In $\mpr \pt = 0$, we have $\kappa^\vac_\pt \approx 0.266$, $0.248$ and $0.246$ for $\N = 1$, $2$ and $3$ respectively; as $\mpr \pt \to \infty$, we have $\kappa^\vac_\pt \to 0^-$. Since the result converges to an integral expression for $\N \to \infty$, I shall assume that the coefficients obtained by carrying out the computation for $\N = 3$ are already a good approximation.
+In $\mpr \pt = 0$, we have $\kappa^\vac_\pt \approx 0.266$, $0.248$ and $0.246$ for $\N = 1$, $2$ and $3$ respectively; as $\mpr \pt \to \infty$, we have $\kappa^\vac_\pt \to 0^-$.
+Since the result converges to an integral expression for $\N \to \infty$, I shall assume that the coefficients obtained by carrying out the computation for $\N = 3$ are already a good approximation.
 
 This energy is represented by following Feynman diagram:
 \begin{center}
@@ -164,7 +175,9 @@ E^{(2)} \approx 0.25 ( 1 + 2 \N )^3 \frac {14} 3 \frac{\e^2}{4 \pi \vpty \a}
 
 %TODO: Degenerate case! Correct formulas.
 
-We consider an electrically charged fermion of type $\ptf$ in the bare state $\ket{\bQ 1 {\ptf} {\q_\ptf} {\sp_\ptf}}$. Up to the first order, the corresponding dressed state is composed of the bare state, of states of the form $\ket{\bQ 1 {\ptf} {\q_\ptf} {\sp_\ptf} \bQ 1 \pt {\eqp{\q-\q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp \bQ 1 \photon {\q_\photon} {\sp_\photon}}$, where $\pt$ is any electrically charged fermion, $\q_\photon \neq \sv 0$ and $(\pt, \q-\q_\photon, \sp') \neq (\ptf, \q_\ptf, \sp_\ptf)$, as well as of states of the form $\ket{\bQ 1 {\ptf} {\eqp{\q_\ptf - \q_\photon}} \sp \bQ 1 \photon {\q_\photon} {\sp_\photon}}$, where $\q_\photon \neq \sv 0$. The corresponding unnormalized coefficients  are given by:
+We consider an electrically charged fermion of type $\ptf$ in the bare state $\ket{\bQ 1 {\ptf} {\q_\ptf} {\sp_\ptf}}$.
+Up to the first order, the corresponding dressed state is composed of the bare state, of states of the form $\ket{\bQ 1 {\ptf} {\q_\ptf} {\sp_\ptf} \bQ 1 \pt {\eqp{\q-\q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp \bQ 1 \photon {\q_\photon} {\sp_\photon}}$, where $\pt$ is any electrically charged fermion, $\q_\photon \neq \sv 0$ and $(\pt, \q-\q_\photon, \sp') \neq (\ptf, \q_\ptf, \sp_\ptf)$, as well as of states of the form $\ket{\bQ 1 {\ptf} {\eqp{\q_\ptf - \q_\photon}} \sp \bQ 1 \photon {\q_\photon} {\sp_\photon}}$, where $\q_\photon \neq \sv 0$.
+The corresponding unnormalized coefficients  are given by:
 \begin{equation*}
 \FT \Phi^{(1)} = - \sqrt{\frac{\e^2}{4 \pi \vpty \h \c}} ( 1 + 2 \N )^{-3/2} \Qp \pt \frac{\ddirspin \pt {\q - \q_\photon} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon}}{( 2 \pi q_\photon )^{1 / 2} \left( \Ek \pt {\q - \q_\photon} + \Ek {\antiparticle \pt} {-\q} + \Ek \photon {\q_\photon} \right) \a / \h \c}
 \end{equation*}
@@ -182,7 +195,8 @@ E^{(2)} & = & E^{(2)} \left( \vac \right) + \frac{\e^2}{4 \pi \vpty \a} \Qp \ptf
 && - ( 1 + 2 \N )^{-3} \sum_{\q_\photon \neq \sv 0} \left[ \frac 1 {2 \pi q_\photon^2} \sum_\sp \left| \ddirspin \ptf {\q_\ptf} {\sp_\ptf} \dirspin {\antiparticle \ptf} {-\q_\ptf - \q_\photon} \sp \right|^2 \right. \\
 && \left. - \frac {\sum_{\sp,\sp_\photon} \left| \ddirspin \ptf {\q_\ptf} {\sp_\ptf} \gammat 0 \gamvec \dirspin {\antiparticle \ptf} {-\q_\ptf - \q_\photon} \sp \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2} {2 \pi q_\photon \left( \Ek \ptf {\q_\ptf} + \Ek {\antiparticle \ptf} {-\q_\ptf - \q_\photon} + \Ek \photon {\q_\photon} \right) \a / \h \c} \right]
 \end{eqnarray*}
-where $E^{(2)} \left( \vac \right)$ is the second order energy of the dressed vacuum. The spin summations evaluate to:
+where $E^{(2)} \left( \vac \right)$ is the second order energy of the dressed vacuum.
+The spin summations evaluate to:
 \begin{eqnarray*}
 \sum_{\sp} \left| \ddirspin \ptf {\q_\ptf - \q_\photon} \sp \dirspin \ptf {\q_\ptf} {\sp_\ptf} \right|^2 & = & \frac 1 2 \left( 1 + \frac{\mpr \ptf^2 + \eqp{\q_\ptf - \q_\photon} \ssp \q_\ptf}{\Ek \ptf {\q_\ptf - \q_\photon} \Ek \ptf {\q_\ptf} ( \a / \h \c )^2} \right) \\
 \sum_{\sp,\sp_\photon} \left| \ddirspin \ptf {\q_\ptf - \q_\photon} \sp \gammat 0 \gamvec \dirspin \ptf {\q_\ptf} {\sp_\ptf} \ssp \cphotonspin {\q_\photon} {\sp_\photon} \right|^2 & = & 1 - \frac{\mpr \ptf^2 + ( \eqp{\q_\ptf - \q_\photon} \ssp \q_\photon ) ( \q_\ptf \ssp \q_\photon ) / q_\photon^2}{\Ek \ptf {\q_\ptf - \q_\photon} \Ek \ptf {\q_\ptf} ( \a / \h \c )^2} \\
@@ -202,7 +216,9 @@ for a given mode $(\q_\ptf, \sp_\ptf)$ of the fermion field.
 
 \section{Dressed photon}
 
-We consider a photon in the bare state $\ket{\bQ 1 {\photon} {\q_ \photon} {\sp_ \photon}}$, where $\q_\photon \neq \sv 0$. Up to the first order, the corresponding dressed state is composed of the bare state, of states of the form $\ket{\bQ 1 {\photon} {\q_ \photon} {\sp_ \photon} \bQ 1 \pt {\eqp{\q-\q_\photon'}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp \bQ 1 \photon {\q_\photon'} {\sp_\photon'}}$, where $\pt$ is any electrically charged fermion, $\q_\photon' \neq \sv 0$ and $(\q_\photon',\sp_\photon') \neq (\q_ \photon,\sp_ \photon)$, of states of the form $\ket{\bQ 2 {\photon} {\q_ \photon} {\sp_ \photon} \bQ 1 \pt {\eqp{\q-\q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp}$ as well as of states of the form $\ket{\bQ 1 {\pt} {\eqp{\q + \q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp}$. The corresponding unnormalized coefficients  are given by:
+We consider a photon in the bare state $\ket{\bQ 1 {\photon} {\q_ \photon} {\sp_ \photon}}$, where $\q_\photon \neq \sv 0$.
+Up to the first order, the corresponding dressed state is composed of the bare state, of states of the form $\ket{\bQ 1 {\photon} {\q_ \photon} {\sp_ \photon} \bQ 1 \pt {\eqp{\q-\q_\photon'}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp \bQ 1 \photon {\q_\photon'} {\sp_\photon'}}$, where $\pt$ is any electrically charged fermion, $\q_\photon' \neq \sv 0$ and $(\q_\photon',\sp_\photon') \neq (\q_ \photon,\sp_ \photon)$, of states of the form $\ket{\bQ 2 {\photon} {\q_ \photon} {\sp_ \photon} \bQ 1 \pt {\eqp{\q-\q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp}$ as well as of states of the form $\ket{\bQ 1 {\pt} {\eqp{\q + \q_\photon}} {\sp'} \bQ 1 {\antiparticle \pt} {-\q} \sp}$.
+The corresponding unnormalized coefficients  are given by:
 \begin{equation*}
 \FT \Phi^{(1)} = - \sqrt{\frac{\e^2}{4 \pi \vpty \h \c}} ( 1 + 2 \N )^{-3/2} \Qp \pt \frac{\ddirspin \pt {\q - \q_\photon'} {\sp'} \gammat 0 \gamvec \dirspin {\antiparticle \pt} {-\q} \sp \ssp \cphotonspin {\q_\photon'} {\sp_\photon'}}{( 2 \pi q_\photon' )^{1 / 2} \left( \Ek \pt {\q - \q_\photon'} + \Ek {\antiparticle \pt} {-\q} + \Ek \photon {\q_\photon'} \right) \a / \h \c}
 \end{equation*}

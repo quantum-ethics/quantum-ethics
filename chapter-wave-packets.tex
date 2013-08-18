@@ -3,7 +3,10 @@
 
 \section{Gaussian wave packet}
 
-A well-known consequence of the quantum formalism is the impossibility to describe a particle, like in classical mechanics, as a mass point having at each instant a well-defined position and velocity. In the quantum mechanics of a single particle in continuous space-time, the movement of the wave packet defining its statistical position can still be described, like in classical fluid mechanics, by a probability current density (which is related to the phase gradient of the wave packet), but as soon as several particles are present or are even being created and annihilated like in Quantum Field Theory, the analogy to classical fluid mechanics becomes much more elusive. It is still possible, however, to describe approximate particle trajectories in the frame of Quantum Field Theory if one considers that proper quantum effects may remain beyond the reach of experimental precision in some situations. Gaussian wave packets are a typical model of such particles with a quasi-classical behavior, \textit{i.e.} with a position and a velocity being well-defined to a good approximation.
+A well-known consequence of the quantum formalism is the impossibility to describe a particle, like in classical mechanics, as a mass point having at each instant a well-defined position and velocity.
+In the quantum mechanics of a single particle in continuous space-time, the movement of the wave packet defining its statistical position can still be described, like in classical fluid mechanics, by a probability current density (which is related to the phase gradient of the wave packet), but as soon as several particles are present or are even being created and annihilated like in Quantum Field Theory, the analogy to classical fluid mechanics becomes much more elusive.
+It is still possible, however, to describe approximate particle trajectories in the frame of Quantum Field Theory if one considers that proper quantum effects may remain beyond the reach of experimental precision in some situations.
+Gaussian wave packets are a typical model of such particles with a quasi-classical behavior, \textit{i.e.} with a position and a velocity being well-defined to a good approximation.
 
 A Gaussian wave packet of a particle of type $\pt$ and in the spin state $\sp$, with a mean momentum $\q_0 \in (\IZ/(1+2\N))^3$, a mean position $\n_0 \in \IR^3$ and a width $w_0 \in \IR_+^*$, is given by:
 \begin{eqnarray*}
@@ -15,7 +18,8 @@ with the normalization factor:
 \begin{equation*}
 C(\q_0,w_0) \eqdef \left[ (2w_0)^3 (1+2\N)^{-3} \sum_{\q} \exp{-4 \pi w_0^2 \q^2} \right]^{-1/2}
 \end{equation*}
-In the usual case where $1 \ll w_0 \ll \N$, this normalization factor approximates to 1. On the position basis, the creation operator of the Gaussian wave packet can be expressed as:
+In the usual case where $1 \ll w_0 \ll \N$, this normalization factor approximates to 1.
+On the position basis, the creation operator of the Gaussian wave packet can be expressed as:
 \begin{eqnarray*}
 \dop{G^\pt_\sp}(\q_0,\n_0,w_0) & = & C(\q_0,w_0) w_0^{-3/2} \sum_{\n} A(\n - \n_0'(\n),w_0) \\
 && \exp{-\pi (\n - \n_0'(\n))^2/2 w_0^2 + \i 2 \pi \q_0 \ssp \n} \cop\pt\n\sp
@@ -24,7 +28,9 @@ with the numerical factor:
 \begin{equation*}
 A(\n - \n_0'(\n),w_0) \eqdef (2w_0^2)^{3/2} (1+2\N)^{-3} \sum_{\q} \exp{-2 \pi w_0^2 \left( \q - \i (\n - \n_0'(\n))/2 w_0^2 \right)^2}
 \end{equation*}
-where $\n_0'(\n)$ can be chosen arbitrarily in $\n_0 + ((1+2\N) \IZ)^3$. In the usual case where $1 \ll w_0 \ll \N$, this factor approximates to 1 if $\n_0'(\n)$ can be chosen such that $\| \n-\n_0'(\n) \| \ll \N$. To the zeroth order, the Hamiltonian evolution of the Gaussian wave packet $\ket{\Psi_0} = \dop{G^\pt_\sp}(\q_0,\n_0,w_0) \ket \vac$ is given by:
+where $\n_0'(\n)$ can be chosen arbitrarily in $\n_0 + ((1+2\N) \IZ)^3$.
+In the usual case where $1 \ll w_0 \ll \N$, this factor approximates to 1 if $\n_0'(\n)$ can be chosen such that $\| \n-\n_0'(\n) \| \ll \N$.
+To the zeroth order, the Hamiltonian evolution of the Gaussian wave packet $\ket{\Psi_0} = \dop{G^\pt_\sp}(\q_0,\n_0,w_0) \ket \vac$ is given by:
 \begin{eqnarray*}
 \ket{\Psi_t} & = & C(\q_0,w_0) (2w_0)^{3/2} (1+2\N)^{-3/2} \\
 && \sum_{\q} \exp{-2 \pi w_0^2 \q^2 - \i 2 \pi \q \ssp \n_0 -\i 2 \pi \Ek \pt {\q_0+\q} (t - t_0) / \h} \cop\pt{\q_0+\q}\sp \ket \vac
