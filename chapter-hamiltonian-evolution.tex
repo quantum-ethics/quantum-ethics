@@ -154,10 +154,9 @@ The functions $\SmE n {E_n, \dotsc, E_0}$ can be calculated recursively accordin
 where the esinc function is defined as in appendix \ref{esinc}.
 To the second order, for instance, we have:
 \begin{multline*}
-\SmE 2 {E_2, E_1, E_0} = -\i 2 \pi \frac{t - t_0} \h \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_0 )} \frac 1 {E_2 - E_1} \\
-\left[ \sinc{\frac{t - t_0} \h ( E_2 - E_0 )} - \exp{\i \pi \frac{t - t_0} \h ( E_2 - E_1 )} \sinc{\frac{t - t_0} \h ( E_1 - E_0 )} \right]
+\SmE 2 {E_2, E_1, E_0} = -\i 2 \pi \frac{t - t_0} \h \exp{\i 2 \pi \frac{t - t_0} \h ( E_2 - E_0 )} \frac 1 {E_2 - E_1} \\
+\left[ \esinc{\frac{t - t_0} \h ( E_0 - E_2 )} - \esinc{\frac{t - t_0} \h ( E_0 - E_1 )} \right]
 \end{multline*}
-where the sinc function is defined as in appendix \ref{sinc}.
 
 \section{Perturbative development}
 
@@ -171,7 +170,7 @@ The explicit perturbative development of the transition amplitude between two pl
 \begin{equation*}
 \Umn f i n t {t_0} = \exp{-\i 2 \pi \frac{t - t_0} \h E_f} \sideset{}{_{k=0}^n}\sum_{\bFQ {N_k} \pt \q \sp} \SmE n {E_n, \dotsc, E_0} \prod_{k=1}^n H'_{k,k-1}
 \end{equation*}
-where we take in the last sum $\bFQ {N_0} \pt \q \sp = \bFQ {N_i} \pt \q \sp$ and $\bFQ {N_n} \pt \q \sp = \bFQ {N_f} \pt \q \sp$ and where we have:
+where the sinc function is defined as in appendix \ref{sinc}, where we take in the last sum $\bFQ {N_0} \pt \q \sp = \bFQ {N_i} \pt \q \sp$ and $\bFQ {N_n} \pt \q \sp = \bFQ {N_f} \pt \q \sp$ and where we have:
 \begin{multline*}
 \SmE n {E_n, \dotsc, E_0} \eqdef \left( \frac{-\i 2 \pi} \h \right)^n \int_{t - t_0 > t_n > \dotsb > t_1 > 0} \\
 \prod_{k=1}^n \exp{\i 2 \pi \frac{t_k} \h ( E_k - E_{k - 1} )} \dt_n \dotsm \dt_1
