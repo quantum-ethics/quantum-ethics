@@ -50,7 +50,7 @@ function curl_get($url, array $get = array(), array $options = array()) {
 		CURLOPT_URL => $urlFull,
 		CURLOPT_HEADER => 0,
 		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_TIMEOUT => 4
+		CURLOPT_TIMEOUT => 10
 	);
 	$ch = curl_init();
 	curl_setopt_array($ch, ($options + $defaults));
@@ -70,6 +70,14 @@ function curl_get($url, array $get = array(), array $options = array()) {
 		<title>Quantum Ethics: A Spinozist Interpretation of Lattice Quantum Field Theory</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-26118689-1', 'quantum-ethics.org');
+			ga('send', 'pageview');
+		</script>
 	</head>
 	<body>
 		<script type="text/javascript">
