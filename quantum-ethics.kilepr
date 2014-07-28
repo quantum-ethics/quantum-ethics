@@ -335,10 +335,10 @@ archive=true
 column=0
 encoding=UTF-8
 highlight=LaTeX
-line=134
+line=177
 mode=LaTeX
-open=false
-order=1
+open=true
+order=3
 
 [item:chapter-quantum-electrodynamics.tex]
 archive=true
@@ -407,7 +407,7 @@ encoding=UTF-8
 highlight=LaTeX
 line=25
 mode=LaTeX
-open=false
+open=true
 order=1
 
 [item:frontmatter-acknowledgements.tex]
@@ -447,8 +447,8 @@ encoding=UTF-8
 highlight=LaTeX
 line=13
 mode=LaTeX
-open=false
-order=-1
+open=true
+order=0
 
 [item:notations.tex]
 archive=true
@@ -532,13 +532,13 @@ order=-1
 
 [item:quantum-ethics.tex]
 archive=true
-column=2
+column=108
 encoding=UTF-8
 highlight=LaTeX
-line=2
+line=12
 mode=LaTeX
-open=false
-order=0
+open=true
+order=2
 
 [view-settings,view=0,item:backmatter-bibliography.tex]
 CursorColumn=102
@@ -594,7 +594,7 @@ CursorLine=8
 
 [view-settings,view=0,item:chapter-philosophical-issues.tex]
 CursorColumn=0
-CursorLine=134
+CursorLine=177
 JumpList=
 ViMarks=
 
@@ -687,7 +687,7 @@ JumpList=
 ViMarks=
 
 [view-settings,view=0,item:quantum-ethics.tex]
-CursorColumn=2
-CursorLine=2
+CursorColumn=108
+CursorLine=12
 JumpList=
-ViMarks=
+ViMarks=.,12,108,[,12,108,],12,108
