@@ -1,29 +1,29 @@
 <?php
 
 function latex2html($latex) {
-	$html = $latex;
-	foreach(array(
-		'&' => '&amp;',
-		'<' => '&lt;',
-		'>' => '&gt;',
-		'``' => '“',
-		'\'\'' => '”',
-		'\'' => '’',
-		'`' => '‘',
-		'--' => '–',
-	) as $search => $replace) {
-		$html = str_replace($search, $replace, $html);
-	}
-	foreach(array(
-		'#\\\\chapter\\*{([^}]*+)}#' => "\t\t\t<h4>$1</h4>",
-		'#\\\\(?:addcontentsline|renewcommand|epigraph)[^\\n]*+#' => '',
-		'#\\n\\n([^\\n]++)#' => "\t\t\t<p>$1</p>\n",
-		'#\\\\textit{([^}]*+)}#' => '<i>$1</i>',
-		'#\\n\\n++#' => "\n",
-	) as $search => $replace) {
-		$html = preg_replace($search, $replace, $html);
-	}
-	return $html;
+    $html = $latex;
+    foreach (array(
+'&' => '&amp;',
+ '<' => '&lt;',
+ '>' => '&gt;',
+ '``' => '“',
+ '\'\'' => '”',
+ '\'' => '’',
+ '`' => '‘',
+ '--' => '–',
+    ) as $search => $replace) {
+        $html = str_replace($search, $replace, $html);
+    }
+    foreach (array(
+'#\\\\chapter\\*{([^}]*+)}#' => "\t\t\t<h4>$1</h4>",
+ '#\\\\(?:addcontentsline|renewcommand|epigraph)[^\\n]*+#' => '',
+ '#\\n\\n([^\\n]++)#' => "\t\t\t<p>$1</p>\n",
+ '#\\\\textit{([^}]*+)}#' => '<i>$1</i>',
+ '#\\n\\n++#' => "\n",
+    ) as $search => $replace) {
+        $html = preg_replace($search, $replace, $html);
+    }
+    return $html;
 }
 
 /**
@@ -34,64 +34,63 @@ function latex2html($latex) {
  * @return string
  */
 function curl_get($url, array $get = array(), array $options = array()) {
-	$urlFull = $url;
-	if(count($get)) {
-		if(strpos($urlFull, '?') === false) {
-			$urlFull .= '?';
-		}
-		$urlFull .= http_build_query($get);
-	}
-	$defaults = array(
-		CURLOPT_URL => $urlFull,
-		CURLOPT_HEADER => 0,
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_TIMEOUT => 10
-	);
-	$ch = curl_init();
-	curl_setopt_array($ch, ($options + $defaults));
-	if(!$result = curl_exec($ch)) {
-		trigger_error(curl_error($ch));
-	}
-	curl_close($ch);
-	return $result;
-} 
-
+    $urlFull = $url;
+    if (count($get)) {
+        if (strpos($urlFull, '?') === false) {
+            $urlFull .= '?';
+        }
+        $urlFull .= http_build_query($get);
+    }
+    $defaults = array(
+        CURLOPT_URL => $urlFull,
+        CURLOPT_HEADER => 0,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 10
+    );
+    $ch = curl_init();
+    curl_setopt_array($ch, ($options + $defaults));
+    if (!$result = curl_exec($ch)) {
+        trigger_error(curl_error($ch));
+    }
+    curl_close($ch);
+    return $result;
+}
 ?><!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
-		<meta name="language" content="english">
-		<meta name="description" content="Quantum Ethics: A Spinozist Interpretation of Quantum Field Theory, by Sébastien Fauvel">
-		<title>Quantum Ethics: A Spinozist Interpretation of Quantum Field Theory</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<script>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+        <meta name="language" content="english">
+        <meta name="description" content="Quantum Ethics: A Spinozist Interpretation of Quantum Field Theory, by Sébastien Fauvel">
+        <title>Quantum Ethics: A Spinozist Interpretation of Quantum Field Theory</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-26118689-1', 'quantum-ethics.org');
-			ga('send', 'pageview');
-		</script>
-	</head>
-	<body>
-		<div id="title">
-			<h1>Quantum Ethics</h1>
-			<h2>&mdash;<br>A Spinozist Interpretation<br>of Quantum Field Theory</h2>
-			<h3><br><a href="http://ens.academia.edu/S%C3%A9bastienFauvel">Sébastien Fauvel</a></h3>
-		</div>
-		<div id="abstract">
-			<div id="download">
-				<a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">
-					<img src="images/pictures/One_Loop_QED_Vacuum_Energy_Diagram.jpg" width="250" height="325" border="0" alt="" title="One-Loop QED Vacuum Energy Diagram">
-				</a>
-				<p><a href="/Quantum%20Ethics.php">» View as PDF</a></p>
-				<p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» Order on Amazon</a></p>
-				<p><a href="https://github.com/quantum-ethics/quantum-ethics">» Contribute on GitHub</a></p><br>
-			</div>
-<?php print latex2html(curl_get('https://raw.githubusercontent.com/quantum-ethics/quantum-ethics/master/chapter-history-of-this-book.tex')); ?>
-			<p><a href="/Quantum%20Ethics.php">» Read full PDF</a></p>
-			<h4>About the Author</h4>
-			<p>Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative Literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.</p>
-		</div>
-	</body>
+            ga('create', 'UA-26118689-1', 'quantum-ethics.org');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <div id="title">
+            <h1>Quantum Ethics</h1>
+            <h2>&mdash;<br>A Spinozist Interpretation<br>of Quantum Field Theory</h2>
+            <h3><br><a href="http://ens.academia.edu/S%C3%A9bastienFauvel">Sébastien Fauvel</a></h3>
+        </div>
+        <div id="abstract">
+            <div id="download">
+                <a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">
+                    <img src="images/pictures/One_Loop_QED_Vacuum_Energy_Diagram.jpg" width="250" height="325" border="0" alt="" title="One-Loop QED Vacuum Energy Diagram">
+                </a>
+                <p><a href="/Quantum%20Ethics.php">» View as PDF</a></p>
+                <p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» Order on Amazon</a></p>
+                <p><a href="https://github.com/quantum-ethics/quantum-ethics">» Contribute on GitHub</a></p><br>
+            </div>
+            <?php print latex2html(curl_get('https://raw.githubusercontent.com/quantum-ethics/quantum-ethics/master/chapter-history-of-this-book.tex')); ?>
+            <p><br><a href="/Quantum%20Ethics.php">» Read full PDF</a></p>
+            <h4>About the Author</h4>
+            <p>Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative Literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.</p>
+        </div>
+    </body>
 </html>
