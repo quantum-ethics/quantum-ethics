@@ -64,7 +64,6 @@ function curl_get($url, array $get = array(), array $options = array()) {
 		<meta name="description" content="Quantum Ethics: A Spinozist Interpretation of Quantum Field Theory, by Sébastien Fauvel">
 		<title>Quantum Ethics: A Spinozist Interpretation of Quantum Field Theory</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -75,11 +74,6 @@ function curl_get($url, array $get = array(), array $options = array()) {
 		</script>
 	</head>
 	<body>
-		<script type="text/javascript">
-			$(function() {
-				$('body').css('background-image', 'url(background.php?w=' + window.screen.width + '&h=' + window.screen.height + ')');
-			});
-		</script>
 		<div id="title">
 			<h1>Quantum Ethics</h1>
 			<h2>&mdash;<br>A Spinozist Interpretation<br>of Quantum Field Theory</h2>
