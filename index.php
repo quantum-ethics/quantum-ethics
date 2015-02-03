@@ -83,10 +83,6 @@ function curl_get($url, array $get = array(), array $options = array()) {
 		<script type="text/javascript">
 			$(function() {
 				$('body').css('background-image', 'url(background.php?w=' + window.screen.width + '&h=' + window.screen.height + ')');
-				$('a').click(function(event) {
-					$.get('click.php', {url: $(event.target).closest('a').attr('href')});
-					return true;
-				});
 			});
 		</script>
 		<div id="title">
@@ -109,4 +105,4 @@ function curl_get($url, array $get = array(), array $options = array()) {
 			<p>Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative Literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.</p>
 		</div>
 	</body>
-</html><? include_once '../../visitors.php';
+</html>

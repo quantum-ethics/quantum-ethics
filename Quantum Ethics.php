@@ -23,5 +23,3 @@ foreach ($headers as $key => $value) {
 }
 
 readfile($file);
-
-include_once '../../visitors.php';
