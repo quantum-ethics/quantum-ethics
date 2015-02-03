@@ -1,10 +1,5 @@
 <?php
 
-if ($_SERVER['SERVER_NAME'] !== 'quantum-ethics.org') {
-	header('Location: http://quantum-ethics.org/Quantum%20Ethics.php', true, 301);
-	exit;
-}
-
 $file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'quantum-ethics.pdf';
 
 $headers = array(
