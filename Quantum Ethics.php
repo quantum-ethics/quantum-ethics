@@ -1,4 +1,4 @@
-<?
+<?php
 
 if ($_SERVER['SERVER_NAME'] !== 'quantum-ethics.org') {
 	header('Location: http://quantum-ethics.org/Quantum%20Ethics.php', true, 301);

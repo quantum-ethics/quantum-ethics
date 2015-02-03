@@ -1,4 +1,4 @@
-<?
+<?php
 
 $original_width = 1280;
 $original_height = 1024;

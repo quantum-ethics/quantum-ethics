@@ -1,4 +1,4 @@
-<?
+<?php
 
 if ($_SERVER['SERVER_NAME'] !== 'quantum-ethics.org') {
 	header('Location: http://quantum-ethics.org/', true, 301);
@@ -99,7 +99,7 @@ function curl_get($url, array $get = array(), array $options = array()) {
 				<p><a href="http://www.amazon.com/Quantum-Ethics-Spinozist-Interpretation-Theory/dp/1481811703/">» Order on Amazon</a></p>
 				<p><a href="https://github.com/quantum-ethics/quantum-ethics">» Contribute on GitHub</a></p><br>
 			</div>
-<? print latex2html(curl_get('https://raw.githubusercontent.com/quantum-ethics/quantum-ethics/master/chapter-history-of-this-book.tex')); ?>
+<?php print latex2html(curl_get('https://raw.githubusercontent.com/quantum-ethics/quantum-ethics/master/chapter-history-of-this-book.tex')); ?>
 			<p><a href="http://quantum-ethics.org/Quantum%20Ethics.php">» Read full PDF</a></p>
 			<h4>About the Author</h4>
 			<p>Sébastien Fauvel, born 1983, graduated from the Ecole Normale Supérieure of Paris in Physics and Comparative Literature. He has been working as a Consultant, Software and Web Developer in Lyon, Freiburg and Basel.</p>
