@@ -1,2 +1,2 @@
-Sitemap: http://quantum-ethics.org/sitemap.xml
+Sitemap: http://www.quantum-ethics.org/sitemap.xml
 User-agent: *
