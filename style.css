@@ -81,7 +81,45 @@ p:last-of-type {
 div#download {
     float: right;
     text-align: center;
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    perspective: 1200px;
+    -moz-perspective: 1200px;
+    -webkit-perspective: 1200px;
+}
+
+div#download .look-inside {
+    display: block;
+    margin-left: auto;
+}
+
+div#download .book-cover {
+    border-radius: 0 7px 7px 0;
+    background: #222;
+    display: block;
+    line-height: 0;
+}
+
+div#download .book-cover img {
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+    transition: transform .5s ease 0s;
+    -moz-transition: -moz-transform .5s ease 0s;
+    -webkit-transition: -webkit-transform .5s ease 0s;
+    transform-origin: 0 0 0;
+    -moz-transform-origin: 0 0 0;
+    -webkit-transform-origin: 0 0 0;
+    -webkit-transform: translate3d(0, 0, 2px);
+}
+
+div#download .book-cover img:hover {
+    transform: rotateY(-20deg);
+    -moz-transform: rotateY(-20deg);
+    -webkit-transform: rotateY(-20deg);
 }
 
 div#download p {
